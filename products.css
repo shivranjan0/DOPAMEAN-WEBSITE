@@ -1,0 +1,1226 @@
+/* fonts */
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./ApercuMonoProRegular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./ApercuMonoProLight.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./ApercuMonoProMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ApercuMonoPro";
+    src: url("./ApercuMonoProBold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+body,
+html {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    background: #ECECEC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: #ECECEC;
+    overflow: hidden;
+    border-bottom: 0.5px solid #000000;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "ApercuMonoPro", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+.announcement-track {
+    display: flex;
+    gap: 80px;
+    white-space: nowrap;
+    animation: scroll-right 20s linear infinite;
+    min-width: 0;
+    height: 35px;
+    align-items: center;
+    flex: 1;
+}
+
+.announcement-track span {
+    font-size: 1.7vh;
+    font-weight: bold;
+    color: #000;
+}
+
+.utility-actions {
+    display: flex;
+    align-items: center;
+    z-index: 1100;
+}
+
+.utility-actions button,
+.action-theme {
+    border: none;
+    border-right: 0.5px solid #000000;
+    border-left: 0.5px solid #000000;
+    padding: 0 2vw;
+    height: 4vh;
+    letter-spacing: 0.1vh;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background: #ECECEC;
+    font: normal normal 400 2vh / 3vh "ApercuMonoPro", sans-serif;
+}
+
+
+.utility-actions button:last-child {
+    border-right: none;
+}
+
+.action-theme {
+    display: flex;
+    align-items: center;
+    border-right: none;
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+/* .bar-spacer {
+    height: 0px;
+    background: #ECECEC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+} */
+
+/* --- Gallery Thumbnails (Top-Left) --- */
+.gallery-container {
+    position: absolute;
+    top: 7vh;
+    left: 12vw;
+    display: flex;
+    gap: 0.2vw;
+    padding: 0.7vh;
+    background-color: rgb(255 255 255);
+    border-radius: 2vh;
+}
+
+.gallery-item {
+    width: 3.1vw;
+    height: 8vh;
+    overflow: hidden;
+    border-radius: 1vh;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.gallery-item.selected {
+    border-color: #333;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* product card at here */
+
+
+.product-card {
+    position: absolute;
+    bottom: 3vh;
+    right: 3vh;
+    width: 100%;
+    max-width: 28vw;
+    background-color: #fff;
+    border: 0.2vh solid #000000;
+}
+
+.product-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.2vh solid #000000;
+}
+
+.product-header h1 {
+    flex-grow: 1;
+    font-size: 0.8em;
+    font-weight: 400;
+    margin: 0;
+    padding: 1vh 1vw;
+}
+
+.product-header .price {
+    padding: 1vh 1vw;
+    border-left: 0.2vh solid #000000;
+    white-space: nowrap;
+}
+
+.product-intro {
+    font-size: 0.65em;
+    color: #555;
+    line-height: 1.6;
+    text-transform: uppercase;
+    padding: 1vh 1vh 1vh 2vh;
+}
+
+.accordion-item,
+.model-info-container,
+.size-selector {
+    border-top: 0.2vh solid #000000;
+}
+
+/* --- MODIFIED RULE --- */
+/* The flex properties have been removed to allow downward expansion */
+
+.accordion-header {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: 700;
+    padding: 1vh 2vh;
+}
+
+.accordion-header .icon {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    font-size: 0.75em;
+}
+
+.accordion-item.active .accordion-content {
+    padding-bottom: 8px;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding: 0vh 6vh;
+}
+
+.accordion-content ul li {
+    padding: 0.2vh 0px;
+    line-height: 1.5;
+}
+
+.model-info-container {
+    display: flex;
+    align-items: center;
+}
+
+.model-info {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 0.65em;
+    line-height: 1.4;
+    padding: 8px 12px;
+}
+
+.size-guide {
+    font-size: 0.65em;
+    color: #000;
+    text-decoration: underline;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-left: 1px solid #000000;
+    white-space: nowrap;
+}
+
+.size-selector {
+    display: flex;
+    padding: 0;
+}
+
+.size-selector button {
+    flex-grow: 1;
+    padding: 8px 0;
+    background-color: #fff;
+    border: none;
+    border-right: 1px solid #dcdcdc;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.75em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.size-selector button:last-child {
+    border-right: none;
+}
+
+.size-selector button.active,
+.size-selector button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.add-to-cart-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 12px;
+    font-weight: 700;
+}
+
+.add-to-cart-bar .final-price {
+    font-size: 0.85em;
+    font-weight: 400;
+}
+
+
+
+
+/* size guid css */
+
+
+/* SIZE GUIDE OVERLAY */
+.size-guide-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -4%);
+    width: 26vw;
+    height: 49vh;
+    background: #fff;
+    border: 2px solid #000;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 9999;
+    padding: 15px;
+    overflow-y: auto;
+    border-radius: 5px;
+
+    /* Start hidden */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* When active, show in center */
+.size-guide-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.size-guide-panel h2 {
+    margin: 0 0 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.size-guide-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.size-guide-panel th,
+.size-guide-panel td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+.close-size-guide {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+
+/* end.................................................................. */
+
+
+
+
+.hero-scroll {
+    width: 88.9%;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hero-scroll {
+    margin-left: 11vw;
+}
+
+.hero-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.hero-track {
+    display: flex;
+}
+
+.hero-track img {
+    height: auto;
+    width: 42vw;
+    flex-shrink: 0;
+    display: block;
+    margin: 0;
+    border: none;
+}
+
+
+
+/* hero section */
+
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+
+
+
+
+/* Side nav */
+.sidebar {
+    position: fixed;
+    top: 6vh;
+    left: 2vh;
+    width: 9vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    z-index: 100;
+}
+
+.side-nav {
+    background: #000;
+    color: #fff;
+    width: 100%;
+    padding: 2vh 0;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brandmark {
+    font-weight: bold;
+    border-bottom: 0.1vh solid rgb(117, 115, 115);
+    width: 97%;
+    text-align: center;
+}
+
+.brandmark img {
+    max-width: 7vw;
+    height: auto;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-left: 5vh;
+}
+
+.nav-list li {
+    margin: 17px 0;
+    cursor: pointer;
+    transition: color 0.3s;
+    font: normal normal 400 0.9vw / 1.4vw "ApercuMonoPro", sans-serif;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.nav-list li:hover {
+    color: #ccc;
+}
+
+
+
+
+/* Quick menu */
+.quick-menu {
+    background: #fff;
+    width: 100%;
+    border-radius: 1vh;
+    overflow: hidden;
+    font: normal normal 400 6vh/3vh "ApercuMonoPro", sans-serif;
+    color: #000000;
+}
+
+
+.quick-item {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    padding: 2vh 2vh 1vh 2vh;
+}
+
+.quick-search {
+    padding-top: 2vh;
+    padding-left: 1vw;
+}
+
+.quick-menu hr {
+    border: none;
+    border-top: 0.1vw solid #000000;
+    margin: 0;
+}
+
+/* typing effect for multiple dots */
+.dots::before {
+    content: "[]";
+    animation: loadingDots 6s steps(6) infinite;
+}
+
+@keyframes loadingDots {
+    0% {
+        content: "[]";
+    }
+
+    16% {
+        content: "[.]";
+    }
+
+    32% {
+        content: "[. .]";
+    }
+
+    48% {
+        content: "[. . .]";
+    }
+
+    64% {
+        content: "[. . . .]";
+    }
+
+    80% {
+        content: "[. . . . .]";
+    }
+
+    100% {
+        content: "[]";
+    }
+}
+
+
+
+.sidebar::after {
+    content: "";
+    position: fixed;
+    top: -6px;
+    right: 88vw;
+    width: 0.1vw;
+    height: 103vh;
+    background: #a5a5a5;
+}
+
+
+
+#clock {
+    position: fixed;
+    bottom: 2vh;
+    left: 0.4vw;
+    font: normal normal 400 2vh / 1vw "ApercuMonoPro", sans-serif;
+    color: #ffffffe3;
+    opacity: 1;
+    letter-spacing: 1px;
+    mix-blend-mode: difference;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-subheader {
+    width: 100%;
+    background: #ECECEC;
+}
+
+.section-subheader__inner {
+    max-width: 100%;
+    width: 86%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    margin-left: 195px;
+}
+
+
+.section-subheader__label {
+    font: normal normal 400 2vh/4vh"ApercuMonoPro", sans-serif;
+    color: #000000;
+    opacity: 1;
+}
+
+.section-subheader__link {
+    text-decoration: none;
+    margin-left: auto;
+    padding-right: 16px;
+    font: normal normal 400 2vh/4vh "ApercuMonoPro", sans-serif;
+    color: #000000;
+    opacity: 1;
+}
+
+.blink-star {
+    font-size: 3vh;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+
+
+.gap-line {
+    width: 88.80%;
+    height: 0.4vh;
+    background: rgb(0 0 0 / 30%);
+    margin: 0px auto;
+    margin-left: 11vw;
+
+}
+
+/* Catalog grid */
+
+
+
+
+/* Notice banner */
+.notice-wrap {
+    background: #ECECEC;
+    padding: 1vh 0;
+}
+
+.notice {
+    max-width: 85vw;
+    margin: 0 0 0 28vh;
+    text-align: center;
+    background: #FFFFFF;
+    padding: 17px 16px;
+    font: normal normal 400 2vh / 3vh "ApercuMonoPro", sans-serif;
+    color: #00BE39;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+
+/* Feature collections */
+.feature-collections {
+    background: #ECECEC;
+}
+
+.feature-collections__inner {
+    width: 87%;
+    margin-left: 12vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+    position: relative;
+}
+
+.feature-card {
+    position: relative;
+    padding: 2vh 0px 2vh 0px;
+    overflow: hidden;
+}
+
+.feature-card img {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    gap: 1vw;
+}
+
+/* Gradient overlay */
+.feature-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2vh;
+    height: 45%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 1;
+}
+
+.feature-card__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 3vw 3vh;
+    font: normal normal 500 2.3vh/4vh "ApercuMonoPro", sans-serif;
+    color: #FFFFFF;
+    opacity: 1;
+    z-index: 2;
+}
+
+.feature-collections__inner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 0.1vw;
+    background: rgba(0, 0, 0, 0.45);
+    transform: translateX(-50%);
+}
+
+.feature-card__name {
+    color: #fff;
+    letter-spacing: 0.1vw;
+}
+
+.feature-card__cta {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+
+/* left to right image at here */
+
+
+.catalog-two {
+    width: 100%;
+    padding-left: 11vw;
+    margin: auto;
+    background: #ECECEC;
+    overflow: hidden;
+}
+
+.catalog-two__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-two-products {
+    display: flex;
+    gap: 0.7vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2vh;
+}
+
+
+/* Hide scrollbars */
+.catalog-two-products::-webkit-scrollbar {
+    display: none;
+}
+
+.catalog-two-products {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Each product block */
+.product-item {
+    flex: 0 0 calc(33.80% - 1vw);
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.product-item img {
+    width: 100%;
+    height: 78vh;
+    object-fit: cover;
+    display: block;
+    padding-left: 0.7vw;
+    padding-top: 2vh;
+}
+
+/* Bottom line (with gap from image) */
+.image-line {
+    width: 101.95%;
+    height: 0.2vh;
+    background: #a5a5a5;
+    margin-top: 0.7vw;
+}
+
+/* Vertical line on right of each product */
+.product-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -0.8vw;
+    width: 0.2vw;
+    height: 102.6%;
+    background: #a5a5a5;
+}
+
+
+
+
+/* Price section */
+.price-item {
+    padding-top: 1vh;
+    padding-left: 1vw;
+}
+
+.price-item h3 {
+    padding: 5px 0;
+    font: normal normal 400 2vh/3vh "ApercuMonoPro", sans-serif;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.price-item p {
+    margin: 0;
+    font: normal normal normal 2vh/3vh "ApercuMonoPro", sans-serif;
+    color: #000;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+/* video at here */
+
+.promo-video {
+    background: #ECECEC;
+    padding: 1vw 1vh 1vw 0;
+}
+
+.promo-video__inner {
+    width: 87%;
+    margin-left: 12vw;
+    background: #fff;
+}
+
+.promo-video__media {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+/* footer start with Here */
+
+footer {
+    width: 100%;
+    padding: 8vh 9vh 1.29vw;
+    background: url('./assets/footer-img.png') no-repeat center/cover;
+    position: relative;
+    color: #fff;
+}
+
+/* Overlay */
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+footer>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Horizontal Line */
+.footer-line {
+    width: 96.7%;
+    height: 0.3vh;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0px auto;
+    margin-left: 6.90vw;
+}
+
+/* Signup Form */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh 68vh 9vh 70vh;
+    max-width: 90vw;
+}
+
+
+.form-container h2 {
+    padding-bottom: 1vh;
+    font: normal normal 500 3.4vh / 3vw "ApercuMonoPro", sans-serif;
+}
+
+.form-container p {
+    font: normal normal 400 1.5vh / 2vh "ApercuMonoPro", sans-serif;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 0.69;
+    padding-bottom: 3vh;
+}
+
+.form-grid form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+}
+
+.form-grid input,
+.form-grid button {
+    width: 203px;
+    height: 33px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.form-grid input {
+    background: transparent;
+    border: 0.1vh solid white;
+    color: #FFFFFF;
+    outline: none;
+    padding-left: 1vh;
+    padding-top: 0.2vw;
+    font: normal normal normal 3vh/1vw "Apercu Mono Pro", monospace;
+    opacity: 1;
+}
+
+.form-grid input::placeholder {
+    color: #FFFFFF;
+    opacity: 1;
+    font: normal normal normal 12px/14px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    position: relative;
+    top: 2px;
+
+}
+
+.form-grid button {
+    background: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    grid-column: 2 / 3;
+}
+
+.form-grid button:hover {
+    background: white;
+    color: black;
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 21vw;
+    padding: 0vh 0vw 0px 14vw;
+    font: normal normal normal 2vh/11vh "Apercu Mono Pro", monospace;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+
+/* Vertical divider inside banner */
+.banner .divider {
+    width: 1px;
+    height: 75px;
+    background: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+}
+
+/* Contact Box */
+.contact-box {
+    margin-bottom: 1vh;
+    top: 56vh;
+    left: -3.3vw;
+    background: #0a0a0a;
+    width: 9.2vw;
+    height: 16vh;
+    border-radius: 1.1vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-box .itemss {
+    margin: 0.2vh 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s ease;
+    font: normal normal 400 1.8vh / 1vw "ApercuMonoPro", sans-serif;
+    padding: 2vh 1vh 0.5vh 2vh;
+}
+
+.contact-box .itemss:hover {
+    opacity: 1;
+}
+
+
+
+.contact-box hr {
+    border: none;
+    border-top: 1px solid #d4d4d4;
+    margin: 0;
+}
+
+
+
+
+/* SEARCH dots */
+.dots::before {
+    content: "[]";
+    animation: loadingDots 6s steps(6) infinite;
+}
+
+/* CONTACT dots */
+.dots-contact::before {
+    content: "[]";
+    animation: loadingDots 6s steps(6) infinite;
+}
+
+/* keyframes reused for both */
+@keyframes loadingDots {
+    0% {
+        content: "[]";
+    }
+
+    16% {
+        content: "[.]";
+    }
+
+    32% {
+        content: "[. .]";
+    }
+
+    48% {
+        content: "[. . .]";
+    }
+
+    64% {
+        content: "[. . . .]";
+    }
+
+    100% {
+        content: "[]";
+    }
+}
+
+/* Footer Columns */
+.footer-columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3vw 15vh;
+    gap: 6vw;
+    flex-wrap: wrap;
+
+}
+
+.logo-column {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-column img {
+    width: 12vw;
+    height: auto;
+    display: block;
+}
+
+/* Headings */
+.footer-column h2,
+.footer-column h3 {
+    padding-bottom: 0vh;
+    text-transform: uppercase;
+    position: relative;
+    top: -15vh;
+    font: normal normal 500 1.2vw / 0vh "ApercuMonoPro", sans-serif;
+}
+
+.footer-column {
+    padding-left: 6vw;
+}
+
+/* Lists */
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    padding-bottom: 8px;
+    font: normal normal normal 12px/20px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 66px 18px 173px;
+    font: normal normal normal 12px/14px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.footer-bottom .left {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-bottom .center {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-bottom .right {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-line-np2 {
+    position: absolute;
+    top: 64%;
+    left: 37.5%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 5.70%;
+    height: 0.2vh;
+    background: rgb(255 255 255 / 30%);
+}
+
+.footer-line-np3 {
+    position: absolute;
+    top: 68%;
+    left: 73.5%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 5.80%;
+    height: 0.2vh;
+    background: rgb(255 255 255 / 30%);
+}
