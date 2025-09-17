@@ -33,11 +33,11 @@
     font-style: normal;
 }
 
-.desktop {
+.view-desktop {
     display: flex !important;
 }
 
-.mobile {
+.view-mobile {
     display: none !important;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 /* ---------------- Hero ---------------- */
-.hero {
+.page-wrapper {
     width: 100%;
     height: 195vh;
     display: flex;
@@ -57,7 +57,7 @@ body {
 }
 
 /* ---------------- Marquee ---------------- */
-.marquee-container {
+.scrolling-banner-container {
     position: fixed;
     top: 0;
     width: 100%;
@@ -70,14 +70,14 @@ body {
     border-bottom: 1px solid black;
 }
 
-.marquee {
+.scrolling-banner {
     position: relative;
     overflow: hidden;
     flex: 1;
     height: 100%;
 }
 
-.marquee div {
+.scrolling-banner div {
     position: absolute;
     display: flex;
     gap: 2.5rem;
@@ -90,7 +90,7 @@ body {
     text-transform: uppercase;
 }
 
-.marquee span {
+.scrolling-banner span {
     font-size: clamp(0.6rem, 0.8vw, 1rem);
     color: black;
     text-transform: uppercase;
@@ -107,16 +107,16 @@ body {
     }
 }
 
-.buttons {
+.header-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 0.2vw;
 }
 
-.btn,
-.btn2,
-.btn3 {
+.action-button-primary,
+.action-button-secondary,
+.action-button-tertiary {
     font-family: "Apercu Mono Pro", sans-serif;
     font-size: clamp(0.3rem, 0.8vw, 1rem);
     height: 1.6vw;
@@ -132,7 +132,7 @@ body {
 }
 
 /* ---------------- Left Hero Nav ---------------- */
-.left-hero {
+.sidebar-container {
     width: 10.5vw;
     height: 192vh;
     position: absolute;
@@ -146,7 +146,7 @@ body {
     border-right: 0.1vw solid #000;
 }
 
-.bb {
+.sidebar-nav-dark {
     background-color: #000;
     border-radius: 0.68vw;
     padding: 1.02vw;
@@ -159,30 +159,30 @@ body {
     text-transform: uppercase;
 }
 
-.bb1 {
+.sidebar-logo-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 0.68vw;
 }
 
-.full-width-line {
+.divider-light {
     border: none;
     height: 1px;
     background-color: #fff;
     margin: 0 -15px;
 }
 
-.bb1 img {
+.sidebar-logo-wrapper img {
     width: 6.803vw;
     height: auto;
 }
 
-.bb2 {
+.sidebar-nav-links {
     margin-top: 1.361vw;
 }
 
-.bb2 a {
+.sidebar-nav-links a {
     text-decoration: none;
     color: #fff;
     display: block;
@@ -193,7 +193,7 @@ body {
 }
 
 /* ---------------- Search + Account Box ---------------- */
-.cc {
+.sidebar-user-box {
     background-color: #fff;
     color: #000;
     border-radius: 0.68vw;
@@ -206,23 +206,23 @@ body {
     width: 9.5vw;
 }
 
-.full-width-line2 {
+.divider-dark {
     border: none;
     height: 1px;
     background-color: #0e0e0e;
     margin: 0 -15px;
 }
 
-.cc1 {
+.user-box-search {
     padding-bottom: 0.544vw;
     font-size: 2.2vh;
 }
 
-.cc2 {
+.user-box-links {
     margin-top: 1.02vw;
 }
 
-.cc2 a {
+.user-box-links a {
     text-decoration: none;
     color: #000;
     display: block;
@@ -231,7 +231,7 @@ body {
     font: normal 13px/16px "Apercu Mono Pro", sans-serif;
 }
 
-.uppar {
+.collection-header {
     display: flex;
     align-items: center;
     height: 10vh;
@@ -239,7 +239,7 @@ body {
     gap: 70vw;
 }
 
-.uppar a {
+.collection-header a {
     text-decoration: none;
     color: black;
     font-family: "Apercu Pro", sans-serif;
@@ -248,7 +248,7 @@ body {
 }
 
 
-.right-hero1 {
+.main-content-area {
     width: 88.7%;
     height: 99%;
     position: relative;
@@ -273,7 +273,7 @@ body {
 }
 
 
-.collection {
+.product-grid-row {
     display: flex;
     width: 100%;
     height: 60vh;
@@ -282,7 +282,7 @@ body {
 
 
 
-.card {
+.product-card {
     background-color: #ececec;
     width: 22vw;
     display: flex;
@@ -296,7 +296,7 @@ body {
     box-sizing: border-box;
 }
 
-.card img {
+.product-card img {
     position: relative;
     width: 21vw;
     height: 48vh;
@@ -307,7 +307,7 @@ body {
 
 
 
-.price {
+.product-info {
     height: 10vh;
     display: flex;
     align-items: center;
@@ -320,7 +320,7 @@ body {
 }
 
 
-.product-name {
+.product-card-name {
     font-family: "Apercu Mono Pro", sans-serif;
     font-size: 0.9vw;
     text-transform: uppercase;
@@ -330,7 +330,7 @@ body {
 
 }
 
-.doller {
+.product-card-price {
     font-family: "Apercu Mono Pro", sans-serif;
     font-size: 0.9vw;
     text-transform: uppercase;
@@ -345,7 +345,7 @@ body {
 
 
 
-.new-div5 {
+.footer-section {
     width: 100%;
     height: 110vh;
     display: flex;
@@ -358,7 +358,7 @@ body {
     z-index: 9;
 }
 
-.new-div5::after {
+.footer-section::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -366,12 +366,12 @@ body {
     z-index: 1;
 }
 
-.new-div5>* {
+.footer-section>* {
     position: relative;
     z-index: 2;
 }
 
-.left-div5 {
+.footer-sidebar {
     width: 11.3%;
     height: 110vh;
     position: absolute;
@@ -384,7 +384,7 @@ body {
     border-right: 0.1vw solid #ffffff;
 }
 
-.dd {
+.footer-contact-box {
     background-color: #000000;
     color: #ffffff;
     border-radius: 0.68vw;
@@ -396,16 +396,16 @@ body {
     z-index: 10;
 }
 
-.dd1 {
+.footer-contact-header {
     padding-bottom: 0.544vw;
     font-size: 0.9vw;
 }
 
-.dd2 {
+.footer-contact-links {
     margin-top: 1.02vw;
 }
 
-.dd2 p {
+.footer-contact-links p {
     margin-bottom: 0.544vw;
     text-transform: uppercase;
     cursor: pointer;
@@ -415,7 +415,7 @@ body {
     opacity: 1;
 }
 
-.dd2 a {
+.footer-contact-links a {
     text-decoration: none;
     transition: color 0.3s;
     margin-bottom: 0.544vw;
@@ -434,7 +434,7 @@ body {
 /* footer at here */
 
 
-.right-div5 {
+.footer-main-content {
     width: 80%;
     height: 95vh;
     position: absolute;
@@ -453,7 +453,7 @@ body {
 
 }
 
-.top {
+.footer-top-section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,7 +464,7 @@ body {
     top: -5vw;
 }
 
-.top1 {
+.footer-newsletter-info {
     max-width: 50vw;
     height: 5vh;
     position: absolute;
@@ -475,7 +475,7 @@ body {
     gap: 1vw;
 }
 
-.top1 .headline {
+.footer-newsletter-info .newsletter-headline {
     font-size: 1.7vw;
     font-weight: bold;
     font-family: "Apercu Pro", sans-serif;
@@ -485,7 +485,7 @@ body {
 
 }
 
-.top1 .subtext {
+.footer-newsletter-info .newsletter-subtext {
     margin: 0;
     font: normal normal normal 10px/12px "Apercu Mono Pro", sans-serif;
     letter-spacing: 0px;
@@ -494,7 +494,7 @@ body {
     opacity: 1;
 }
 
-.top2 {
+.footer-newsletter-form {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -505,22 +505,22 @@ body {
     right: 45vw;
 }
 
-.email-form {
+.newsletter-signup-form {
     display: flex;
     flex-direction: column;
     gap: 1vw;
     width: 32vw;
 }
 
-.email-form .row {
+.newsletter-signup-form .form-input-row {
     display: flex;
     gap: 1vw;
 }
 
-.email-form input[type="text"],
-.email-form input[type="email"],
-.email-form input[type="tel"],
-.email-form input[type="submit"] {
+.newsletter-signup-form input[type="text"],
+.newsletter-signup-form input[type="email"],
+.newsletter-signup-form input[type="tel"],
+.newsletter-signup-form input[type="submit"] {
     flex: 1;
     padding: 0.6vw 1vw;
     font-size: 0.9vw;
@@ -529,23 +529,23 @@ body {
     transition: border 0.3s, background-color 0.3s;
 }
 
-.email-form input:focus {
+.newsletter-signup-form input:focus {
     border-color: #333;
     outline: none;
 }
 
-.email-form input[type="submit"] {
+.newsletter-signup-form input[type="submit"] {
     background-color: #000;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-.email-form input[type="submit"]:hover {
+.newsletter-signup-form input[type="submit"]:hover {
     background-color: #444;
 }
 
-.middle {
+.footer-middle-banners {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -559,7 +559,7 @@ body {
 
 }
 
-.middle1 {
+.footer-banner-shipping {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -568,22 +568,22 @@ body {
     border-right: 0.1vw solid white;
 }
 
-.middle2 {
+.footer-banner-cod {
     width: 55vw;
     padding: 1vw;
 }
 
-.middle1 p {
+.footer-banner-shipping p {
     font-family: "Apercu Mono Pro", sans-serif;
     font-size: 0.8vw;
 }
 
-.middle2 p {
+.footer-banner-cod p {
     font-family: "Apercu Mono Pro", sans-serif;
     font-size: 0.8vw;
 }
 
-.bottom {
+.footer-bottom-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -595,7 +595,7 @@ body {
 
 }
 
-.bottom1 {
+.footer-logo-area {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -607,7 +607,7 @@ body {
     top: 0vw;
 }
 
-.bottom2 {
+.footer-links-area {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -619,7 +619,7 @@ body {
     top: 0vw;
 }
 
-.hed1 {
+.footer-links-header-1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -630,7 +630,7 @@ body {
     left: 2vw;
 }
 
-.hed2 {
+.footer-links-header-2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -641,7 +641,7 @@ body {
     left: 25vw;
 }
 
-.sec1 {
+.footer-links-column-1 {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -654,12 +654,12 @@ body {
     font-family: "Apercu Mono Pro", sans-serif;
 }
 
-.sec1 a {
+.footer-links-column-1 a {
     text-decoration: none;
     color: inherit;
 }
 
-.sec2 {
+.footer-links-column-2 {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -672,12 +672,12 @@ body {
     font-family: "Apercu Mono Pro", sans-serif;
 }
 
-.sec2 a {
+.footer-links-column-2 a {
     text-decoration: none;
     color: inherit;
 }
 
-.bott1 {
+.footer-legal-bar-desktop {
     display: flex;
     position: absolute;
     height: 10vh;
@@ -687,7 +687,7 @@ body {
     border-top: 0.1vw solid white;
 }
 
-.bott1>div {
+.footer-legal-bar-desktop>div {
     flex: 1;
     display: flex;
     align-items: center;
@@ -699,7 +699,7 @@ body {
     font-family: "Apercu Mono Pro", sans-serif;
 }
 
-.bott2 {
+.footer-legal-col-1 {
     border-right: 0.1vw solid white;
 }
 

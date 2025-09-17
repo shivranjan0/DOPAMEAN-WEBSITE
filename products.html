@@ -4,458 +4,797 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page Design</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/productpage.css" />
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="assets/productresponsive.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
     <link rel="stylesheet" href="products.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="view-mobile mobile-navbar">
+        <div class="mobile-nav-logo">
+            <a href="#">
+                <img src="src/Group 16.svg" alt="Home">
 
-    <div class="announcement-bar">
-        <div class="announcement-track">
-            <span>14 DAY RETURNS</span>
-            <span>SHOP FW24 COLLECTION</span>
-            <span>FREE SHIPPING ON ALL ORDERS</span>
-            <span>14 DAY RETURNS</span>
-            <span>SHOP FW24 COLLECTION</span>
-            <span>FREE SHIPPING ON ALL ORDERS</span>
-            <span>14 DAY RETURNS</span>
-            <span>SHOP FW24 COLLECTION</span>
-            <span>FREE SHIPPING ON ALL ORDERS</span>
-            <span>14 DAY RETURNS</span>
-            <span>SHOP FW24 COLLECTION</span>
-            <span>FREE SHIPPING ON ALL ORDERS</span>
-        </div>
-
-        <div class="utility-actions">
-            <button class="action-account">ACCOUNT</button>
-            <button class="action-bag">BAG [0]</button>
-            <div class="action-theme">
-                <span>DARK MODE</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="bar-spacer"></div>
-
-
-    <!-- hero section -->
-    <div class="hero-section">
-        <div class="hero-scroll">
-            <div class="hero-track">
-                <img src="./assets/product1 (10).png" alt="Look 1" />
-                <img src="./assets/product1 (6).png" alt="Look 2" />
-                <img src="./assets/product1 (8).png" alt="Look 3" />
-                <img src="./assets/product1 (9).png" alt="Look 4" />
-            </div>
-        </div>
-
-
-        <div class="gallery-container">
-            <div class="gallery-item selected">
-                <img src="./assets/product1 (10).png" alt="Thumbnail 1">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/product1 (6).png" alt="Thumbnail 2">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/product1 (7).png" alt="Thumbnail 3">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/product1 (6).png" alt="Thumbnail 4">
-            </div>
-        </div>
-
-
-
-        <div class="product-card">
-            <header class="product-header">
-                <h1>PRODUCT NAME HERE</h1>
-                <span class="price">RS. 4900/-</span>
-            </header>
-
-            <p class="product-intro">
-                MATERIALS 240 GSM PUFF AND HIGH DENSITY PRINT 100% COTTON SHIPPING & RETURNS SHIPPING FOR ALL PRODUCTS -
-                DISPATCHED WITHIN 24 HOURS . DELIVERED IN 3-4 DAYS
-            </p>
-
-            <div class="accordion">
-                <div class="accordion-item active">
-                    <button class="accordion-header" aria-expanded="true">
-                        MATERIALS
-                        <span class="icon">-</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>100% COTTON</li>
-                            <li>WEIGHT : 220 GSM ULTRA SOFT | BIO SILICONE WASH</li>
-                            <li>DROP SHOULDER</li>
-                            <li>ROUNDED PROFILE</li>
-                            <li>PUFF | SCREEN PRINT</li>
-                            <li>REVERSE WASH ONLY</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        SHIPPING & RETURNS
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <p>Shipping details here.</p>
-                        </ul>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        CARE GUIDE
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <p>Care instructions here.</p>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="model-info-container">
-                <p class="model-info">THE MALE MODEL IS 6'15, WEARING SIZE L.</p>
-                <a href="#" class="size-guide">SIZE GUIDE</a>
-            </div>
-
-            <div class="size-selector">
-                <button>XS</button>
-                <button>S</button>
-                <button>M</button>
-                <button class="active">L</button>
-                <button>XL</button>
-                <button>XXL</button>
-                <button>XXXL</button>
-            </div>
-
-            <div class="add-to-cart-bar">
-                <span>ADD TO CART</span>
-                <span class="final-price">[ RS. 4,600.00 ]</span>
-            </div>
-        </div>
-
-
-
-
-
-        <!-- size guid at here -->
-
-
-        <!-- SIZE GUIDE TABLE COMPONENT -->
-        <div class="size-guide-overlay" id="sizeGuideOverlay">
-            <div class="size-guide-panel">
-                <button class="close-size-guide" id="closeSizeGuide">&times;</button>
-                <h2>Size Guide</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Size</th>
-                            <th>Chest (inches)</th>
-                            <th>Length (inches)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>XS</td>
-                            <td>34</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <td>S</td>
-                            <td>36</td>
-                            <td>26</td>
-                        </tr>
-                        <tr>
-                            <td>M</td>
-                            <td>38</td>
-                            <td>27</td>
-                        </tr>
-                        <tr>
-                            <td>L</td>
-                            <td>40</td>
-                            <td>28</td>
-                        </tr>
-                        <tr>
-                            <td>XL</td>
-                            <td>42</td>
-                            <td>29</td>
-                        </tr>
-                        <tr>
-                            <td>XXL</td>
-                            <td>44</td>
-                            <td>30</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-
-
-
-
-
-        <!-- Side Navigation -->
-        <div class="sidebar">
-            <div class="side-nav">
-                <div class="brandmark">
-                    <a href="/">
-                        <img src="./assets/Group 4.png" alt="Dopamean Logo">
-                    </a>
-                </div>
-                <ul class="nav-list">
-                    <li>SHOP ALL</li>
-                    <li>APPAREL</li>
-                    <li>TOP WEAR</li>
-                    <li>BOTTOM WEAR</li>
-                    <li>NEW IN</li>
-                </ul>
-            </div>
-
-            <!-- Quick Menu inside same div -->
-            <div class="quick-menu">
-                <div class="quick-item quick-search">
-                    SEARCH <span class="dots"></span>
-                </div>
-
-                <hr>
-                <div class="quick-item">ACCOUNT</div>
-                <div class="quick-item">BAG[0]</div>
-            </div>
-        </div>
-
-        <div id="clock"></div>
-    </div>
-
-
-
-    <div class="section-subheader">
-        <div class="section-subheader__inner">
-            <span class="section-subheader__label">NEW ARRIVAL</span>
-            <a href="#" class="section-subheader__link">
-                <span class="blink-star">*</span> SHOP NOW
             </a>
         </div>
+        <div class="mobile-nav-search">
+            <a href="#">
+
+                <span>[SEARCH FOR....]</span>
+            </a>
+        </div>
+        <div class="mobile-nav-bag">
+            <a href="#">
+                <span>BAG[0]</span>
+            </a>
+
+        </div>
+
     </div>
 
 
-    <div class="gap-line"></div>
+    <div class="product-page-hero">
 
 
-    <!-- Catalog Grid -->
+        <div class=" scrolling-banner-container">
+            <div class="scrolling-banner">
 
-    <section class="catalog-two">
-        <div class="catalog-two__inner">
-
-            <!-- Scrollable Products -->
-            <div class="catalog-two-products">
-
-                <!-- Product 1 -->
-                <div class="product-item">
-                    <img src="./assets/product1 (3).png" alt="Product 1" />
-                    <div class="image-line"></div>
-                    <div class="price-item">
-                        <h3>PRODUCT NAME GOES HERE 01</h3>
-                        <p>[ RS. <span>15,000</span> ]</p>
-                    </div>
+                <div>
+                    <span class="view-desktop">FREE SHIPPING</span>
+                    <span>CASH ON DELIVERY</span>
+                    <span>NOW LIVE</span>
+                    <span>FREE SHIPPING</span>
+                    <span>CASH ON DELIVERY</span>
+                    <span>NOW LIVE</span>
+                    <span>FREE SHIPPING</span>
+                    <span>CASH ON DELIVERY</span>
+                    <span>NOW LIVE</span>
+                    <span>FREE SHIPPING</span>
+                    <span>CASH ON DELIVERY</span>
+                    <span>NOW LIVE</span>
+                    <span>FREE SHIPPING</span>
+                    <span>CASH ON DELIVERY</span>
+                    <span>NOW LIVE</span>
+                    <span>FREE SHIPPING</span>
+                    <span>CASH ON DELIVERY</span>
+                    <span>NOW LIVE</span>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-item">
-                    <img src="./assets/product1 (8).png" alt="Product 2" />
-                    <div class="image-line"></div>
-                    <div class="price-item">
-                        <h3>PRODUCT NAME GOES HERE 02</h3>
-                        <p>[ RS. <span>20,000</span> ]</p>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-item">
-                    <img src="./assets/product1 (4).png" alt="Product 4" />
-                    <div class="image-line"></div>
-                    <div class="price-item">
-                        <h3>PRODUCT NAME GOES HERE 03</h3>
-                        <p>[ RS. <span>18,000</span> ]</p>
-                    </div>
-                </div>
-
-                <!-- Product 4 (scrollable) -->
-                <div class="product-item">
-                    <img src="./assets/product1 (7).png" alt="Product 6" />
-                    <div class="image-line"></div>
-                    <div class="price-item">
-                        <h3>PRODUCT NAME GOES HERE 04</h3>
-                        <p>[ RS. <span>22,000</span> ]</p>
-                    </div>
-                </div>
-
-                <!-- Add more products as needed -->
-
+            </div>
+            <div class=" view-desktop header-actions">
+                <button class="action-btn-primary">Shop Now</button>
+                <button class="action-btn-secondary">Contact Us</button>
+                <button class="action-btn-tertiary">Dark mode</button>
             </div>
         </div>
-    </section>
-    <div class="gap-line"></div>
 
-    <!-- Success Banner -->
-    <div class="notice-wrap">
-        <div class="notice">
-            SUCCESS! YOU'VE QUALIFIED FOR FREE SHIPPING
+        <div class=" view-desktop sidebar-container">
+            <div class="sidebar-nav-dark">
+                <div class="sidebar-logo-area">
+                    <a href="index.html">
+                        <img src="./assets/Group 4.png" alt="hello" />
+                    </a>
+                </div>
+                <hr class="divider-light">
+                <div class="sidebar-nav-links">
+                    <a href="#">Shop all</a>
+                    <a href="#">APPAREL</a>
+                    <a href="#">TOP WEAR</a>
+                    <a href="#">BOTTOM WEAR</a>
+                    <a href="#">NEW IN</a>
+                </div>
+            </div>
+            <div class="sidebar-nav-light">
+                <div class="sidebar-search-header">SEARCH[....]</div>
+                <hr class="divider-dark">
+                <div class="sidebar-user-links">
+                    <a href="#">ACCOUNT</a>
+                    <a href="#">BAG[0]</a>
+                </div>
+            </div>
+
+            <div id="time1"></div>
+        </div>
+
+        <div class="main-content-area">
+
+
+
+            <div class=" view-mobile mobile-product-display">
+                <div class="mobile-product-info-wrapper">
+                    <div class="mobile-product-title-area">
+
+
+                        <span class="mobile-product-title">PRODUCT NAME GOES HERE 01</span>
+                        <div class="mobile-size-guide-wrapper">
+                            <button id="btnOpenSizeChart">[ SIZE GUIDE ]</button>
+
+                            <div id="popupSizeChart" class="size-chart-popup">
+                                <div class="size-chart-popup-content">
+                                    <span class="popup-close-button" id="btnClosePopup">&times;</span>
+                                    <h3>SIZE CHART (INCHES)</h3>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>SIZE</th>
+                                                <th>CHEST</th>
+                                                <th>SHOULDER</th>
+                                                <th>LENGTH</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>XXXS</td>
+                                                <td>39</td>
+                                                <td>19.5</td>
+                                                <td>26.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXS</td>
+                                                <td>42</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XS</td>
+                                                <td>44</td>
+                                                <td>20.5</td>
+                                                <td>28.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>S</td>
+                                                <td>46</td>
+                                                <td>21</td>
+                                                <td>28.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>M</td>
+                                                <td>48</td>
+                                                <td>21.5</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td>L</td>
+                                                <td>50</td>
+                                                <td>22</td>
+                                                <td>29.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XL</td>
+                                                <td>52</td>
+                                                <td>22.5</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXL</td>
+                                                <td>54</td>
+                                                <td>23</td>
+                                                <td>30.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XXXL</td>
+                                                <td>56</td>
+                                                <td>23.5</td>
+                                                <td>31</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mobile-size-selector-area">
+                        <div class="mobile-size-options-grid">
+                            <span class="mobile-size-option">XS</span>
+                            <span class="mobile-size-option">S</span>
+                            <span class="mobile-size-option">M</span>
+                            <span class="mobile-size-option">L</span>
+                            <span class="mobile-size-option">XL</span>
+                            <span class="mobile-size-option">XXL</span>
+                            <span class="mobile-size-option">XXXL</span>
+                        </div>
+
+                    </div>
+                    <div class="mobile-purchase-area"> <span class="mobile-product-price">[RS.12,000]</span>
+                        <span class="mobile-add-to-bag-btn">ADD TO BAG</span>
+                    </div>
+                </div>
+                <div class=" view-desktop thumbnail-gallery">
+                    <img src="./assets/product1 (4).png" alt="Image 1" />
+                    <img src="./assets/product1 (5).png" alt="Image 2" />
+                    <img src="./assets/product1 (4).png" alt="Image 3" />
+                    <img src="./assets/product1 (7).png" alt="Image 4" />
+                    <img src="./assets/product1 (9).png" alt="Image 5" />
+                </div>
+
+                <div class="view-desktop desktop-product-details-box">
+                    <div class="desktop-details-header">
+                        <div class="desktop-product-name-wrapper">
+                            <p>PRODUCT NAME HERE</p>
+                        </div>
+                        <div class="desktop-product-price-wrapper">
+                            <p>RS. 4900/-</p>
+                        </div>
+                    </div>
+                    <div class="desktop-product-description">
+                        <p>MATERIALS 240 GSM PUFF AND HIGH DENSITY PRINT 100% COTTON SHIPPING & RETURNS SHIPPING FOR ALL
+                            PRODUCTS - DISPATCHED WITHIN 24 HOURS, DELIVERED IN 3-4 DAYS</p>
+                    </div>
+
+
+                    <div class="info-accordion-item">
+                        <div class="info-accordion-header">Hello</div>
+                        <div class="info-accordion-content">
+                            <p>Hello guys</p>
+                        </div>
+                    </div>
+
+                    <div class="info-accordion-item">
+                        <div class="info-accordion-header">Hello</div>
+                        <div class="info-accordion-content">
+                            <p>Hello guys</p>
+                        </div>
+                    </div>
+
+                    <div class="desktop-model-info-row">
+                        <div class="desktop-model-info-text">
+                            <p>THE MALE MODEL IS 6’15 , WEARING SIZE L.</p>
+                        </div>
+                        <div class="desktop-size-guide-link-wrapper">
+                            <p>SIZE GUIDE</p>
+                        </div>
+                    </div>
+                    <div class="desktop-size-selector-row">
+                        <div class="desktop-size-options-container">
+                            <span class="desktop-size-button">XS</span>
+                            <span class="desktop-size-button">S</span>
+                            <span class="desktop-size-button">M</span>
+                            <span class="desktop-size-button">L</span>
+                            <span class="desktop-size-button">XL</span>
+                            <span class="desktop-size-button">XXL</span>
+                            <span class="desktop-size-button">XXXL</span>
+                        </div>
+                    </div>
+                    <div class="desktop-purchase-footer">
+                        <div class="desktop-add-to-cart-btn">
+                            <p>ADD TO CART</p>
+                        </div>
+                        <div class="desktop-purchase-price">
+                            <p>[ RS. 4,600.00 ]</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="product-image-card-1">
+                    <img src="./assets/product1 (7).png" alt="product1" />
+
+                </div>
+                <div class="product-image-card-2">
+                    <img src="./assets/product1 (6).png" alt="product2" />
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (8).png" alt="product3" />
+
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (1).png" alt="product3" />
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (9).png" alt="product3" />
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (10).png" alt="product3" />
+
+                </div>
+            </div>
+
+            <div class=" view-desktop desktop-product-display">
+                <div class="thumbnail-gallery">
+                    <img src="./assets/product1 (10).png" alt="Image 1" />
+                    <img src="./assets/product1 (3).png" alt="Image 2" />
+                    <img src="./assets/product1 (4).png" alt="Image 3" />
+                    <img src="./assets/product1 (7).png" alt="Image 4" />
+                    <img src="./assets/product1 (7).png" alt="Image 5" />
+                </div>
+
+
+                <div class="desktop-product-info-card">
+                    <header class="info-card-header">
+                        <h1>PRODUCT NAME HERE</h1>
+                        <span class="info-card-price">RS. 4900/-</span>
+                    </header>
+
+                    <p class="info-card-description">
+                        MATERIALS 240 GSM PUFF AND HIGH DENSITY PRINT 100% COTTON SHIPPING & RETURNS SHIPPING FOR ALL
+                        PRODUCTS -
+                        DISPATCHED WITHIN 24 HOURS . DELIVERED IN 3-4 DAYS
+                    </p>
+
+                    <div class="info-accordion-container">
+                        <div class="info-accordion-item is-active">
+                            <button class="info-accordion-header" aria-expanded="true">
+                                MATERIALS
+                                <span class="accordion-toggle-icon">-</span>
+                            </button>
+                            <div class="info-accordion-content">
+                                <ul>
+                                    <li>100% COTTON</li>
+                                    <li>WEIGHT : 220 GSM ULTRA SOFT | BIO SILICONE WASH</li>
+                                    <li>DROP SHOULDER</li>
+                                    <li>ROUNDED PROFILE</li>
+                                    <li>PUFF | SCREEN PRINT</li>
+                                    <li>REVERSE WASH ONLY</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info-accordion-item">
+                            <button class="info-accordion-header" aria-expanded="false">
+                                SHIPPING & RETURNS
+                                <span class="accordion-toggle-icon">+</span>
+                            </button>
+                            <div class="info-accordion-content">
+                                <ul>
+                                    <li>
+                                        <p>Shipping details here.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info-accordion-item">
+                            <button class="info-accordion-header" aria-expanded="false">
+                                CARE GUIDE
+                                <span class="accordion-toggle-icon">+</span>
+                            </button>
+                            <div class="info-accordion-content">
+                                <ul>
+                                    <li>
+                                        <p>Care instructions here.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card-model-details">
+                        <p class="model-details-text">THE MALE MODEL IS 6'15, WEARING SIZE L.</p>
+                        <a href="#" class="size-guide-link">SIZE GUIDE</a>
+                    </div>
+
+                    <div class="info-card-size-selector">
+                        <button>XS</button>
+                        <button>S</button>
+                        <button>M</button>
+                        <button class="is-active">L</button>
+                        <button>XL</button>
+                        <button>XXL</button>
+                        <button>XXXL</button>
+                    </div>
+
+                    <div class="info-card-purchase-bar">
+                        <span>ADD TO CART</span>
+                        <span class="purchase-bar-price">[ RS. 4,600.00 ]</span>
+                    </div>
+                </div>
+
+                <div class="product-image-card-1">
+                    <img src="./assets/product1 (8).png" alt="product1" />
+
+                </div>
+                <div class="product-image-card-2">
+                    <img src="./assets/product1 (6).png" alt="product2" />
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (5).png" alt="product3" />
+
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (8).png" alt="product3" />
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (9).png" alt="product3" />
+
+                </div>
+                <div class="product-image-card-3">
+                    <img src="./assets/product1 (8).png" alt="product3" />
+
+                </div>
+            </div>
+            <div class="view-mobile mobile-details-section">
+                <div class="mobile-details-header">
+                    <div class="mobile-modal-wrapper">
+                        <button id="openSizeGuideBtn">[ SIZE GUIDE ]</button>
+
+                        <div id="sizeGuideModal" class="size-guide-popup-modal">
+                            <div class="size-guide-popup-content">
+                                <span class="size-guide-close-btn" id="closeSizeGuideBtn">&times;</span>
+                                <h3>SIZE CHART (INCHES)</h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>SIZE</th>
+                                            <th>CHEST</th>
+                                            <th>SHOULDER</th>
+                                            <th>LENGTH</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>XXXS</td>
+                                            <td>39</td>
+                                            <td>19.5</td>
+                                            <td>26.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XXS</td>
+                                            <td>42</td>
+                                            <td>20</td>
+                                            <td>27</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XS</td>
+                                            <td>44</td>
+                                            <td>20.5</td>
+                                            <td>28.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>S</td>
+                                            <td>46</td>
+                                            <td>21</td>
+                                            <td>28.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>M</td>
+                                            <td>48</td>
+                                            <td>21.5</td>
+                                            <td>29</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td>50</td>
+                                            <td>22</td>
+                                            <td>29.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XL</td>
+                                            <td>52</td>
+                                            <td>22.5</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XXL</td>
+                                            <td>54</td>
+                                            <td>23</td>
+                                            <td>30.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XXXL</td>
+                                            <td>56</td>
+                                            <td>23.5</td>
+                                            <td>31</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="mobile-details-title">PRODUCT NAME GOES HERE 01</span>
+                    <span class="mobile-details-description">MATERIALS 240 GSM PUFF AND HIGH DENSITY PRINT 100% COTTON
+                        SHIPPING & RETURNS
+                        SHIPPING FOR ALL PRODUCTS - DISPATCHED WITHIN 24 HOURS , DELIVERED IN 3-4 DAYS</span>
+                </div>
+                <div class="mobile-model-info-text">
+                    <span class="mobile-model-info-content">THE MALE MODEL IS 6’15 , WEARING SIZE L.</span>
+                </div>
+                <div class="mobile-size-selector-section">
+                    <div class="mobile-size-options-grid">
+                        <span class="mobile-size-option">XS</span>
+                        <span class="mobile-size-option">S</span>
+                        <span class="mobile-size-option">M</span>
+                        <span class="mobile-size-option">L</span>
+                        <span class="mobile-size-option">XL</span>
+                        <span class="mobile-size-option">XXL</span>
+                        <span class="mobile-size-option">XXXL</span>
+                    </div>
+
+                </div>
+                <div class="mobile-purchase-section">
+                    <span class="mobile-purchase-price">[RS.12,000]</span>
+                    <span class="mobile-purchase-button">ADD TO BAG</span>
+                </div>
+                <div class="mobile-tabs-container">
+                    <div class="mobile-tab-list">
+                        <div class="mobile-tab-item is-active" data-tab="content1">MATERIALS</div>
+                        <div class="mobile-tab-item" data-tab="content2">SHIPPING & RETURNS</div>
+                        <div class="mobile-tab-item" data-tab="content3">CARE GUIDE</div>
+                    </div>
+
+                    <div class="mobile-tab-panels">
+                        <div id="content1" class="mobile-tab-panel is-active">
+                            <span>
+                                <p>100% COTTON</p>
+                                <p>WEIGHT: 220 GSM ULTRA SOFT | BIO SILICONE WASH</p>
+                                <p>DROP SHOULDER ROUNDED PROFILE PUFF</p>
+                                <p>SCREEN PRINT REVERSE WASH ONLY</p>
+                                <p>DROP SHOULDER ROUNDED PROFILE PUFF</p>
+                                <p>SCREEN PRINT REVERSE WASH ONLY</p>
+                            </span>
+                        </div>
+                        <div id="content2" class="mobile-tab-panel">
+                            <span>
+                                <p>100% COTTON</p>
+                                <p>WEIGHT: 220 GSM ULTRA SOFT | BIO SILICONE WASH</p>
+                                <p>DROP SHOULDER ROUNDED PROFILE PUFF</p>
+                                <p>SCREEN PRINT REVERSE WASH ONLY</p>
+                                <p>SCREEN PRINT REVERSE WASH ONLY</p>
+                            </span>
+                        </div>
+                        <div id="content3" class="mobile-tab-panel">
+                            <span>
+                                <p>100% COTTON</p>
+                                <p>WEIGHT: 220 GSM ULTRA SOFT | BIO SILICONE WASH</p>
+                                <p>DROP SHOULDER ROUNDED PROFILE PUFF</p>
+                                <p>SCREEN PRINT REVERSE WASH ONLY</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
         </div>
     </div>
 
-    <div class="gap-line"></div>
 
 
-    <!-- Feature Collections -->
-    <section class="feature-collections">
-        <div class="feature-collections__inner">
-            <article class="feature-card">
-                <img src="./assets/product1 (5).png" alt="Collection" />
-                <div class="feature-card__overlay">
-                    <span class="feature-card__name">MY COLLECTION NAME GOES HERE</span>
-                    <a href="products.html" class="feature-card__cta">SHOP NOW</a>
+    <div class="related-products-section">
+
+        <div class=" view-desktop related-products-sidebar"></div>
+        <div class="related-products-main">
+            <div class="related-products-header">
+                <a href="#" class="related-products-link-1">NEW ARRIVALS</a>
+                <a href="#" class="related-products-link-2">SHOP NOW</a>
+            </div>
+            <div class="related-products-grid">
+                <div class="related-product-item-1">
+                    <img src="./assets/product1 (2).png" alt="product1" />
+                    <div class="info-card-price">
+                        <div class="related-product-name-1">PRODUCT NAME GOES HERE 01</div>
+                        <div class="related-product-price-1">[ RS. 15,000 ]</div>
+                    </div>
                 </div>
-            </article>
-
-            <article class="feature-card">
-                <img src="./assets/product1 (1).png" alt="Collection" />
-                <div class="feature-card__overlay">
-                    <span class="feature-card__name">MY COLLECTION NAME GOES HERE</span>
-                    <a href="#" class="feature-card__cta">SHOP NOW</a>
+                <div class="related-product-item-2">
+                    <img src="./assets/product1 (2).png" alt="product2" />
+                    <div class="related-product-info-2">
+                        <div class="related-product-name-2">PRODUCT NAME GOES HERE 01</div>
+                        <div class="related-product-price-2">[ RS. 15,000 ]</div>
+                    </div>
                 </div>
-            </article>
+                <div class="related-product-item-3">
+                    <img src="./assets/product1 (2).png" alt="product3" />
+                    <div class="related-product-info-3">
+                        <div class="related-product-name-3">PRODUCT NAME GOES HERE 03</div>
+                        <div class="related-product-price-3">[ RS. 15,000 ]</div>
+                    </div>
+                </div>
+
+                <div class="related-product-item-3">
+                    <img src="./assets/product1 (7).png" alt="product3" />
+                    <div class="related-product-info-3">
+                        <div class="related-product-name-3">PRODUCT NAME GOES HERE 03</div>
+                        <div class="related-product-price-3">[ RS. 15,000 ]</div>
+                    </div>
+                </div>
+                <div class="related-product-item-3">
+                    <img src="./assets/product1 (7).png" alt="product3" />
+                    <div class="related-product-info-3">
+                        <div class="related-product-name-3">PRODUCT NAME GOES HERE 03</div>
+                        <div class="related-product-price-3">[ RS. 15,000 ]</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="related-products-banner">
+                <span>SUCCESS! YOU'VE QUALIFIED FOR FREE SHIPPING</span>
+            </div> -->
         </div>
-    </section>
+    </div>
 
 
 
 
-
-    <div class="gap-line"></div>
-
-
-
-
-
-    <!-- Video section -->
-    <section class="promo-video">
-        <div class="promo-video__inner">
-            <video class="promo-video__media" src="./assets/vid.mp4" poster="./assets/Group 17.png" autoplay muted loop
-                playsinline></video>
+    <div class="collections-section">
+        <div class=" view-desktop collections-sidebar"></div>
+        <div class="collections-main">
+            <div class="collections-grid-container">
+                <div class="collection-item-1">
+                    <div class="collection-image-wrapper">
+                        <img src="./assets/product1 (1).png" alt="collection1" />
+                        <div class="collection-overlay-title">MY COLLECTION NAME GOES HERE</div>
+                        <div class=" view-desktop collection-overlay-count-1">[ 15 ]</div>
+                        <div class="view-desktop collection-overlay-cta-1">SHOP NOW</div>
+                    </div>
+                </div>
+                <div class="collection-item-2">
+                    <div class="collection-image-wrapper">
+                        <img src="./assets/product1 (10).png" alt="collection2" />
+                        <div class="collection-overlay-title">MY COLLECTION NAME GOES HERE</div>
+                        <div class=" view-desktop collection-overlay-count-2">[ 15 ]</div>
+                        <div class="view-desktop collection-overlay-cta-2">SHOP NOW</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
 
-
-
-
-
-    <!-- Image footer section -->
-
-
-    <footer>
-        <div class="footer-line5"></div>
-
-        <!-- Signup Form -->
-        <div class="form-container">
-            <h2>BE THE PART OF DOPAMEAN WORLD</h2>
-            <p>SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT EXCLUSIVE LAUNCHES, NEWS
-                & OFFERS</p>
-            <div class="form-grid">
-                <form>
-                    <input type="text" placeholder="First Name">
-                    <input type="email" placeholder="Email Address">
-                    <input type="text" placeholder="Phone Number">
-                    <button type="submit">Waitlist Me Now</button>
-                </form>
+    <div class="page-footer-section">
+        <div class=" view-desktop footer-sidebar">
+            <div class="footer-contact-box">
+                <div class="footer-contact-header">CONTACT US [....]</div>
+                <hr class="divider-light">
+                <div class="footer-contact-links">
+                    <p><a href="" target="#">INSTAGRAM</a></p>
+                    <p><a href="" target="#">YOUTUBE</a></p>
+                </div>
             </div>
         </div>
 
-        <div class="footer-line"></div>
+        <div class="footer-main-content">
+            <div class=" view-desktop footer-top-area">
+                <div class="footer-newsletter-info">
+                    <p class="footer-newsletter-headline">BE THE PART OF DOPAMEAN WORLD</p>
+                    <p class="footer-newsletter-subtext">
+                        SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST
+                        TO KNOW ABOUT<br />
+                        EXCLUSIVE LAUNCHES, NEWS & OFFERS
+                    </p>
+                </div>
+                <div class="footer-newsletter-form-container">
+                    <form class="newsletter-form">
+                        <div class="form-row">
+                            <input type="text" name="firstname" placeholder="FIRST NAME" required />
+                            <input type="email" name="email" placeholder="EMAIL ADDRESS" required />
+                        </div>
 
-        <!-- Banner -->
-        <div class="banner">
-            <span>FREE SHIPPING ON ALL ORDERS</span>
-            <span class="divider"></span>
-            <span>CASH ON DELIVERY AVAILABLE</span>
-        </div>
-
-        <div class="footer-line"></div>
-
-        <!-- Contact Box -->
-        <div class="contact-box">
-            <div class="itemss quick-contact">
-                CONTACT US <span class="dots-contact"></span>
-            </div>
-            <hr>
-            <div class="itemss">INSTAGRAM</div>
-            <div class="itemss">YOUTUBE</div>
-        </div>
-
-        <!-- Footer Columns -->
-        <div class="footer-columns">
-            <!-- Left Logo -->
-            <div class="footer-column logo-column">
-                <a href="index.html">
-                    <img src="./assets/Dopamean.png" alt="Dopamean Logo">
-                </a>
+                        <div class="form-row">
+                            <input type="tel" name="phone" placeholder="PHONE NUMBER" required />
+                            <input type="submit" value="WISHLIST ME NOW" />
+                        </div>
+                    </form>
+                </div>
             </div>
 
-
-            <!-- Middle: Customer Services -->
-            <div class="footer-column">
-                <h3>Customer Services</h3>
-                <ul>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Product Care</a></li>
-                    <li><a href="#">Size Charts</a></li>
-                    <li><a href="#">Orders</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Exchanges / Returns</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                </ul>
+            <div class=" view-desktop footer-middle-area">
+                <div class="footer-middle-column-1">
+                    <p>FREE SHIPPING ON ALL ORDERS</p>
+                </div>
+                <div class="footer-middle-column-2">
+                    <p>CASH ON DELIVERY AVAILIABLE</p>
+                </div>
             </div>
 
-            <!-- Right: About & Legal -->
-            <div class="footer-column">
-                <h3>About & Legal</h3>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Visit Us</a></li>
-                    <li><a href="#">Environmental Promises</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">Accessibility Statement</a></li>
-                </ul>
+
+            <div class=" view-desktop footer-bottom-area">
+                <div class="footer-bottom-logo">
+                    <img src="./assets/dopamean (2).png" />
+                </div>
+                <div class="footer-bottom-links">
+                    <div class="footer-links-header-1">CUSTOMER SERVICES</div>
+                    <div class="footer-links-header-2">ABOUT & LEGAL</div>
+                    <div class="footer-links-col-1">
+                        <div><a href="#">FAQS</a></div>
+                        <div><a href="#">PRODUCT CARE</a></div>
+                        <div><a href="#">SIZE CHARTS</a></div>
+                        <div><a href="#">ORDERS</a></div>
+                        <div><a href="#">SHIPPING</a></div>
+                        <div><a href="#">EXCHANGES/RETURNS</a></div>
+                        <div><a href="#">GIFT CARDS</a></div>
+                    </div>
+
+                    <div class="footer-links-col-2">
+                        <div><a href="#">ABOUT</a></div>
+                        <div><a href="#">CONTACT</a></div>
+                        <div><a href="#">VISIT US</a></div>
+                        <div><a href="#">ENVIRONMENTAL PROMISES</a></div>
+                        <div><a href="#">TERMS & CONDITIONS</a></div>
+                        <div><a href="#">PRIVACY POLICY</a></div>
+                        <div><a href="#">COOKIE POLICY</a></div>
+                        <div><a href="#">ACCESSIBILITY STATEMENT</a></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="footer-line"></div> <!-- line before bottom -->
 
-        <!-- Bottom Info -->
-        <div class="footer-bottom">
-            <div class="left">COUNTRY/CITY: INDIA / PANIPAT</div>
-            <div class="footer-line-np2"></div>
-            <div class="center" id="india-time"></div>
-            <div class="footer-line-np3"></div>
-            <div class="right">© 2024 | DOPAMEAN</div>
+        <div class="view-mobile footer-mobile-container">
+            <div class="footer-mobile-logo">
+                <img src="src/Group 16.svg" alt="icon" width="100" height="100" />
+            </div>
+            <div class="footer-mobile-banner-1">
+                <p>CASH ON DELIVERY AVAILIABLE</p>
+            </div>
+            <div class=" view-mobile footer-mobile-main">
+                <div class="footer-mobile-banner-2">
+                    <h2>FREE SHIPPING ON ALL ORDERS</h2>
+                </div>
+                <div class="info-accordion-container">
+                    <div class="info-accordion-item">
+                        <div class="info-accordion-header">BE THE PART OF DOPAMEAN WORLD</div>
+                        <div class="info-accordion-content">
+                            <p>
+                                SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT
+                                EXCLUSIVE LAUNCHES,
+                                NEWS & OFFERS
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-accordion-item">
+                        <div class="info-accordion-header">CUSTOMER SERVICES</div>
+                        <div class="info-accordion-content">
+                            <p>
+                                SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT
+                                EXCLUSIVE LAUNCHES,
+                                NEWS & OFFERS
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-accordion-item">
+                        <div class="info-accordion-header">ABOUT & LEGAL</div>
+                        <div class="info-accordion-content">
+                            <p>
+                                SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT
+                                EXCLUSIVE LAUNCHES,
+                                NEWS & OFFERS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-mobile-socials">
+                    <p>INSTAGRAM</p>
+                    <p2>PINTREST</p2>
+                    <p3>LINKEDIN</p3>
+                    <p4>FACEBOOK</p4>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class=" view-desktop footer-legal-desktop">
+            <div class="footer-legal-col-1">
+                <p>COUNTRY/CITY: INDIA / PANIPAT</p>
+            </div>
+            <div id="bott3"></div>
+            <div class="footer-legal-col-3">
+                © 2024 | DOPAMEAN
+            </div>
+        </div>
+        <div class=" view-mobile footer-legal-mobile">
+            <div class="footer-legal-mobile-left">
+                <p>COUNTRY/CITY: INDIA / PANIPAT</p>
+                <div id="bott4"></div>
+            </div>
+            <div class="footer-legal-mobile-right">
+                © 2024 | DOPAMEAN
+            </div>
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
