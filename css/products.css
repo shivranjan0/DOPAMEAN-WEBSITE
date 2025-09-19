@@ -247,7 +247,7 @@ body {
     position: fixed;
     top: 20vw;
     z-index: 10;
-    height: 9vw;
+    height: 8vw;
     width: 9.5vw;
 }
 
@@ -813,7 +813,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(70%);
+    filter: brightness(80%);
     padding: 10px;
 }
 
@@ -922,6 +922,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 100;
+    filter: brightness(75%);
 
 }
 
@@ -990,7 +991,7 @@ body {
 /* right side banner */
 
 .right-side-banner {
-    width: 88%;
+    width: 89%;
 }
 
 
@@ -1005,7 +1006,7 @@ body {
 .footer-newsletter-info {
     max-width: 50vw;
     position: absolute;
-    right: 28vw;
+    right: 32vw;
     top: 3vh;
     display: flex;
     flex-direction: column;
@@ -1147,7 +1148,7 @@ body {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     gap: 2vw 5vw;
-    padding-top: 2vw;
+    padding-top: 1vw;
     color: #f6f4f4;
 }
 

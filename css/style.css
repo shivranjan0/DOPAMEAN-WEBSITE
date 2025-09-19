@@ -251,7 +251,7 @@ body {
     position: fixed;
     top: 20vw;
     z-index: 10;
-    height: 9vw;
+    height: 8vw;
     width: 9.5vw;
 }
 
@@ -353,7 +353,7 @@ body {
     height: 100%;
     background-color: #ececec;
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 10;
 }
 
 
@@ -600,6 +600,7 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100%;
+    z-index: 30;
 }
 
 .collection-item {
@@ -621,7 +622,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(70%);
+    filter: brightness(80%);
     padding: 10px;
 }
 
@@ -753,6 +754,7 @@ body {
     display: flex;
     position: relative;
     background-image: url("./assets/footer-img.png");
+    filter: brightness(75%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -825,7 +827,7 @@ body {
 /* right side banner */
 
 .right-side-banner {
-    width: 88%;
+    width: 89%;
 }
 
 
@@ -840,7 +842,7 @@ body {
 .footer-newsletter-info {
     max-width: 50vw;
     position: absolute;
-    right: 33vw;
+    right: 32vw;
     top: 3vh;
     display: flex;
     flex-direction: column;
@@ -982,7 +984,7 @@ body {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     gap: 2vw 5vw;
-    padding-top: 2vw;
+    padding-top: 1vw;
     color: #f6f4f4;
 }
 
@@ -1033,31 +1035,38 @@ body {
 
 
 .bottom-area {
+    position: absolute;
+    bottom: 0;
+    left: 11vw;
+    /* Adjust to align with your main content, skipping the sidebar */
+    width: 88vw;
+    /* The remaining width */
     height: 10%;
 }
 
-
 .footer-legal-bar-desktop {
     display: flex;
+    width: 100%;
+    /* Takes full width of its parent (.bottom-area) */
     position: absolute;
-    width: 88.1vw;
-    right: 0vw;
-    bottom: 0vw;
+    bottom: 0;
     border-top: 0.1vw solid white;
+    color: white;
+    font-family: "Apercu Mono Pro", sans-serif;
+    font-size: 0.8vw;
 }
 
 .footer-legal-bar-desktop>div {
     flex: 1;
+    /* Each column takes equal space */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    font-size: 0.8vw;
     height: 5vw;
-    font-family: "Apercu Mono Pro", sans-serif;
 }
 
+/* Borders between columns */
 .footer-legal-col-1 {
     border-right: 0.1vw solid white;
 }
