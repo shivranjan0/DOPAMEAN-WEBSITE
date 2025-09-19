@@ -51,10 +51,6 @@ body {
     height: 100vh;
     display: flex;
     position: relative;
-    background-image: url("Group\ 17.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
 
 }
@@ -280,47 +276,245 @@ body {
 
 
 
-/* ---------------------------  side nav bar end ------------------------------------- */
 
 
-/* --------------------------- bottom sentence --------------------------------------- */
 
-.banner-text-content {
-    position: fixed;
-    /* width: 90%; */
-    /* max-width: 900px; */
-    bottom: 3%;
-    left: 53%;
-    transform: translateX(-50%);
-    color: #ffffff;
-    font-family: sans-serif;
+
+
+
+
+/* --- Product Content and Image Scroller --- */
+.product-page-container {
+    position: absolute;
+    top: 1.6vw;
+    left: 11vw;
+    width: calc(100% - 11vw);
+    height: calc(100% - 1.6vw);
 }
 
-.banner-headline {
-    font-size: 1.6vw;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+.product-image-scroller {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-.banner-subheadline {
-    font-size: 0.9vw;
+.product-image-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.product-image-card {
+    min-width: 45vw;
+    height: 100%;
+    border-right: 0.1vw solid #000;
+}
+
+.product-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Overlays --- */
+.product-overlay-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.thumbnail-gallery {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    height: 4vw;
+    width: 18vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 11px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.2vw;
+    pointer-events: auto;
+    padding: 0.4vw;
+    /* Essential for design */
+}
+
+.thumbnail-gallery img {
+    width: 19%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.product-info-card {
+    position: absolute;
+    bottom: 3vw;
+    right: 3vw;
+    width: 100%;
+    max-width: 450px;
+    background-color: #fff;
+    border: 1px solid #000000;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.product-header,
+.add-to-cart-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 12px;
+    /* Essential for design */
+}
+
+.product-header {
+    border-bottom: 1px solid #000000;
+}
+
+.product-header h1 {
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.product-header .price {
+    border-left: 1px solid #000000;
+    font-size: 0.8em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    /* Essential for design */
+}
+
+.product-intro {
+    font-size: 0.65em;
+    color: #555;
     line-height: 1.6;
     text-transform: uppercase;
-    opacity: 0.9;
-    margin-bottom: 10px;
+    padding: 8px 12px;
+    /* Essential for design */
 }
 
-.banner-cta-link a {
-    color: #ffffff;
+.accordion-item,
+.model-info-container,
+.size-selector {
+    border-top: 1px solid #000000;
+}
+
+.accordion-header {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: 700;
+    height: 35px;
+    padding: 0 12px;
+    /* Essential for design */
+}
+
+.accordion-header .icon {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    font-size: 0.75em;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding: 8px 12px;
+    /* Essential for design */
+}
+
+.accordion-content ul li {
+    line-height: 1.5;
+}
+
+.model-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 12px;
+    /* Essential for design */
+}
+
+.model-info {
+    font-size: 0.65em;
+    line-height: 1.4;
+}
+
+.size-guide {
+    font-size: 0.65em;
+    color: #000;
     text-decoration: underline;
-    font-size: 1.5vw;
-    text-transform: uppercase;
-
-
+    font-weight: 700;
+    border-left: 1px solid #000000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    /* Essential for design */
 }
 
-/* ------------------------------------ bottom sentence end  ------------------------------------- */
+.size-selector {
+    display: flex;
+}
+
+.size-selector button {
+    flex-grow: 1;
+    height: 35px;
+    background-color: #fff;
+    border: none;
+    border-right: 1px solid #dcdcdc;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.75em;
+}
+
+.size-selector button:last-child {
+    border-right: none;
+}
+
+.size-selector button.active,
+.size-selector button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.add-to-cart-bar {
+    background-color: #000000;
+    color: #fff;
+    font-weight: 700;
+}
+
+.add-to-cart-bar .final-price {
+    font-size: 0.85em;
+    font-weight: 400;
+}
+
 
 
 .content-section-1 {
@@ -375,7 +569,6 @@ body {
 
 
 
-/* ------------------------------- product section at here ------------------------------------ */
 
 
 .product-scroll-container {
@@ -524,7 +717,8 @@ body {
     left: -17vw;
 }
 
-/* ------------------------------------ product section end at here ---------------------------------- */
+
+
 
 /* ---------------------------------------  notifaction section ----------------------------------------*/
 
@@ -535,7 +729,7 @@ body {
 
 .section-sidebar {
     width: 11vw;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-right: 0.1vw solid #000;
 }
 
@@ -567,6 +761,8 @@ body {
 
 
 /* -------------------------------------  notifaction end at here ------------------------------------*/
+
+
 
 
 .desktop-view {
@@ -700,55 +896,28 @@ body {
 
 
 
-/* ---------- product section end at here ------------ */
-
-
-/*---------------------- video section ------------------------------ */
-
-
-.content-section-4 {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
-
-.desktop-view.section-sidebar-1 {
-    width: 11vw;
-    background-color: #d1d1d1;
-}
-
-
-.video-section-content {
-    width: 89%;
-    height: 100%;
-    background-color: #ececec;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    z-index: 1;
-}
-
-.video-section-content video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 
 
-/*---------------------- video section end  ------------------------------ */
 
 
 
-/*----------------------- footer section --------------------------------- */
+
+
+
+
+
+
+
+
+
+
 .main-banner2 {
     width: 100%;
     height: 100vh;
     display: flex;
     position: relative;
-    background-image: url("footer-img.png");
+    background-image: url("./assets/footer-img.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -836,7 +1005,7 @@ body {
 .footer-newsletter-info {
     max-width: 50vw;
     position: absolute;
-    right: 33vw;
+    right: 28vw;
     top: 3vh;
     display: flex;
     flex-direction: column;
@@ -979,7 +1148,7 @@ body {
     grid-template-rows: auto auto;
     gap: 2vw 5vw;
     padding-top: 2vw;
-    /* Adjust this value to move it more or less */
+    color: #f6f4f4;
 }
 
 .footer-links-header-1 {

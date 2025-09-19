@@ -4,16 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collection Page</title>
-  <link rel="stylesheet" href="collection_page.css">
+  <link rel="stylesheet" href="./css/collection_page.css">
+  <title>Document</title>
 </head>
 
 <body>
-  <div class="page-wrapper">
+  <!-- ---------------------------------------- hero section ------------------------------------------------ -->
+  <div class="main-banner">
     <div class="scrolling-banner-container">
       <div class="scrolling-banner">
         <div>
-          <span class="view-desktop">FREE SHIPPING</span>
+          <span class="desktop-view">FREE SHIPPING</span>
           <span>CASH ON DELIVERY</span>
           <span>NOW LIVE</span>
           <span>FREE SHIPPING</span>
@@ -33,316 +34,267 @@
           <span>NOW LIVE</span>
         </div>
       </div>
-      <div class=" view-desktop header-actions">
-        <button class="action-button-primary">Shop Now</button>
-        <button class="action-button-secondary">Contact Us</button>
-        <button class="action-button-tertiary">Dark mode</button>
-      </div>
-    </div>
-
-    <div class="main-content-area">
-      <div class="collection-header">
-        <a href="#" class="header-title">COLLECTION</a>
-        <a href="#" class="header-filter-button">FILTERS</a>
-      </div>
-
-      <div class="product-grid-row">
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-grid-row">
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-grid-row">
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="./assets/product1 (2).png" alt="product1" />
-          <div class="product-info">
-            <div class="product-card-name">PRODUCT NAME GOES HERE 01</div>
-            <div class="product-card-price">[ RS. 15,000 ]</div>
-          </div>
-        </div>
+      <div class=" desktop-view header-buttons">
+        <button class="header-btn-1">Shop Now</button>
+        <button class="header-btn-2">Contact Us</button>
+        <button class="header-btn-3">Dark mode</button>
       </div>
     </div>
 
 
-    <div class=" view-desktop sidebar-container">
-      <div class="sidebar-nav-dark">
-        <div class="sidebar-logo-wrapper">
+
+    <!-- --------------------------- side nav bar ------------------------------------- -->
+
+    <div class=" desktop-view side-navigation-wrapper">
+      <div class="nav-box-dark">
+        <div class="nav-box-logo-area">
           <a href="#">
             <img src="./assets/Group 4.png" alt="hello" />
           </a>
         </div>
 
-        <hr class="divider-light">
+        <hr class="divider-line-light">
 
-        <div class="sidebar-nav-links">
+        <div class="nav-box-links">
           <a href="#">Shop all</a>
           <a href="#">APPAREL</a>
           <a href="#">TOP WEAR</a>
           <a href="#">BOTTOM WEAR</a>
-          <a href="productpage.html">NEW IN</a>
+          <a href="#">NEW IN</a>
         </div>
       </div>
-      <div class="sidebar-user-box">
-        <div class="user-box-search">SEARCH[....]</div>
-        <hr class="divider-dark">
-        <div class="user-box-links">
+      <div class="nav-box-light">
+        <div class="nav-box-header-1">SEARCH[....]</div>
+        <hr class="divider-line-dark">
+        <div class="nav-box-user-links">
           <a href="#">ACCOUNT</a>
           <a href="#">BAG[0]</a>
         </div>
       </div>
-
-
-    </div>
-  </div>
-  <div id="time1"></div>
-  </div>
-
-
-  <div class="footer-section">
-    <div class=" view-desktop footer-sidebar">
-      <div class="footer-contact-box">
-        <div class="footer-contact-header">CONTACT US [....]</div>
-        <hr class="divider-light">
-        <div class="footer-contact-links">
-          <p><a href="" target="#">INSTAGRAM</a></p>
-          <p><a href="" target="#">YOUTUBE</a></p>
-        </div>
-      </div>
     </div>
 
-    <div class="footer-main-content">
-      <div class=" view-desktop footer-top-section">
-        <div class="footer-newsletter-info">
-          <p class="newsletter-headline">BE THE PART OF DOPAMEAN WORLD</p>
-          <p class="newsletter-subtext">
-            SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST
-            TO KNOW ABOUT<br />
-            EXCLUSIVE LAUNCHES, NEWS & OFFERS
-          </p>
+    <!-- ------------------------------ side nav bar end -------------------------------- -->
+
+    <div class="content-section-1">
+
+      <div class=" desktop-view section-sidebar-1"></div>
+      <div class="section-main-content-1">
+        <div class="section-header-1">
+          <a href="#" class="header-link-1">FILTER</a>
+          <a href="#" class="header-link-2">SORTED BY</a>
         </div>
-        <div class="footer-newsletter-form">
-          <form class="newsletter-signup-form">
-            <div class="form-input-row">
-              <input type="text" name="firstname" placeholder="FIRST NAME" required />
-              <input type="email" name="email" placeholder="EMAIL ADDRESS" required />
+
+        <!-- -----------------------product at here ------------- -->
+
+        <div class="product-scroll-container">
+          <div class="product-card-1">
+            <img src="./assets/product1 (7).png" alt="product1" />
+            <div class="product-price-info-1">
+              <div class="product-card-name-1">PRODUCT NAME GOES HERE 01</div>
+              <div class="product-card-price-1">[ RS. 15,000 ]</div>
             </div>
-
-            <div class="form-input-row">
-              <input type="tel" name="phone" placeholder="PHONE NUMBER" required />
-              <input type="submit" value="WISHLIST ME NOW" />
+          </div>
+          <div class="product-card-2">
+            <img src="./assets/product1 (7).png" alt="product2" />
+            <div class="product-price-info-2">
+              <div class="product-card-name-2">PRODUCT NAME GOES HERE 01</div>
+              <div class="product-card-price-2">[ RS. 15,000 ]</div>
             </div>
-          </form>
-        </div>
-      </div>
-
-      <div class=" view-desktop footer-middle-banners">
-        <div class="footer-banner-shipping">
-          <p>FREE SHIPPING ON ALL ORDERS</p>
-        </div>
-        <div class="footer-banner-cod">
-          <p>CASH ON DELIVERY AVAILIABLE</p>
-        </div>
-      </div>
-
-
-      <div class=" view-desktop footer-bottom-section">
-        <div class="footer-logo-area">
-          <img src="./assets/dopamean (2).png" />
-        </div>
-        <div class="footer-links-area">
-          <div class="footer-links-header-1">CUSTOMER SERVICES</div>
-          <div class="footer-links-header-2">ABOUT & LEGAL</div>
-          <div class="footer-links-column-1">
-            <div><a href="#">FAQS</a></div>
-            <div><a href="#">PRODUCT CARE</a></div>
-            <div><a href="#">SIZE CHARTS</a></div>
-            <div><a href="#">ORDERS</a></div>
-            <div><a href="#">SHIPPING</a></div>
-            <div><a href="#">EXCHANGES/RETURNS</a></div>
-            <div><a href="#">GIFT CARDS</a></div>
           </div>
-
-          <div class="footer-links-column-2">
-            <div><a href="#">ABOUT</a></div>
-            <div><a href="#">CONTACT</a></div>
-            <div><a href="#">VISIT US</a></div>
-            <div><a href="#">ENVIRONMENTAL PROMISES</a></div>
-            <div><a href="#">TERMS & CONDITIONS</a></div>
-            <div><a href="#">PRIVACY POLICY</a></div>
-            <div><a href="#">COOKIE POLICY</a></div>
-            <div><a href="#">ACCESSIBILITY STATEMENT</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="view-mobile footer-mobile-container">
-      <div class="footer-mobile-logo">
-        <img src="src/Group 16.svg" alt="icon" width="100" height="100" />
-      </div>
-      <div class="footer-mobile-banner-1">
-        <p>CASH ON DELIVERY AVAILIABLE</p>
-      </div>
-      <div class=" view-mobile footer-mobile-main">
-        <div class="footer-mobile-banner-2">
-          <h2>FREE SHIPPING ON ALL ORDERS</h2>
-        </div>
-        <div class="mobile-accordion">
-          <div class="mobile-accordion-item">
-            <div class="mobile-accordion-header">BE THE PART OF DOPAMEAN WORLD</div>
-            <div class="mobile-accordion-content">
-              <p>
-                SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT
-                EXCLUSIVE LAUNCHES,
-                NEWS & OFFERS
-              </p>
+          <div class="product-card-3">
+            <img src="./assets/product1 (10).png" alt="product3" />
+            <div class="product-price-info-3">
+              <div class="product-card-name-3">PRODUCT NAME GOES HERE 03</div>
+              <div class="product-card-price-3">[ RS. 15,000 ]</div>
             </div>
           </div>
 
-          <div class="mobile-accordion-item">
-            <div class="mobile-accordion-header">CUSTOMER SERVICES</div>
-            <div class="mobile-accordion-content">
-              <p>
-                SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT
-                EXCLUSIVE LAUNCHES,
-                NEWS & OFFERS
-              </p>
+          <div class="product-card-3">
+            <img src="./assets/product1 (7).png" alt="product3" />
+            <div class="product-price-info-3">
+              <div class="product-card-name-3">PRODUCT NAME GOES HERE 03</div>
+              <div class="product-card-price-3">[ RS. 15,000 ]</div>
             </div>
           </div>
 
-          <div class="mobile-accordion-item">
-            <div class="mobile-accordion-header">ABOUT & LEGAL</div>
-            <div class="mobile-accordion-content">
-              <p>
-                SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST TO KNOW ABOUT
-                EXCLUSIVE LAUNCHES,
-                NEWS & OFFERS
-              </p>
+          <div class="product-scroll-container">
+            <div class="product-card-1">
+              <img src="./assets/product1 (7).png" alt="product1" />
+              <div class="product-price-info-1">
+                <div class="product-card-name-1">PRODUCT NAME GOES HERE 01</div>
+                <div class="product-card-price-1">[ RS. 15,000 ]</div>
+              </div>
             </div>
+            <div class="product-card-2">
+              <img src="./assets/product1 (7).png" alt="product2" />
+              <div class="product-price-info-2">
+                <div class="product-card-name-2">PRODUCT NAME GOES HERE 01</div>
+                <div class="product-card-price-2">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+            <div class="product-card-3">
+              <img src="./assets/product1 (7).png" alt="product3" />
+              <div class="product-price-info-3">
+                <div class="product-card-name-3">PRODUCT NAME GOES HERE 03</div>
+                <div class="product-card-price-3">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+
+            <div class="product-card-3">
+              <img src="./assets/product1 (7).png" alt="product3" />
+              <div class="product-price-info-3">
+                <div class="product-card-name-3">PRODUCT NAME GOES HERE 03</div>
+                <div class="product-card-price-3">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+            <!-- ----------------------- product at here end ------------- -->
           </div>
+          <div class="product-scroll-container">
+            <div class="product-card-1">
+              <img src="./assets/product1 (7).png" alt="product1" />
+              <div class="product-price-info-1">
+                <div class="product-card-name-1">PRODUCT NAME GOES HERE 01</div>
+                <div class="product-card-price-1">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+            <div class="product-card-2">
+              <img src="./assets/product1 (7).png" alt="product2" />
+              <div class="product-price-info-2">
+                <div class="product-card-name-2">PRODUCT NAME GOES HERE 01</div>
+                <div class="product-card-price-2">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+            <div class="product-card-3">
+              <img src="./assets/product1 (7).png" alt="product3" />
+              <div class="product-price-info-3">
+                <div class="product-card-name-3">PRODUCT NAME GOES HERE 03</div>
+                <div class="product-card-price-3">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+
+            <div class="product-card-3">
+              <img src="./assets/product1 (7).png" alt="product3" />
+              <div class="product-price-info-3">
+                <div class="product-card-name-3">PRODUCT NAME GOES HERE 03</div>
+                <div class="product-card-price-3">[ RS. 15,000 ]</div>
+              </div>
+            </div>
+            <!-- ----------------------- product at here end ------------- -->
+          </div>
+
+
+
+          <!-- --------------------------- product scroll end  -------------------------------------- -->
         </div>
-
-        <div class="footer-mobile-socials">
-          <p>INSTAGRAM</p>
-          <p2>PINTREST</p2>
-          <p3>LINKEDIN</p3>
-          <p4>FACEBOOK</p4>
-        </div>
       </div>
     </div>
-    <div class=" view-desktop footer-legal-bar-desktop">
-      <div class="footer-legal-col-1">
-        <p>COUNTRY/CITY: INDIA / PANIPAT</p>
-      </div>
-      <div id="bott3"></div>
-      <div class="footer-legal-col-3">
-        © 2024 | DOPAMEAN
-      </div>
-    </div>
-    <div class=" view-mobile footer-legal-bar-mobile">
-      <div class="footer-legal-mobile-left">
-        <p>COUNTRY/CITY: INDIA / PANIPAT</p>
-        <div id="bott4"></div>
-      </div>
-      <div class="footer-legal-mobile-right">
-        © 2024 | DOPAMEAN
-      </div>
-    </div>
-
-
   </div>
 
 
 
+  <div class="main-banner2">
+    <div class="side-banner">
+      <div class="footer-sidebar">
+        <div class="footer-contact-box">
+          <div class="footer-contact-header">CONTACT US [....]</div>
+          <hr class="divider-line-light">
+          <div class="footer-contact-links">
+            <p><a href="" target="#">INSTAGRAM</a></p>
+            <p><a href="" target="#">YOUTUBE</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side-banner">
+      <div class="input-area">
+        <div class="footer-top-area">
+          <div class="footer-newsletter-info">
+            <p class="footer-newsletter-headline">BE THE PART OF DOPAMEAN WORLD</p>
+            <p class="footer-newsletter-subtext">
+              SIGN UP TODAY AND GET 15% OFF YOUR FIRST PURCHASE AND BE THE FIRST
+              TO KNOW ABOUT<br />
+              EXCLUSIVE LAUNCHES, NEWS & OFFERS
+            </p>
+          </div>
+          <div class="footer-newsletter-form-container">
+            <form class="newsletter-form">
+              <div class="form-row">
+                <input type="text" name="firstname" placeholder="FIRST NAME" required />
+                <input type="email" name="email" placeholder="EMAIL ADDRESS" required />
+              </div>
+
+              <div class="form-row">
+                <input type="tel" name="phone" placeholder="PHONE NUMBER" required />
+                <input type="submit" value="WISHLIST ME NOW" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
 
-  <script src="script.js"></script>
+      <div class="shiping-details">
+        <div class="footer-middle-area">
+          <div class="footer-middle-column-1">
+            <p>FREE SHIPPING ON ALL ORDERS</p>
+          </div>
+          <div class="footer-middle-column-2">
+            <p>CASH ON DELIVERY AVAILIABLE</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="about-us">
+        <div class="footer-bottom-area">
+          <div class="footer-bottom-logo-area">
+            <img src="./assets/dopamean (2).png" alt="Dopamean Logo" />
+          </div>
+          <div class="footer-bottom-links-area">
+            <div class="footer-links-header-1">CUSTOMER SERVICES</div>
+            <div class="footer-links-header-2">ABOUT & LEGAL</div>
+            <div class="footer-links-column-1">
+              <div><a href="#">FAQS</a></div>
+              <div><a href="#">PRODUCT CARE</a></div>
+              <div><a href="#">SIZE CHARTS</a></div>
+              <div><a href="#">ORDERS</a></div>
+              <div><a href="#">SHIPPING</a></div>
+              <div><a href="#">EXCHANGES/RETURNS</a></div>
+              <div><a href="#">GIFT CARDS</a></div>
+            </div>
+            <div class="footer-links-column-2">
+              <div><a href="#">ABOUT</a></div>
+              <div><a href="#">CONTACT</a></div>
+              <div><a href="#">VISIT US</a></div>
+              <div><a href="#">ENVIRONMENTAL PROMISES</a></div>
+              PROMISES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="bottom-area">
+      <div class=" desktop-view footer-legal-bar-desktop">
+        <div class="footer-legal-col-1">
+          <p>COUNTRY/CITY: INDIA / PANIPAT</p>
+        </div>
+        <div id="bott3"></div>
+        <div class="footer-legal-col-3">
+          © 2024 | DOPAMEAN
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 </body>
 
 </html>
