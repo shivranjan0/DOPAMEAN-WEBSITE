@@ -8,30 +8,50 @@
 /*-------font import----------- */
 
 @font-face {
-    font-family: 'Apercu Mono Pro';
-    src: url('../fonts/ApercuMonoProLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Apercu Mono Pro';
-    src: url('../fonts/ApercuMonoProRegular.woff') format('woff');
+    font-family: 'Apercu Pro';
+    src: url('./apercu_regular_pro.woff2') format('woff2'),
+        url('./apercu_regular_pro.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Apercu Mono Pro';
-    src: url('../fonts/ApercuMonoProMedium.woff') format('woff');
+    font-family: 'Apercu Pro';
+    src: url('./apercu_regular_italic_pro.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('./apercu_medium_pro.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
+/* Apercu Mono Pro Family */
 @font-face {
     font-family: 'Apercu Mono Pro';
-    src: url('../fonts/ApercuMonoProBold.woff') format('woff');
-    font-weight: 700;
+    src: url('./ApercuMonoProRegular.woff2') format('woff2'),
+        url('./ApercuMonoProRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Satoshi Family */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./Satoshi-Regular.woff2') format('woff2'),
+        url('./Satoshi-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./Satoshi-Medium.woff2') format('woff2'),
+        url('./Satoshi-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -140,20 +160,23 @@ body {
 .header-btn-1,
 .header-btn-2,
 .header-btn-3 {
-    font-family: "Apercu Mono Pro", sans-serif;
+    font-family: "Apercu Mono Pro", monospace;
     font-size: clamp(0.3rem, 0.8vw, 1rem);
+    font-weight: normal;
+    line-height: 1.2;
     height: 1.6vw;
     min-height: 0.9vw;
     padding: 0 0.8rem;
     border: none;
     background: #fff;
-    color: black;
+    color: #000000;
     cursor: pointer;
     border-left: 1px solid black;
     text-transform: uppercase;
+    letter-spacing: 0px;
+    opacity: 1;
     transition: background-color 0.3s, color 0.3s;
 }
-
 
 /* ------------------------------ side nav bar ---------------------------------------- */
 
@@ -241,12 +264,17 @@ body {
 }
 
 .nav-box-links a {
+    font-family: 'Apercu Pro', sans-serif;
+    font-size: 1vw;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #FFFFFF;
     text-decoration: none;
-    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    opacity: 1;
     display: block;
     margin-bottom: 0.68vw;
-    font-size: 1vw;
-    text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -256,7 +284,6 @@ body {
     color: #000000;
     border-radius: 0.68vw;
     padding: 1.02vw;
-    font-family: "Apercu Pro", sans-serif;
     position: fixed;
     top: 20vw;
     z-index: 10;
@@ -266,9 +293,17 @@ body {
 
 
 .nav-box-header-1 {
-    padding-bottom: 0.544vw;
+    font-family: 'Apercu Mono Pro', monospace;
     font-size: 2.2vh;
+    font-weight: normal;
+    line-height: 1.2;
+    padding-bottom: 0.544vw;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
 }
+
 
 .nav-box-user-links {
     margin-top: 1.02vw;
@@ -296,38 +331,49 @@ body {
 
 .banner-text-content {
     position: fixed;
-    /* width: 90%; */
-    /* max-width: 900px; */
     bottom: 3%;
     left: 53%;
     transform: translateX(-50%);
     color: #ffffff;
-    font-family: sans-serif;
 }
 
 .banner-headline {
+    font-family: 'Apercu Pro', sans-serif;
     font-size: 1.6vw;
     font-weight: bold;
+    line-height: 1.2;
     text-transform: uppercase;
     margin-bottom: 10px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
 }
 
 .banner-subheadline {
+    font-family: 'Apercu Mono Pro', monospace;
     font-size: 0.9vw;
+    font-weight: normal;
     line-height: 1.6;
     text-transform: uppercase;
-    opacity: 0.9;
     margin-bottom: 10px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.69;
 }
 
 .banner-cta-link a {
-    color: #ffffff;
-    text-decoration: underline;
+    font-family: 'Apercu Pro', sans-serif;
     font-size: 1.5vw;
+    font-weight: 500;
+    /* medium */
+    line-height: 1.2;
+    color: #FFFFFF;
+    text-decoration: underline;
     text-transform: uppercase;
-
-
+    letter-spacing: 0px;
+    opacity: 1;
 }
+
 
 
 
@@ -377,15 +423,16 @@ body {
 
 
 .section-header-1 a {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-size: 1.02vw;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #000000;
     text-decoration: none;
-    color: black;
-    font-family: "Apercu Pro", sans-serif;
-    font-size: 1.02vw;
-    font-family: "Apercu Pro", sans-serif;
-    font-size: 1.02vw;
+    letter-spacing: 0px;
+    opacity: 1;
     margin-left: 1vw;
 }
-
 
 
 /* ------------------------------- product section at here ------------------------------------ */
@@ -431,7 +478,6 @@ body {
     align-items: center;
     justify-content: center;
     border-top: 1px solid #000;
-    font-family: "Apercu Pro", sans-serif;
 }
 
 
@@ -477,64 +523,36 @@ body {
 }
 
 
-.product-card-name-1 {
-    font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 1.02vw;
-    /* 15px */
-    text-transform: uppercase;
-    position: relative;
-    top: -2vh;
-    left: -2vh;
-}
-
-.product-card-name-2 {
-    font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 1.02vw;
-    /* 15px */
-    text-transform: uppercase;
-    position: relative;
-    top: -2vh;
-    left: -2vh;
-}
-
+.product-card-name-1,
+.product-card-name-2,
 .product-card-name-3 {
-    font-family: "Apercu Mono Pro", sans-serif;
+    font-family: "Apercu Mono Pro", monospace;
     font-size: 1.02vw;
-    /* 15px */
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: #000000;
     text-transform: uppercase;
+    opacity: 1;
     position: relative;
     top: -2vh;
     left: -2vh;
 }
 
-.product-card-price-1 {
-    font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 1.02vw;
-    /* 15px */
-    text-transform: uppercase;
-    position: relative;
-    top: 1.5vh;
-    left: -17vw;
-}
-
-.product-card-price-2 {
-    font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 1.02vw;
-    /* 15px */
-    text-transform: uppercase;
-    position: relative;
-    top: 1.5vh;
-    left: -17vw;
-}
-
+.product-card-price-1,
+.product-card-price-2,
 .product-card-price-3 {
-    font-family: "Apercu Mono Pro", sans-serif;
+    font-family: "Apercu Mono Pro", monospace;
     font-size: 1.02vw;
-    /* 15px */
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: #000000;
     text-transform: uppercase;
+    opacity: 1;
     position: relative;
     top: 1.5vh;
-    left: -17vw;
+    left: -15vw;
 }
 
 /* ------------------------------------ product section end at here ---------------------------------- */
@@ -567,17 +585,19 @@ body {
 }
 
 .notification-text {
-    margin: 0;
-    color: #28a745;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-family: 'Apercu Mono Pro', monospace;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    color: #00BE39;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0px;
+    opacity: 1;
+    margin: 0;
     height: 49px;
     display: flex;
     align-items: center;
 }
-
 
 /* -------------------------------------  notifaction end at here ------------------------------------*/
 
@@ -657,23 +677,38 @@ body {
 }
 
 .collection-title {
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-family: 'Apercu Pro', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
     text-transform: uppercase;
-    font-family: "Apercu Pro", sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
 }
 
 .collection-count {
+    font-family: "Apercu Mono Pro", monospace;
     font-size: clamp(13px, 1.2vw, 16px);
-    font-family: "Apercu Mono Pro", sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
 }
 
 .collection-cta {
-    color: #ffffff;
-    font-size: clamp(14px, 1.3vw, 18px);
-    font-family: "Apercu Mono Pro", sans-serif;
+    font-family: 'Apercu Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    /* medium */
+    line-height: 22px;
+    color: #FFFFFF;
     text-transform: uppercase;
     text-decoration: underline;
+    letter-spacing: 0px;
+    opacity: 1;
 }
+
 
 
 @media (min-width: 768px) {
@@ -763,7 +798,7 @@ body {
     display: flex;
     position: relative;
     background-image: url("./assets/footer-img.png");
-    filter: brightness(75%);
+    /* filter: brightness(85%); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -933,6 +968,14 @@ body {
 
 
 .shiping-details {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
     height: 10%;
 }
 
