@@ -59,7 +59,16 @@ body {
 
 }
 
+#time1 {
+    top: 96vh;
+    position: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 1;
 
+}
 
 /* markee container */
 

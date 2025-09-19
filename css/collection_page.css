@@ -55,7 +55,16 @@ body {
 
 }
 
+#time1 {
+    top: 96vh;
+    position: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 1;
 
+}
 
 /* markee container */
 
@@ -384,7 +393,7 @@ body {
 .product-card-name-2,
 .product-card-name-3 {
     font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 1.02vw;
+    font-size: 0.8vw;
     text-transform: uppercase;
 }
 
@@ -393,7 +402,7 @@ body {
 .product-card-price-2,
 .product-card-price-3 {
     font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 1.02vw;
+    font-size: 0.8vw;
     text-transform: uppercase;
 }
 
@@ -510,7 +519,7 @@ body {
 .footer-newsletter-info {
     max-width: 50vw;
     position: absolute;
-    right: 33vw;
+    right: 32vw;
     top: 3vh;
     display: flex;
     flex-direction: column;
