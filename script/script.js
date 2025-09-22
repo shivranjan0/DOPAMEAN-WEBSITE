@@ -43,3 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateClock, 1000);
     updateClock();
 });
+
+
+
+
+// accordian 
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentlyActiveItem = document.querySelector('.accordion-item.active');
+            const clickedItem = header.parentElement;
+
+            // If there is an active item and it's not the one we clicked, close it.
+            if (currentlyActiveItem && currentlyActiveItem !== clickedItem) {
+                currentlyActiveItem.classList.remove('active');
+                const activeHeader = currentlyActiveItem.querySelector('.accordion-header');
+                activeHeader.setAttribute('aria-expanded', 'false');
+                activeHeader.querySelector('.icon').textContent = '+';
+            }
+
+            // Toggle the clicked item
+            clickedItem.classList.toggle('active');
+            const icon = header.querySelector('.icon');
+            const isExpanded = clickedItem.classList.contains('active');
+
+            header.setAttribute('aria-expanded', isExpanded);
+            icon.textContent = isExpanded ? '-' : '+';
+        });
+    });
+});
