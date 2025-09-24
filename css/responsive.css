@@ -1,0 +1,1355 @@
+/* --- Basic Setup, Fonts & Variables --- */
+:root {
+    --color-dark: #000;
+    --color-light: #fff;
+    --color-border: #ddd;
+    --font-mono: "Apercu Mono Pro", monospace;
+}
+
+@font-face {
+    font-family: 'Apercu Mono Pro';
+    src: url('./ApercuMonoProRegular.woff2') format('woff2'),
+        url('./ApercuMonoProRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Add other @font-face rules if you have them */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #ECECEC;
+    font-family: 'Apercu Pro', sans-serif;
+}
+
+/* ======================================================= */
+/* ============== DEFAULT (DESKTOP) STYLES =============== */
+/* ======================================================= */
+
+/* Hide mobile elements on desktop by default */
+.mobile {
+    display: none !important;
+}
+
+.main-banner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background-image: url("./assets/Group\ 17.png");
+    /* Placeholder URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#time1 {
+    position: fixed;
+    bottom: 1vh;
+    left: 1vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 1;
+}
+
+/* Marquee container */
+.scrolling-banner-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 1.7vw;
+    /* min-height: 25px; */
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    border-bottom: 1px solid black;
+}
+
+.scrolling-banner {
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+}
+
+.scrolling-banner div {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    animation: marquee-desktop 15s linear infinite;
+    font: normal normal normal 12px/14px "Apercu Mono Pro", monospace;
+    text-transform: uppercase;
+}
+
+.scrolling-banner span {
+    font-size: clamp(0.6rem, 0.8vw, 1rem);
+    color: black;
+}
+
+@keyframes marquee-desktop {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-btn-1,
+.header-btn-2,
+.header-btn-3 {
+    font-family: "Apercu Mono Pro", monospace;
+    font-size: clamp(0.6rem, 0.8vw, 1rem);
+    height: 1.6vw;
+    /* min-height: 25px; */
+    padding: 0 1rem;
+    border: none;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    border-left: 1px solid black;
+    text-transform: uppercase;
+}
+
+/* Side Navigation */
+/* .side-navigation-wrapper {
+    width: 11vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-top: 3.4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+    z-index: 999;
+    border-right: 0.1vw solid #000;
+} */
+
+.nav-box-dark {
+    background-color: #000;
+    border-radius: 0.68vw;
+    padding: 1.4vw;
+    width: 9.5vw;
+    margin-bottom: 1vw;
+}
+
+.nav-box-logo-area {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.68vw;
+}
+
+.nav-box-logo-area img {
+    width: 100%;
+    height: auto;
+}
+
+.divider-line-light {
+    border: none;
+    height: 1px;
+    background-color: #fff;
+    margin: 0 -1.4vw;
+    /* Extend to edges */
+}
+
+.divider-line-dark {
+    border: none;
+    height: 1px;
+    background-color: #000;
+    margin: 0 -1.02vw;
+    /* Extend to edges */
+}
+
+.nav-box-links {
+    margin-top: 1.361vw;
+}
+
+.nav-box-links a {
+    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.68vw;
+    text-transform: uppercase;
+}
+
+.nav-box-light {
+    background-color: #fff;
+    color: #000;
+    border-radius: 0.68vw;
+    padding: 1.02vw;
+    width: 9.5vw;
+}
+
+.nav-box-header-1 {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-size: clamp(0.7rem, 1vw, 1.2rem);
+    padding-bottom: 0.544vw;
+}
+
+.nav-box-user-links {
+    margin-top: 1.02vw;
+}
+
+.nav-box-user-links a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    margin-bottom: 0.68vw;
+    text-transform: uppercase;
+    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
+}
+
+/* Bottom Text Content */
+.banner-text-content {
+    position: fixed;
+    bottom: 5%;
+    left: 55%;
+    transform: translateX(-50%);
+    color: #fff;
+    width: 80%;
+    max-width: 800px;
+}
+
+.banner-headline {
+    font-family: 'Apercu Pro', sans-serif;
+    font-size: 1.6vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.banner-subheadline {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-size: 0.9vw;
+    line-height: 1.6;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.banner-cta-link a {
+    font-family: 'Apercu Pro', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+
+/* ======================================================= */
+/* =================== MOBILE STYLES ===================== */
+/* ======================================================= */
+@media (max-width: 768px) {
+
+    /* Toggle visibility */
+    .desktop-view {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+
+    /* Set up the background for mobile */
+    .main-banner-mobile-background {
+        width: 100%;
+        height: 100vh;
+        background-image: url("./assets/Group\ 17.png");
+        /* Placeholder URL */
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        /* Better for mobile performance */
+    }
+
+    /* Mobile Header */
+    .mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        display: flex;
+        /* Re-enable flex for the header itself */
+        flex-direction: column;
+    }
+
+    .top-nav-mobile {
+        display: flex;
+        align-items: stretch;
+        background-color: var(--color-dark);
+        color: var(--color-light);
+        height: 55px;
+    }
+
+    .nav-section {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        border-right: 1px solid #ffffff;
+        /* Darker border for contrast */
+    }
+
+    .mobile-logo-img {
+        width: 110px;
+        height: auto;
+    }
+
+    .search-container {
+        flex-grow: 1;
+        color: #ffffff;
+        font-size: 0.8rem;
+    }
+
+    .controls-container {
+        gap: 1rem;
+        border-right: none;
+    }
+
+    .bag-link {
+        font-size: 0.8rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 22px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    .hamburger-menu .line {
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-light);
+    }
+
+    .sub-nav-mobile {
+        display: flex;
+        align-items: stretch;
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        font-size: 0.7rem;
+        height: 35px;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .marquee-container {
+        flex-grow: 1;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .marquee-content {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        animation: marquee-mobile 15s linear infinite;
+    }
+
+    .marquee-content span {
+        padding: 0 1rem;
+    }
+
+    @keyframes marquee-mobile {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .dark-mode-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.1rem;
+        padding: 0px 10px;
+        border-left: 1px solid #000000;
+        flex-shrink: 0;
+    }
+
+    .toggle-switch {
+        width: 34px;
+        height: 18px;
+        background-color: var(--color-dark);
+        border-radius: 9px;
+        padding: 2px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle-circle {
+        width: 14px;
+        height: 14px;
+        background-color: var(--color-light);
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+}
+
+
+
+
+/* ======================================================= */
+/* ===================== BASE STYLES ===================== */
+/* ======================================================= */
+:root {
+    --primary-text: #ffffff;
+    --secondary-text: rgba(255, 255, 255, 0.7);
+    --accent-green: #22c55e;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --bg-color: #1a1a1a;
+    --font-main: 'Inter', sans-serif;
+    --font-logo: 'Teko', sans-serif;
+    --font-mono: "Apercu Mono Pro", monospace;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+}
+
+/* Default state: show desktop, hide mobile */
+.mobile-view {
+    display: none;
+}
+
+.desktop-view {
+    display: block;
+}
+
+
+/* ======================================================= */
+/* ==================== DESKTOP STYLES =================== */
+/* ======================================================= */
+.main-banner2 {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+}
+
+.side-banner {
+    width: 11vw;
+    border-right: 1px solid var(--border-color);
+    padding: 2rem;
+}
+
+.footer-contact-box {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-contact-header {
+    margin-bottom: 1rem;
+}
+
+.divider-line-light {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.footer-contact-links p {
+    margin-bottom: 0.5rem;
+}
+
+.right-side-banner {
+    width: 89vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-area,
+.shiping-details,
+.about-us,
+.bottom-area {
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 3rem;
+}
+
+.footer-top-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-newsletter-headline {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.footer-newsletter-subtext {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    max-width: 45ch;
+}
+
+.newsletter-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form input {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1rem;
+    color: var(--primary-text);
+    font-family: var(--font-mono);
+    flex: 1;
+}
+
+.newsletter-form input[type="submit"] {
+    background-color: var(--primary-text);
+    color: #000;
+    cursor: pointer;
+}
+
+.footer-middle-area {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+}
+
+.footer-bottom-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-bottom-logo-area img {
+    width: 150px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-bottom-links-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1rem 2rem;
+    font-size: 0.8rem;
+}
+
+.footer-links-header-1,
+.footer-links-header-2 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links-column-1,
+.footer-links-column-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links-column-1 a,
+.footer-links-column-2 a {
+    color: var(--secondary-text);
+    transition: color 0.2s;
+}
+
+.footer-links-column-1 a:hover,
+.footer-links-column-2 a:hover {
+    color: var(--primary-text);
+}
+
+
+.bottom-area {
+    flex-grow: 1;
+}
+
+.footer-legal-bar-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+}
+
+
+/* ======================================================= */
+/* ================ MOBILE STYLES (768px) ================ */
+/* ======================================================= */
+@media (max-width: 768px) {
+
+    /* Switch visibility */
+    .desktop-view {
+        display: none;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    /* Copied Mobile Styles */
+    .footer-container {
+        width: 100%;
+        max-width: 100%;
+        /* Take full width on mobile */
+        margin: 0 auto;
+        background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.95)), url('footer-img.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-container {
+        text-align: center;
+    }
+
+    .logo-text {
+        font-family: var(--font-logo);
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+    }
+
+    .banners-container {
+        text-align: center;
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .banner {
+        padding: 0.5rem 0;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .banner-cod {
+        color: var(--accent-green);
+        margin-bottom: 0.5rem;
+    }
+
+    .shipping-banner {
+        border-top: 1px solid #888;
+        border-bottom: 1px solid #888;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .shipping-banner-content {
+        background-color: rgba(85, 85, 85, 0.7);
+        padding: 20px 40px;
+    }
+
+    .shipping-banner-content p {
+        color: #E0E0E0;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .accordion-section {
+        font-size: 0.875rem;
+        flex-grow: 1;
+        /* Pushes the bottom content down */
+    }
+
+    .accordion-item {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .accordion-item:first-of-type {
+        border-top: 1px solid var(--border-color);
+    }
+
+    .accordion-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .accordion-title {
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .accordion-description {
+        margin-top: 0.5rem;
+        color: var(--secondary-text);
+        font-size: 0.75rem;
+        padding-right: 1rem;
+        text-transform: uppercase;
+        line-height: 1.5;
+    }
+
+    .accordion-icon {
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding-left: 1rem;
+    }
+
+    .accordion-content {
+        margin-top: 0.75rem;
+        color: var(--secondary-text);
+        font-size: 0.75rem;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .accordion-content a {
+        display: block;
+        margin-top: 0.5rem;
+        transition: color 0.2s;
+        padding-bottom: 10px;
+    }
+
+    .accordion-content a:hover {
+        color: var(--accent-green);
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--border-color);
+        text-transform: uppercase;
+        flex-wrap: wrap;
+        /* Allows wrapping on small screens */
+    }
+
+    .social-links a {
+        transition: color 0.2s;
+        padding: 0.5rem;
+    }
+
+    .social-links a:hover {
+        color: var(--accent-green);
+    }
+
+    .bottom-bar {
+        display: flex;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        align-items: stretch;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .bottom-bar-left {
+        width: 66.66%;
+        border-right: 1px solid var(--border-color);
+        padding: 0.5rem 1rem;
+    }
+
+    .bottom-bar-left p,
+    .bottom-bar-right p {
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    .bottom-bar-right {
+        width: 33.33%;
+        padding: 0.5rem 1rem;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+
+
+
+:root {
+    --primary-text: #ffffff;
+    --secondary-text: rgba(255, 255, 255, 0.7);
+    --accent-green: #22c55e;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --bg-color: #1a1a1a;
+    --font-main: 'Inter', sans-serif;
+    --font-logo: 'Teko', sans-serif;
+    --font-mono: "Apercu Mono Pro", monospace;
+    --font-body: "Apercu Pro", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+}
+
+/* Default state: show desktop, hide mobile */
+.dpm-mobile-wrapper {
+    display: none;
+}
+
+.dpm-desktop-wrapper {
+    display: block;
+}
+
+/* ======================================================= */
+/* ==================== DESKTOP STYLES =================== */
+/* ======================================================= */
+
+.dpm-main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background-image: url("./assets/footer-img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.dpm-left-panel {
+    width: 11.1%;
+    height: 100vh;
+    left: 0;
+    border-right: 0.1vw solid #f6f4f4;
+}
+
+.dpm-left-panel-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dpm-contact-widget {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 0.68vw;
+    padding: 1.02vw;
+    position: absolute;
+    bottom: 1vw;
+    width: 9.565vw;
+    z-index: 10;
+}
+
+.dpm-contact-widget-title {
+    padding-bottom: 0.544vw;
+    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.dpm-widget-divider {
+    border: none;
+    height: 0.1px;
+    background-color: #ffffff;
+    margin: 0 -1.02vw;
+}
+
+.dpm-contact-widget-links {
+    margin-top: 1.02vw;
+    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #ECECEC;
+}
+
+.dpm-contact-widget-links p {
+    margin-bottom: 0.544vw;
+}
+
+.dpm-contact-widget-links a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+/* --- Right Side Banner --- */
+.dpm-right-panel {
+    width: 89%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dpm-newsletter-section {
+    height: 30%;
+}
+
+.dpm-newsletter-text {
+    max-width: 50vw;
+    position: absolute;
+    right: 37vw;
+    top: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.dpm-newsletter-text .dpm-newsletter-title {
+    font-family: var(--font-body);
+    font-size: 1.5vw;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dpm-newsletter-text .dpm-newsletter-description {
+    font: normal normal normal 10px/12px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dpm-newsletter-form-wrapper {
+    position: absolute;
+    top: 15vh;
+    right: 37vw;
+}
+
+.dpm-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.dpm-newsletter-form .dpm-form-row {
+    display: flex;
+    gap: 1vw;
+}
+
+.dpm-newsletter-form input {
+    flex: 1;
+    padding: 0.6vw 1vw;
+    font-size: 0.9vw;
+    border: 0.1vw solid #ccc;
+    background: transparent;
+    color: #fff;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.dpm-newsletter-form input::placeholder {
+    color: #ddd;
+}
+
+.dpm-newsletter-form input:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+.dpm-newsletter-form input[type="submit"] {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
+
+.dpm-newsletter-form input[type="submit"]:hover {
+    background-color: #ccc;
+}
+
+/* --- Shipping Details --- */
+.dpm-perks-section {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    height: 10%;
+}
+
+.dpm-perks-bar {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    text-align: center;
+    border-bottom: 0.1vw solid white;
+    border-top: 0.1vw solid white;
+}
+
+.dpm-perk-item-1,
+.dpm-perk-item-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    /* Use percentage for better scaling */
+}
+
+.dpm-perk-item-1 {
+    border-right: 0.1vw solid white;
+    color: #ECECEC;
+}
+
+/* --- About Us --- */
+.dpm-main-links-section {
+    height: 50%;
+    padding: 1rem 0;
+}
+
+.dpm-main-links-grid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dpm-main-links-logo {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dpm-main-links-logo img {
+    width: 150px;
+    filter: brightness(0) invert(1);
+}
+
+.dpm-main-links-columns {
+    flex: 2;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr;
+    gap: 1vw 6vw;
+    padding-top: 1vw;
+    color: #f6f4f4;
+}
+
+.dpm-links-title-1,
+.dpm-links-title-2 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dpm-links-list-1,
+.dpm-links-list-2 {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    font: normal normal normal 15px/40px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+
+.dpm-links-list-1 {
+    grid-column: 1;
+}
+
+.dpm-links-list-2 {
+    grid-column: 2;
+}
+
+/* --- Bottom Bar --- */
+.dpm-legal-section {
+    position: absolute;
+    bottom: 0;
+    left: 11.1%;
+    width: 88.9%;
+    height: 10%;
+}
+
+.dpm-legal-bar {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 0.1vw solid white;
+    color: white;
+    font-family: "Apercu Mono Pro", monospace;
+    font-size: 0.8vw;
+}
+
+.dpm-legal-bar>div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 5vw;
+}
+
+.dpm-legal-item-1,
+.dpm-legal-item-2 {
+    border-right: 0.1vw solid white;
+}
+
+
+/* ======================================================= */
+/* ================ MOBILE STYLES (768px) ================ */
+/* ======================================================= */
+@media (max-width: 768px) {
+
+    /* Switch visibility */
+    .dpm-desktop-wrapper {
+        display: none;
+    }
+
+    .dpm-mobile-wrapper {
+        display: block;
+    }
+
+    /* Mobile-specific styles for the footer */
+    .dpm-mobile-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.95)), url('./assets/footer-img.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dpm-mobile-logo-wrapper {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-top: 5rem;
+    }
+
+    .dpm-mobile-perks-wrapper {
+        text-align: center;
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .dpm-mobile-perk {
+        padding: 0.5rem 0;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .dpm-mobile-perk-highlight {
+        color: var(--accent-green);
+        margin-bottom: 0.5rem;
+    }
+
+    .dpm-mobile-shipping-bar {
+        border-top: 1px solid #888;
+        border-bottom: 1px solid #888;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dpm-mobile-shipping-content {
+        background-color: rgba(85, 85, 85, 0.7);
+        padding: 20px 16vw;
+    }
+
+    .dpm-mobile-shipping-content p {
+        color: #E0E0E0;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .dpm-mobile-accordion {
+        font-size: 0.875rem;
+        flex-grow: 1;
+    }
+
+    .dpm-accordion-item {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .dpm-accordion-item:first-of-type {
+        border-top: 1px solid var(--border-color);
+    }
+
+    .dpm-accordion-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .dpm-accordion-title {
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .dpm-accordion-description {
+        margin-top: 0.5rem;
+        color: var(--secondary-text);
+        font-size: 0.75rem;
+        padding-right: 1rem;
+        text-transform: uppercase;
+        line-height: 1.5;
+    }
+
+    .dpm-accordion-icon {
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding-left: 1rem;
+    }
+
+    .dpm-accordion-content {
+        margin-top: 0.75rem;
+        color: var(--secondary-text);
+        font-size: 0.75rem;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .dpm-accordion-content a {
+        display: block;
+        margin-top: 0.5rem;
+        transition: color 10.6s;
+        padding-bottom: 10px;
+    }
+
+    .dpm-accordion-content a:hover {
+        color: var(--accent-green);
+    }
+
+    .dpm-mobile-socials {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--border-color);
+        text-transform: uppercase;
+        flex-wrap: wrap;
+    }
+
+    .dpm-mobile-socials a {
+        transition: color 0.2s;
+        padding: 0.5rem;
+    }
+
+    .dpm-mobile-socials a:hover {
+        color: var(--accent-green);
+    }
+
+    .dpm-mobile-legal-bar {
+        display: flex;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        align-items: stretch;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .dpm-mobile-legal-left {
+        width: 66.66%;
+        border-right: 1px solid var(--border-color);
+        padding: 0.5rem 1rem;
+    }
+
+    .dpm-mobile-legal-left p,
+    .dpm-mobile-legal-right p {
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    .dpm-mobile-legal-right {
+        width: 33.33%;
+        padding: 0.5rem 1rem;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .dpm-is-hidden {
+        display: none;
+    }
+}

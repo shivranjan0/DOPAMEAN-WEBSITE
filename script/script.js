@@ -1,48 +1,129 @@
-function updateClock() {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    const timeString = `[ INDIA ${hours}:${minutes}:${seconds} HH ]`;
 
-    const timeElement = document.getElementById("bott3");
+// Simple script for the desktop clock
+function updateTime() {
+    const timeElement = document.getElementById('time1');
     if (timeElement) {
-        timeElement.textContent = timeString;
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        timeElement.textContent = `[ INDIA  ${timeString} ]`;
     }
 }
-
-// Run the function every second
-setInterval(updateClock, 1000);
-
-// Run it once immediately on load
-updateClock();
+setInterval(updateTime, 1000);
+updateTime();
 
 
 
 
-// side nav clock
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionHeaders = document.querySelectorAll('.dpm-accordion-header');
 
+    // A flag to prevent multiple animations from running at the same time
+    let isAnimating = false;
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Function to update time in both sidebar & footer
-    function updateClock() {
-        let now = new Date();
+    // --- Reusable Animation Function ---
+    const slide = (element, action) => {
+        // This is a quick fix to prevent animation queue buildup.
+        // A more robust solution might involve aborting previous animations.
+        if (action === 'down' && isAnimating) return;
 
+        isAnimating = true;
 
-        let hours = now.getHours().toString().padStart(2, '0');
-        let minutes = now.getMinutes().toString().padStart(2, '0');
-        let seconds = now.getSeconds().toString().padStart(2, '0');
-        let timeString = `[ INDIA ${hours}:${minutes}:${seconds} HH ]`;
-        let sidebarTime = document.getElementById("time1");
-        let footerTime = document.getElementById("bott3");
+        const duration = 350; // Animation speed in milliseconds
 
-        if (sidebarTime) sidebarTime.textContent = timeString;
-        if (footerTime) footerTime.textContent = timeString;
-    }
+        if (action === 'down') {
+            // --- To Open the Accordion ---
+            element.classList.remove('dpm-is-hidden');
+            const height = element.offsetHeight;
 
-    setInterval(updateClock, 1000);
-    updateClock();
+            const animation = element.animate([
+                { height: '0px', overflow: 'hidden' },
+                { height: `${height}px`, overflow: 'hidden' }
+            ], {
+                duration: duration,
+                easing: 'ease-in-out'
+            });
+
+            animation.onfinish = () => {
+                element.style.height = 'auto';
+                isAnimating = false;
+            };
+        } else {
+            // --- To Close the Accordion ---
+            const height = element.offsetHeight;
+
+            const animation = element.animate([
+                { height: `${height}px`, overflow: 'hidden' },
+                { height: '0px', overflow: 'hidden' }
+            ], {
+                duration: duration,
+                easing: 'ease-in-out'
+            });
+
+            animation.onfinish = () => {
+                element.classList.add('dpm-is-hidden');
+                element.style.height = '';
+                isAnimating = false;
+            };
+        }
+    };
+
+    accordionHeaders.forEach(clickedHeader => {
+        clickedHeader.addEventListener('click', () => {
+            if (isAnimating && !clickedHeader.nextElementSibling.classList.contains('dpm-is-hidden')) return;
+
+            const content = clickedHeader.nextElementSibling;
+            const icon = clickedHeader.querySelector('.dpm-accordion-icon');
+            const isOpening = content.classList.contains('dpm-is-hidden');
+
+            // If you click on an already open item, do nothing until animations are complete
+            if (!isOpening && isAnimating) return;
+
+            // --- Close all other accordions smoothly ---
+            // This is the logic that was added back in.
+            accordionHeaders.forEach(otherHeader => {
+                const otherContent = otherHeader.nextElementSibling;
+                if (otherHeader !== clickedHeader && !otherContent.classList.contains('dpm-is-hidden')) {
+                    slide(otherContent, 'up'); // Animate it closed
+                    otherHeader.querySelector('.dpm-accordion-icon').textContent = '+';
+                }
+            });
+
+            // --- Toggle the clicked accordion ---
+            if (isOpening) {
+                slide(content, 'down'); // Animate it open
+                icon.textContent = '-';
+            } else {
+                slide(content, 'up'); // Animate it closed
+                icon.textContent = '+';
+            }
+        });
+    });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // --- Time Update Logic for BOTH views ---
+    const mobileTimeElement = document.getElementById('mobile-time');
+    const desktopTimeElement = document.getElementById('desktop-time');
+
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+        if (mobileTimeElement) {
+            mobileTimeElement.textContent = formattedTime;
+        }
+        if (desktopTimeElement) {
+            desktopTimeElement.textContent = `[ INDIA ${formattedTime} HH ]`;
+        }
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+});
+
 
 
 
