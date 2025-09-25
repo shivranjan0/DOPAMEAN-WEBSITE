@@ -55,6 +55,14 @@
     font-style: normal;
 }
 
+.desktop {
+    display: flex !important;
+}
+
+.mobile {
+    display: none !important;
+}
+
 
 
 html,
@@ -67,8 +75,10 @@ body {
 }
 
 
+
+
 .main-banner {
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
     display: flex;
     position: relative;
@@ -317,10 +327,6 @@ body {
 
 
 
-
-
-
-
 /* --- Product Content and Image Scroller --- */
 .product-page-container {
     position: absolute;
@@ -390,6 +396,20 @@ body {
     cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .product-info-card {
     position: absolute;
     bottom: 3vw;
@@ -399,7 +419,6 @@ body {
     background-color: #fff;
     border: 1px solid #000000;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    z-index: 100;
     pointer-events: auto;
 }
 
@@ -434,6 +453,7 @@ body {
     padding-left: 12px;
     /* Essential for design */
     font: normal normal 14px/18px "Apercu Pro", sans-serif;
+    color: #000;
 }
 
 .product-intro {
@@ -450,7 +470,10 @@ body {
 .model-info-container,
 .size-selector {
     border-top: 1px solid #000000;
+    color: #000;
 }
+
+
 
 .accordion-header {
     background: none;
@@ -526,7 +549,7 @@ body {
     color: #000000;
     opacity: 1;
     text-decoration: underline;
-    border-left: 1px solid #000000;
+    /* border-left: 1px solid #000000; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -556,8 +579,8 @@ body {
 
 .size-selector button.active,
 .size-selector button:hover {
-    background-color: #000;
-    color: #fff;
+    /* background-color: #000; */
+    color: #000000;
 }
 
 .add-to-cart-bar {
@@ -578,189 +601,232 @@ body {
 }
 
 
-.content-section-1 {
+
+
+
+/*-------------------------------------------------- end of the hero section --------------------------------------- */
+.showcase-container {
     display: flex;
     width: 100%;
     height: 100vh;
-
+    overflow: hidden;
 }
 
-
-.section-sidebar-1 {
+.showcase-sidebar {
     width: 11vw;
     height: 100%;
     background-color: #ececec;
-    color: #ffffff;
     padding: 1.361vw;
-    /* 20px */
     box-sizing: border-box;
-    border-right: 0.1vw solid #000;
+    border-right: 1px solid #000;
 }
 
-
-
-.section-main-content-1 {
+.showcase-main {
     width: 88.6%;
     height: 100%;
     background-color: #ececec;
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 10;
 }
 
-
-.section-header-1 {
+.page-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 10vh;
-    border-bottom: 0.1vw solid #000;
-    gap: 70vw;
+    border-bottom: 1px solid #000;
+    padding: 0 1.5vw;
 }
 
-
-
-.section-header-1 a {
-    font-family: 'Apercu Mono Pro', monospace;
+.header-link {
+    font-family: 'Roboto Mono', monospace;
     font-size: 1.02vw;
-    font-weight: normal;
-    line-height: 1.2;
     color: #000000;
     text-decoration: none;
-    letter-spacing: 0px;
-    opacity: 1;
-    margin-left: 1vw;
 }
 
-
-
-
-
-.product-scroll-container {
+.item-grid-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
     height: 90vh;
     width: 100%;
     overflow-x: auto;
     scroll-behavior: smooth;
+}
+
+.item-grid-container::-webkit-scrollbar {
+    display: none;
+}
+
+.item-grid-container {
+    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-
-
-.product-card-1,
-.product-card-2,
-.product-card-3 {
+.item-card {
     background-color: #ececec;
     min-width: 30vw;
-    display: inline-flex;
     height: 100%;
-    border-right: 0.1vw solid #000;
-    border-bottom: 0.1vw solid #000;
+    border-right: 1px solid #000;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-card img {
+    width: 100%;
+    height: 88%;
+    object-fit: cover;
+    padding: 7px;
     box-sizing: border-box;
 }
 
-
-
-.product-price-info-1,
-.product-price-info-2,
-.product-price-info-3 {
-    height: 10vh;
+.item-info {
+    height: 12%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     border-top: 1px solid #000;
-    font-family: "Apercu Pro", sans-serif;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
 }
 
-
-.shipping-banner {
-
-    top: 1.5vw;
-    height: 3.5vw;
-    width: 95%;
-    left: 2.5vw;
-    right: 5vw;
-    background-color: #ffffff;
-    justify-content: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-
-
-
-
-.product-card-1 img {
-    /* position: relative; */
-    /* bottom: 1vh; */
-    height: 90%;
-    object-fit: cover;
-    padding: 7px 7px 6px 7px;
-}
-
-
-
-.product-card-2 img {
-    height: 90%;
-    object-fit: cover;
-    padding: 7px 7px 6px 7px;
-}
-
-.product-card-3 img {
-    height: 90%;
-    object-fit: cover;
-    padding: 7px 7px 6px 7px;
-
-}
-
-
-.product-card-name-1,
-.product-card-name-2,
-.product-card-name-3 {
-    font-family: "Apercu Mono Pro", monospace;
+.item-name,
+.item-price {
+    font-family: "Roboto Mono", monospace;
     font-size: 1.02vw;
-    font-weight: normal;
-    line-height: 1.2;
-    letter-spacing: 0px;
     color: #000000;
     text-transform: uppercase;
-    opacity: 1;
-    position: relative;
-    top: -2vh;
-    left: -2vh;
 }
 
-.product-card-price-1,
-.product-card-price-2,
-.product-card-price-3 {
-    font-family: "Apercu Mono Pro", monospace;
-    font-size: 1.02vw;
-    font-weight: normal;
-    line-height: 1.2;
-    letter-spacing: 0px;
-    color: #000000;
-    text-transform: uppercase;
-    opacity: 1;
-    position: relative;
-    top: 1.5vh;
-    left: -15vw;
+.item-name {
+    margin-bottom: 4px;
+}
+
+/* --- NEW RULE TO HIDE BAR ON DESKTOP --- */
+.shop-now-bar {
+    display: none;
 }
 
 
-.product-scroll-container a {
-    text-decoration: none;
-    /* removes underline */
-    color: inherit;
-    /* keeps the same text color as before */
+
+
+
+
+/* ================================================= */
+/* --- CORRECTED & COMBINED MOBILE STYLES      --- */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    .showcase-container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    .showcase-sidebar {
+        display: none;
+    }
+
+    .showcase-main {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-header {
+        height: 60px;
+        padding: 0 15px;
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+
+    .header-link {
+        font-size: 16px;
+    }
+
+    .item-grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background-color: #000000a1;
+        overflow: visible;
+        height: auto;
+        width: 100%;
+        border-top: 1px solid #000;
+    }
+
+    .item-card {
+        min-width: 0;
+        width: 100%;
+        height: auto;
+        border-right: none;
+    }
+
+    .item-card img {
+        height: auto;
+        aspect-ratio: 4 / 5;
+        padding: 10px;
+    }
+
+    .item-info {
+        height: auto;
+        min-height: 80px;
+        padding: 10px 15px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    .item-name,
+    .item-price {
+        font-size: 14px;
+    }
+
+    /* Make the "SHOP NOW" bar visible on mobile */
+
+
+    .shop-now-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        background-color: #f0f2f5;
+        border-bottom: 1px solid black;
+        padding: 20px 0;
+        z-index: 100;
+        position: relative;
+    }
+
+    /* The inner white box holding the link */
+    .inner-design {
+        background-color: #ffffff;
+        padding: 15px 36vw;
+        /* Padding on all sides to create the box effect */
+        text-align: center;
+    }
+
+    /* Styling for the link itself */
+    .shop-now-bar a {
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        /* Medium weight is often cleaner than bold */
+        letter-spacing: 0.5px;
+        /* Adds a little space between letters */
+    }
 }
 
-/* ---------------------------------------  notifaction section ----------------------------------------*/
+/* ---------------------------------------  notifaction section at here ----------------------------------------*/
 
 
 .page-container {
@@ -809,15 +875,10 @@ body {
 
 
 
-.desktop-view {
-    display: none;
-}
+/* --- Base Layout & Typography --- */
 
-
-.content-section {
+.page-container {
     display: flex;
-    width: 100%;
-    min-height: 100vh;
 }
 
 .section-sidebar {
@@ -826,10 +887,65 @@ body {
     border-right: 0.1vw solid #000;
 }
 
+.main-content {
+    flex: 1;
+    padding: 10px;
+}
+
+/* --- Notification Bar --- */
+
+.notification-bar {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-text {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    color: #00BE39;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin: 0;
+    height: 49px;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Content Sections --- */
+
+.content-section,
+.content-section-4 {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
 .section-main-content {
     width: 100%;
     box-sizing: border-box;
 }
+
+/* --- Responsive Visibility Classes --- */
+
+/* This class shows elements ONLY on mobile */
+.mobile-only {
+    display: flex;
+    /* Or block, grid, etc., depending on the element */
+}
+
+/* This class shows elements ONLY on desktop */
+.desktop-only {
+    display: none;
+}
+
+
+/* --- Product Catalog Styles (Mobile First) --- */
 
 .collection-grid {
     display: flex;
@@ -871,7 +987,6 @@ body {
     color: #ffffff;
     display: flex;
     justify-content: space-between;
-
     align-items: center;
     padding: 1em;
 }
@@ -885,43 +1000,48 @@ body {
 .collection-title {
     font-family: 'Apercu Pro', sans-serif;
     font-weight: 500;
-    line-height: 1.2;
     text-transform: uppercase;
-    letter-spacing: 0px;
     color: #FFFFFF;
-    opacity: 1;
 }
 
 .collection-count {
     font-family: "Apercu Mono Pro", monospace;
     font-size: clamp(13px, 1.2vw, 16px);
-    font-weight: normal;
-    line-height: 1.2;
-    letter-spacing: 0px;
     color: #FFFFFF;
-    opacity: 1;
 }
 
 .collection-cta {
     font-family: 'Apercu Pro', sans-serif;
     font-size: 18px;
     font-weight: 500;
-    /* medium */
-    line-height: 22px;
     color: #FFFFFF;
     text-transform: uppercase;
     text-decoration: underline;
-    letter-spacing: 0px;
-    opacity: 1;
 }
+
+/* --- Video Section Styles (Mobile First) --- */
+
+.video-section-content {
+    width: 100%;
+    height: 100vh;
+}
+
+.video-section-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 
 @media (min-width: 768px) {
 
+    .mobile-only {
+        display: none;
+    }
 
-    .desktop-view {
+    .desktop-only {
         display: flex;
-        align-items: center;
     }
 
     .section-main-content {
@@ -938,6 +1058,8 @@ body {
         width: 50%;
         height: 100%;
         border-right: 0.1vw solid #000;
+        border-bottom: none;
+        /* Remove bottom border */
     }
 
     .collection-item:last-child {
@@ -954,199 +1076,8 @@ body {
 
 
 
+/*-- This class hides elements on desktop --*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-banner2 {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    position: relative;
-    background-image: url("./assets/footer-img.png");
-    /* filter: brightness(85%); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 100;
-
-}
-
-.side-banner {
-    width: 11.1%;
-    height: 100vh;
-    left: 0;
-
-    border-right: 0.1vw solid #f6f4f4;
-}
-
-
-
-.footer-contact-box {
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 0.68vw;
-    padding: 1.02vw;
-    position: absolute;
-    bottom: 1vw;
-    width: 9.565vw;
-    z-index: 10;
-}
-
-.footer-contact-header {
-    padding-bottom: 0.544vw;
-    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-.footer-contact-links {
-    margin-top: 1.02vw;
-    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
-    letter-spacing: 0px;
-    color: #ECECEC;
-    opacity: 1;
-}
-
-
-.footer-contact-links p {
-    margin-bottom: 0.544vw;
-    color: #FFFFFF;
-}
-
-.footer-contact-links a {
-    text-decoration: none;
-    margin-bottom: 0.544vw;
-    cursor: pointer;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-}
-
-
-.footer-sidebar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-
-
-/* right side banner */
-
-.right-side-banner {
-    width: 89%;
-}
-
-
-
-
-.input-area {
-    height: 30%;
-}
-
-
-
-.footer-newsletter-info {
-    max-width: 50vw;
-    position: absolute;
-    right: 35vw;
-    top: 3vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-.footer-newsletter-info .footer-newsletter-headline {
-    font-family: "Apercu Pro", sans-serif;
-    font-size: 1.5vw;
-    font-weight: bold;
-    line-height: 36px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
-    margin: 0;
-}
-
-
-.footer-newsletter-info .footer-newsletter-subtext {
-    font: normal normal normal 10px/12px "Apercu Mono Pro", monospace;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
-    margin: 0;
-}
-
-
-.footer-newsletter-form-container {
-    position: absolute;
-    top: 15vh;
-    right: 37vw;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-
-.newsletter-form .form-row {
-    display: flex;
-    gap: 1vw;
-}
-
-.newsletter-form input[type="text"],
-.newsletter-form input[type="email"],
-.newsletter-form input[type="tel"],
-.newsletter-form input[type="submit"] {
-    flex: 1;
-    padding: 0.6vw 1vw;
-    font-size: 0.9vw;
-    border: 0.1vw solid #ccc;
-    background: transparent;
-    transition: border 0.3s, background-color 0.3s;
-}
-
-
-.newsletter-form input:focus {
-    border-color: #333;
-    outline: none;
-}
-
-.newsletter-form input[type="submit"] {
-    background-color: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.newsletter-form input[type="submit"]:hover {
-    background-color: #444;
-}
-
-
-
-
-
-/* end */
 
 
 .shiping-details {
@@ -1227,7 +1158,6 @@ body {
     grid-row: 1;
     font-family: "Apercu Pro", sans-serif;
     font-weight: 500;
-    /* medium */
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0px;
@@ -1283,16 +1213,13 @@ body {
     position: absolute;
     bottom: 0;
     left: 11vw;
-    /* Adjust to align with your main content, skipping the sidebar */
     width: 88vw;
-    /* The remaining width */
     height: 10%;
 }
 
 .footer-legal-bar-desktop {
     display: flex;
     width: 100%;
-    /* Takes full width of its parent (.bottom-area) */
     position: absolute;
     bottom: 0;
     border-top: 0.1vw solid white;
@@ -1303,7 +1230,7 @@ body {
 
 .footer-legal-bar-desktop>div {
     flex: 1;
-    /* Each column takes equal space */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1311,11 +1238,367 @@ body {
     height: 5vw;
 }
 
-/* Borders between columns */
+
 .footer-legal-col-1 {
     border-right: 0.1vw solid white;
 }
 
 #bott3 {
+    border-right: 0.1vw solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* for mobile */
+
+
+:root {
+    --primary-text: #ffffff;
+    --secondary-text: rgba(255, 255, 255, 0.7);
+    --accent-green: #22c55e;
+    --border-color: rgba(255, 255, 255, 0.2);
+    /* --bg-color: #1a1a1a; */
+    --font-main: 'Inter', sans-serif;
+    --font-logo: 'Teko', sans-serif;
+    --font-mono: "Apercu Mono Pro", monospace;
+    --font-body: "Apercu Pro", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+}
+
+/* Default state: show desktop, hide mobile */
+.dpm-mobile-wrapper {
+    display: none;
+    position: relative;
+}
+
+.dpm-desktop-wrapper {
+    display: block;
+}
+
+/* ======================================================= */
+/* ==================== DESKTOP STYLES =================== */
+/* ======================================================= */
+
+.dpm-main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background-image: url("./assets/footer-img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.dpm-left-panel {
+    width: 11.1%;
+    height: 100vh;
+    left: 0;
+    border-right: 0.1vw solid #f6f4f4;
+}
+
+.dpm-left-panel-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dpm-contact-widget {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 0.68vw;
+    padding: 1.02vw;
+    position: absolute;
+    bottom: 1vw;
+    width: 9.565vw;
+    z-index: 10;
+}
+
+.dpm-contact-widget-title {
+    padding-bottom: 0.544vw;
+    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.dpm-widget-divider {
+    border: none;
+    height: 0.1px;
+    background-color: #ffffff;
+    margin: 0 -1.02vw;
+}
+
+.dpm-contact-widget-links {
+    margin-top: 1.02vw;
+    font: normal normal normal 13px/16px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #ECECEC;
+}
+
+.dpm-contact-widget-links p {
+    margin-bottom: 0.544vw;
+}
+
+.dpm-contact-widget-links a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+/* --- Right Side Banner --- */
+.dpm-right-panel {
+    width: 89%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dpm-newsletter-section {
+    height: 30%;
+}
+
+.dpm-newsletter-text {
+    max-width: 50vw;
+    position: absolute;
+    right: 37vw;
+    top: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.dpm-newsletter-text .dpm-newsletter-title {
+    font-family: var(--font-body);
+    font-size: 1.5vw;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dpm-newsletter-text .dpm-newsletter-description {
+    font: normal normal normal 10px/12px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dpm-newsletter-form-wrapper {
+    position: absolute;
+    top: 15vh;
+    right: 37vw;
+}
+
+.dpm-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.dpm-newsletter-form .dpm-form-row {
+    display: flex;
+    gap: 1vw;
+}
+
+.dpm-newsletter-form input {
+    flex: 1;
+    padding: 0.6vw 1vw;
+    font-size: 0.9vw;
+    border: 0.1vw solid #ccc;
+    background: transparent;
+    color: #fff;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.dpm-newsletter-form input::placeholder {
+    color: #ddd;
+}
+
+.dpm-newsletter-form input:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+.dpm-newsletter-form input[type="submit"] {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
+
+.dpm-newsletter-form input[type="submit"]:hover {
+    background-color: #ccc;
+}
+
+/* --- Shipping Details --- */
+.dpm-perks-section {
+    font-family: 'Apercu Mono Pro', monospace;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    height: 10%;
+}
+
+.dpm-perks-bar {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    text-align: center;
+    border-bottom: 0.1vw solid white;
+    border-top: 0.1vw solid white;
+}
+
+.dpm-perk-item-1,
+.dpm-perk-item-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    /* Use percentage for better scaling */
+}
+
+.dpm-perk-item-1 {
+    border-right: 0.1vw solid white;
+    color: #ECECEC;
+}
+
+/* --- About Us --- */
+.dpm-main-links-section {
+    height: 50%;
+    padding: 1rem 0;
+}
+
+
+.dpm-main-links-grid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dpm-main-links-logo {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dpm-main-links-logo img {
+    width: 150px;
+    filter: brightness(0) invert(1);
+}
+
+.dpm-main-links-columns {
+    flex: 2;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr;
+    gap: 1vw 6vw;
+    padding-top: 1vw;
+    color: #f6f4f4;
+}
+
+.dpm-links-title-1,
+.dpm-links-title-2 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dpm-links-list-1,
+.dpm-links-list-2 {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    font: normal normal normal 15px/40px "Apercu Mono Pro", monospace;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+
+.dpm-links-list-1 {
+    grid-column: 1;
+}
+
+.dpm-links-list-2 {
+    grid-column: 2;
+}
+
+/* --- Bottom Bar --- */
+.dpm-legal-section {
+    position: absolute;
+    bottom: 0;
+    left: 11.1%;
+    width: 88.9%;
+    height: 10%;
+}
+
+.dpm-legal-bar {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 0.1vw solid white;
+    color: white;
+    font-family: "Apercu Mono Pro", monospace;
+    font-size: 0.8vw;
+}
+
+.dpm-legal-bar>div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 5vw;
+}
+
+.dpm-legal-item-1,
+.dpm-legal-item-2 {
     border-right: 0.1vw solid white;
 }
