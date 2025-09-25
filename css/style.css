@@ -202,7 +202,9 @@ body {
     position: fixed;
     top: unset;
     right: 0px;
-    bottom: 12%;
+    bottom: 3%;
+    left: 70%;
+    transform: translateX(-50%);
 
 
 }
@@ -358,18 +360,17 @@ body {
     opacity: 0.69;
 }
 
-.banner-cta-link a {
+/* .banner-cta-link a {
     font-family: 'Apercu Pro', sans-serif;
     font-size: 1.5vw;
     font-weight: 500;
-    /* medium */
     line-height: 1.2;
     color: #FFFFFF;
     text-decoration: underline;
     text-transform: uppercase;
     letter-spacing: 0px;
     opacity: 1;
-}
+} */
 
 
 
