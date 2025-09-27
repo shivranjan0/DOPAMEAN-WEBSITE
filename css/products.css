@@ -74,11 +74,12 @@ body {
 
 }
 
-
+/* ======================================================= */
+/* ==================== hero style ================= */
+/* ======================================================= */
 
 
 .main-banner {
-    /* width: 100%; */
     height: 100vh;
     display: flex;
     position: relative;
@@ -96,8 +97,6 @@ body {
     z-index: 1;
 
 }
-
-/* markee container */
 
 .scrolling-banner-container {
     position: fixed;
@@ -136,8 +135,6 @@ body {
     text-transform: uppercase;
     opacity: 1;
 }
-
-
 
 .scrolling-banner span {
     font-size: clamp(0.6rem, 0.8vw, 1rem);
@@ -186,7 +183,6 @@ body {
 }
 
 
-/* ------------------------------ side nav bar ---------------------------------------- */
 
 
 .side-navigation-wrapper {
@@ -211,7 +207,6 @@ body {
     top: unset;
     right: 0px;
     bottom: 12%;
-
 
 }
 
@@ -296,13 +291,11 @@ body {
 .nav-box-header-1 {
     font-family: 'Apercu Mono Pro', monospace;
     font-size: 2.2vh;
-    /* font-weight: normal; */
     line-height: 1.2;
     padding-bottom: 0.544vw;
     text-align: left;
     letter-spacing: 0px;
-    /* color: #000000; */
-    /* opacity: 1*/
+
 }
 
 .nav-box-user-links {
@@ -323,7 +316,7 @@ body {
 }
 
 
-/* --- Product Content and Image Scroller --- */
+
 .product-page-container {
     position: absolute;
     top: 1.6vw;
@@ -357,7 +350,6 @@ body {
     object-fit: cover;
 }
 
-/* --- Overlays --- */
 .product-overlay-info {
     position: absolute;
     top: 0;
@@ -397,14 +389,9 @@ body {
 
 
 
-
-
-
-
-
-
-
-
+/* ================================================= */
+/* ============== price accordian style =============*/
+/* ================================================= */
 
 .product-info-card {
     position: absolute;
@@ -425,7 +412,6 @@ body {
     justify-content: space-between;
     height: 40px;
     padding: 0 12px;
-    /* Essential for design */
 }
 
 .product-header {
@@ -447,7 +433,6 @@ body {
     display: flex;
     align-items: center;
     padding-left: 12px;
-    /* Essential for design */
     font: normal normal 14px/18px "Apercu Pro", sans-serif;
     color: #000;
 }
@@ -470,7 +455,6 @@ body {
 }
 
 
-
 .accordion-header {
     background: none;
     border: none;
@@ -483,7 +467,6 @@ body {
     font-weight: 700;
     height: 35px;
     padding: 0 12px;
-    /* Essential for design */
 }
 
 .accordion-header .icon {
@@ -505,7 +488,6 @@ body {
 .accordion-content ul {
     list-style: none;
     padding: 8px 12px;
-    /* Essential for design */
 }
 
 .accordion-content ul li {
@@ -525,13 +507,12 @@ body {
     justify-content: space-between;
     height: 40px;
     padding: 0 12px;
-    /* Essential for design */
+
 }
 
 .model-info {
     font-family: 'Apercu Pro', sans-serif;
     font-weight: 500;
-    /* medium */
     font-size: 12px;
     line-height: 1.4;
     letter-spacing: 0px;
@@ -545,7 +526,6 @@ body {
     color: #000000;
     opacity: 1;
     text-decoration: underline;
-    /* border-left: 1px solid #000000; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -575,7 +555,6 @@ body {
 
 .size-selector button.active,
 .size-selector button:hover {
-    /* background-color: #000; */
     color: #000000;
 }
 
@@ -597,10 +576,11 @@ body {
 }
 
 
+/* ================================================= */
+/* ============== scroll image style =============*/
+/* ================================================= */
 
 
-
-/*-------------------------------------------------- end of the hero section --------------------------------------- */
 .showcase-container {
     display: flex;
     width: 100%;
@@ -705,173 +685,19 @@ body {
     margin-bottom: 4px;
 }
 
-/* --- NEW RULE TO HIDE BAR ON DESKTOP --- */
+
 .shop-now-bar {
     display: none;
 }
 
 
 
-
-
-
 /* ================================================= */
-/* --- CORRECTED & COMBINED MOBILE STYLES      --- */
+/* =============== notifaction style ================*/
 /* ================================================= */
 
-@media (max-width: 768px) {
-
-    .showcase-container {
-        flex-direction: column;
-        height: auto;
-        overflow: visible;
-    }
-
-    .showcase-sidebar {
-        display: none;
-    }
-
-    .showcase-main {
-        width: 100%;
-        height: auto;
-    }
-
-    .page-header {
-        height: 60px;
-        padding: 0 15px;
-        border-bottom: 1px solid #000;
-        border-top: 1px solid #000;
-    }
-
-    .header-link {
-        font-size: 16px;
-    }
-
-    .item-grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1px;
-        background-color: #000000a1;
-        overflow: visible;
-        height: auto;
-        width: 100%;
-        border-top: 1px solid #000;
-    }
-
-    .item-card {
-        min-width: 0;
-        width: 100%;
-        height: auto;
-        border-right: none;
-    }
-
-    .item-card img {
-        height: auto;
-        aspect-ratio: 4 / 5;
-        padding: 10px;
-    }
-
-    .item-info {
-        height: auto;
-        min-height: 80px;
-        padding: 10px 15px;
-        border-top: 1px solid #000;
-        border-bottom: 1px solid #000;
-    }
-
-    .item-name,
-    .item-price {
-        font-size: 14px;
-    }
-
-    /* Make the "SHOP NOW" bar visible on mobile */
 
 
-    .shop-now-bar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        border-top: 1px solid #e0e0e0;
-        border-bottom: 1px solid #e0e0e0;
-        background-color: #f0f2f5;
-        border-bottom: 1px solid black;
-        padding: 20px 0;
-        z-index: 100;
-        position: relative;
-    }
-
-    /* The inner white box holding the link */
-    .inner-design {
-        background-color: #ffffff;
-        padding: 15px 36vw;
-        /* Padding on all sides to create the box effect */
-        text-align: center;
-    }
-
-    /* Styling for the link itself */
-    .shop-now-bar a {
-        font-family: "Roboto Mono", monospace;
-        font-size: 14px;
-        color: #000;
-        text-decoration: none;
-        font-weight: 500;
-        /* Medium weight is often cleaner than bold */
-        letter-spacing: 0.5px;
-        /* Adds a little space between letters */
-    }
-}
-
-/* ---------------------------------------  notifaction section at here ----------------------------------------*/
-
-
-.page-container {
-    display: flex;
-}
-
-.section-sidebar {
-    width: 11vw;
-    /* background-color: #ffffff; */
-    border-right: 0.1vw solid #000;
-}
-
-.main-content {
-    flex: 1;
-    padding: 10px;
-}
-
-.notification-bar {
-    background-color: #ffffff;
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.notification-text {
-    font-family: 'Apercu Mono Pro', monospace;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 20px;
-    color: #00BE39;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    opacity: 1;
-    margin: 0;
-    height: 49px;
-    display: flex;
-    align-items: center;
-}
-
-
-
-/* -------------------------------------  notifaction end at here ------------------------------------*/
-
-
-
-
-/* --- Base Layout & Typography --- */
 
 .page-container {
     display: flex;
@@ -888,7 +714,6 @@ body {
     padding: 10px;
 }
 
-/* --- Notification Bar --- */
 
 .notification-bar {
     background-color: #ffffff;
@@ -913,7 +738,15 @@ body {
     align-items: center;
 }
 
-/* --- Content Sections --- */
+
+
+
+
+/* ================================================= */
+/* =============== collection style ================*/
+/* ================================================= */
+
+
 
 .content-section,
 .content-section-4 {
@@ -927,21 +760,17 @@ body {
     box-sizing: border-box;
 }
 
-/* --- Responsive Visibility Classes --- */
 
-/* This class shows elements ONLY on mobile */
+
 .mobile-only {
     display: flex;
-    /* Or block, grid, etc., depending on the element */
+
 }
 
-/* This class shows elements ONLY on desktop */
 .desktop-only {
     display: none;
 }
 
-
-/* --- Product Catalog Styles (Mobile First) --- */
 
 .collection-grid {
     display: flex;
@@ -1015,7 +844,14 @@ body {
     text-decoration: underline;
 }
 
-/* --- Video Section Styles (Mobile First) --- */
+
+
+
+/* ======================================================= */
+/* ==================== video style ===================== */
+/* ======================================================= */
+
+
 
 .video-section-content {
     width: 100%;
@@ -1028,62 +864,11 @@ body {
     object-fit: cover;
 }
 
-/* ------------ this is for mobile responsive ------------------- */
-
-@media (min-width: 768px) {
-
-    .mobile-only {
-        display: none;
-    }
-
-    .desktop-only {
-        display: flex;
-    }
-
-    .section-main-content {
-        flex: 1;
-        width: auto;
-        border-top: 0.1vw solid #000;
-    }
-
-    .collection-grid {
-        flex-direction: row;
-    }
-
-    .collection-item {
-        width: 50%;
-        height: 100%;
-        border-right: 0.1vw solid #000;
-        border-bottom: none;
-        /* Remove bottom border */
-    }
-
-    .collection-item:last-child {
-        border-right: none;
-    }
-
-    .collection-overlay {
-        left: 3%;
-        right: 3%;
-        width: auto;
-        bottom: 5%;
-    }
-}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* for mobile */
+/* ======================================================= */
+/* ==================== Footer style ===================== */
+/* ======================================================= */
 
 
 :root {
@@ -1122,20 +907,15 @@ button {
 
 
 
-
-/* Default state: show desktop, hide mobile */
 .dpm-mobile-wrapper {
     display: none;
     position: relative;
 }
 
-.dpm-desktop-wrapper {
+/* .dpm-desktop-wrapper {
     display: block;
-}
+} */
 
-/* ======================================================= */
-/* ==================== DESKTOP STYLES =================== */
-/* ======================================================= */
 
 .dpm-main-container {
     width: 100%;
@@ -1204,7 +984,6 @@ button {
     color: #FFFFFF;
 }
 
-/* --- Right Side Banner --- */
 .dpm-right-panel {
     width: 89%;
     display: flex;
@@ -1289,7 +1068,7 @@ button {
     background-color: #ccc;
 }
 
-/* --- Shipping Details --- */
+
 .dpm-perks-section {
     font-family: 'Apercu Mono Pro', monospace;
     font-size: 15px;
@@ -1314,7 +1093,6 @@ button {
     align-items: center;
     justify-content: center;
     width: 50%;
-    /* Use percentage for better scaling */
 }
 
 .dpm-perk-item-1 {
@@ -1322,7 +1100,6 @@ button {
     color: #ECECEC;
 }
 
-/* --- About Us --- */
 .dpm-main-links-section {
     height: 50%;
     padding: 1rem 0;
