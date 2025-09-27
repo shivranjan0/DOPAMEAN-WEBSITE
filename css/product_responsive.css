@@ -2,7 +2,6 @@
 /* =================== MOBILE STYLES ===================== */
 /* ======================================================= */
 
-/* This media query will apply all styles inside it only on screens 768px wide or smaller. */
 @media (max-width: 768px) {
     .desktop {
         display: none !important;
@@ -12,21 +11,17 @@
         display: flex !important;
     }
 
-    /* Hide desktop-only elements */
     .scrolling-banner-container,
     .side-navigation-wrapper,
     #time1 {
         display: none;
     }
 
-    /* Show mobile-only elements */
     .mobile {
         display: block !important;
-        /* The mobile header uses flex, so we'll adjust that below */
     }
 
 
-    /* --- Mobile Header Styling --- */
 
     .mobile-header {
         display: flex !important;
@@ -40,7 +35,6 @@
         text-transform: uppercase;
     }
 
-    /* Top Bar (Black) */
     .top-nav-mobile {
         display: flex;
         align-items: stretch;
@@ -146,7 +140,9 @@
     }
 
 
-    /* --- Main Product Content Area --- */
+    /* ======================================================= */
+    /* ================ hero product responsive ============== */
+    /* ======================================================= */
 
     .product-page-container {
         position: static;
@@ -168,17 +164,17 @@
         border-right: none;
     }
 
-    /* Hide desktop thumbnail gallery */
     .thumbnail-gallery {
         display: none;
     }
 
-
-    /* --- Fixed Bottom Product Card --- */
+    /* ======================================================= */
+    /* ========= product cart informatio sticky ============== */
+    /* ======================================================= */
 
     .product-info-card {
         background-color: #f7f7f7;
-        border: 1px solid #e7e7e7;
+        border: 1px solid #000000;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         width: 96%;
@@ -195,20 +191,6 @@
 
     }
 
-    /* A pseudo-element to create the top handle without adding HTML */
-    .product-info-card::before {
-        content: '';
-        width: 40px;
-        height: 4px;
-        background-color: #d1d1d1;
-        border-radius: 2px;
-        /* position: absolute; */
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* Hide elements not used in the mobile UI */
     .product-intro,
     .accordion,
     .product-header .price,
@@ -216,16 +198,13 @@
         display: none;
     }
 
-    /* Top Row: Product Name & Size Guide */
     .product-header {
         position: relative;
-        /* Positioning context for the size guide link */
         display: flex;
         align-items: center;
         height: 55px;
         padding: 0 16px;
         margin-top: 12px;
-        /* Space for the handle */
         border-bottom: 1px solid #eee;
     }
 
@@ -255,7 +234,6 @@
         gap: 4px;
     }
 
-    /* Adding icon and brackets with CSS to avoid changing HTML */
     .size-guide::before {
         content: '';
         display: inline-block;
@@ -265,36 +243,43 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+   /*----   this part is for hover dont delete it ------ */
 
-    .size-guide::after {
+
+    /* .size-guide::after {
         content: ']';
         padding-left: 2px;
-    }
+    } */
 
-    .size-guide {
+    /* .size-guide {
         padding-left: 2px;
         letter-spacing: -1px;
-    }
+    } */
 
-    .size-guide::before {
+    /* .size-guide::before {
         padding-right: 2px;
-    }
-
+    } */
+/* 
     .size-guide::first-letter {
         padding-left: 2px;
-    }
+    } */
+
+
+
+
+/* ---- also do not delete it is for responsive part    ----- */
 
 
     /* Middle Row: Size Selector */
-    .size-selector {
+    /* .size-selector {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         height: 45px;
         border-bottom: 1px solid #eee;
-    }
+    } */
 
-    .size-selector button {
+    /* .size-selector button {
         background-color: transparent;
         border: none;
         color: #666;
@@ -303,52 +288,50 @@
         cursor: pointer;
         padding: 4px 8px;
         transition: color 0.2s ease;
-    }
+    } */
 
     /* .size-selector button:hover {
         color: #111;
     } */
 
-
+/* 
     .size-selector button.active {
-        /* color: #000; */
         font-weight: 700;
-    }
+    } */
 
-    /* Add brackets to the active size using pseudo-elements */
+/* 
     .size-selector button.active::before {
         content: "[ ";
-    }
+    } */
 
-    .size-selector button.active::after {
+    /* .size-selector button.active::after {
         content: " ]";
-    }
+    } */
 
-    /* Bottom Row: Add to Bag */
-    .add-to-cart-bar {
+
+    /* .add-to-cart-bar {
         background-color: #000;
         color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 14px 16px;
-    }
-
+    } */
+/* 
     .add-to-cart-bar span:first-child,
     .add-to-cart-bar .final-price {
         font-family: 'Space Mono', monospace;
         font-size: 14px;
         font-weight: normal;
-    }
+    } */
 
-    /* Add asterisk before "ADD TO BAG" */
-    .add-to-cart-bar span:first-child::before {
+    /* .add-to-cart-bar span:first-child::before {
         content: "* ";
-    }
+    } */
 
-    .final-price {
+    /* .final-price {
         font-weight: 700;
-    }
+    } */
 
 
     /* for hero section end at here */
@@ -590,7 +573,6 @@
             font-family: 'VT323', monospace;
             width: 100%;
             background-color: #f7f7f7;
-            /* border: 1px solid #000000; */
         }
 
         .product-container-mobile .section {
@@ -603,7 +585,6 @@
             margin: 0;
         }
 
-        /* --- Header --- */
         .product-header-mobile {
             display: flex;
             justify-content: space-between;
@@ -625,8 +606,6 @@
             align-items: center;
             gap: 5px;
         }
-
-        /* --- Description & Model Info --- */
         .product-description-mobile {
             font-size: 14px;
             line-height: 2.5;

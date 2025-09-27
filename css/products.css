@@ -1028,7 +1028,7 @@ body {
     object-fit: cover;
 }
 
-
+/* ------------ this is for mobile responsive ------------------- */
 
 @media (min-width: 768px) {
 
@@ -1072,185 +1072,6 @@ body {
 
 
 
-/*-- This class hides elements on desktop --*/
-
-
-
-.shiping-details {
-    font-family: 'Apercu Mono Pro', monospace;
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 18px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
-    height: 10%;
-}
-
-.footer-middle-area {
-    display: flex;
-    justify-content: center;
-    height: 10vh;
-    text-align: center;
-    border-bottom: 0.1vw solid white;
-    border-top: 0.1vw solid white;
-
-}
-
-
-.footer-middle-column-1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    border-right: 0.1vw solid white;
-    color: #ECECEC;
-}
-
-.footer-middle-column-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    color: white;
-}
-
-
-
-.about-us {
-    height: 50%;
-}
-
-
-.footer-bottom-area {
-    display: flex;
-    align-items: center;
-    /* Vertically aligns both logo and links areas */
-    width: 100%;
-}
-
-/* Logo Area */
-.footer-bottom-logo-area {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Links Area - Pushed content down with padding-top */
-.footer-bottom-links-area {
-    flex: 2;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    gap: 1vw 6vw;
-    padding-top: 1vw;
-    color: #f6f4f4;
-}
-
-.footer-links-header-1,
-.footer-links-header-2 {
-    grid-row: 1;
-    font-family: "Apercu Pro", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
-}
-
-.footer-links-header-1 {
-    grid-column: 1;
-}
-
-.footer-links-header-2 {
-    grid-column: 2;
-}
-
-.footer-links-column-1 {
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    font: normal normal normal 15px/40px "Apercu Mono Pro", monospace;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 0.92;
-}
-
-.footer-links-column-1 a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.footer-links-column-2 {
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    font-size: 0.9vw;
-    font-family: "Apercu Mono Pro", sans-serif;
-}
-
-.footer-links-column-2 a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-
-
-.bottom-area {
-    position: absolute;
-    bottom: 0;
-    left: 11vw;
-    width: 88vw;
-    height: 10%;
-}
-
-.footer-legal-bar-desktop {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    border-top: 0.1vw solid white;
-    color: white;
-    font-family: "Apercu Mono Pro", sans-serif;
-    font-size: 0.8vw;
-}
-
-.footer-legal-bar-desktop>div {
-    flex: 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 5vw;
-}
-
-
-.footer-legal-col-1 {
-    border-right: 0.1vw solid white;
-}
-
-#bott3 {
-    border-right: 0.1vw solid white;
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1270,7 +1091,6 @@ body {
     --secondary-text: rgba(255, 255, 255, 0.7);
     --accent-green: #22c55e;
     --border-color: rgba(255, 255, 255, 0.2);
-    /* --bg-color: #1a1a1a; */
     --font-main: 'Inter', sans-serif;
     --font-logo: 'Teko', sans-serif;
     --font-mono: "Apercu Mono Pro", monospace;
@@ -1299,6 +1119,9 @@ button {
     color: inherit;
     font-family: inherit;
 }
+
+
+
 
 /* Default state: show desktop, hide mobile */
 .dpm-mobile-wrapper {
