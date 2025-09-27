@@ -70,7 +70,7 @@
                 <hr class="divider-line-dark">
                 <div class="nav-box-user-links">
                     <a href="#">ACCOUNT</a>
-                    <a href="#">BAG[0]</a>
+                    <a href="#" id="open-bag-link">BAG[0]</a>
                 </div>
             </div>
         </div>
@@ -155,7 +155,10 @@
         <div class="section-main-content-1">
             <div class="section-header-1">
                 <a href="products.html" class="header-link-1">NEW ARRIVALS</a>
-                <a href="./assets/product1 (9).png" class="header-link-2">SHOP NOW</a>
+
+                <a href="./assets/product1 (9).png" class="header-link-2">
+                    <span class="blinking-star"></span>SHOP NOW
+                </a>
             </div>
 
             <div class="product-scroll-container">
@@ -258,9 +261,12 @@
     <div class="showcase-container">
         <div class="showcase-desktop-view showcase-sidebar"></div>
         <div class="showcase-main">
-            <div class="page-header">
-                <a href="#" class="header-link">NEW ARRIVALS</a>
-                <a href="#" class="header-link">SHOP NOW</a>
+            <div class="section-header-1">
+                <a href="products.html" class="header-link-1">NEW ARRIVALS</a>
+
+                <a href="./assets/product1 (9).png" class="header-link-2">
+                    <span class="blinking-star"></span>SHOP NOW
+                </a>
             </div>
             <div class="item-grid-container">
                 <a href="#" class="item-card">
@@ -517,6 +523,103 @@
     </div>
 
 
+
+    <!-- ======================================================= -->
+    <!-- ==================== side price  ==================== -->
+    <!-- ======================================================= -->
+
+
+    <aside class="shopping-bag-container">
+        <header class="bag-header">
+            <span>SHOPPING BAG [01]</span>
+            <a href="#" class="close-btn" id="close-bag-btn">[CLOSE]</a>
+        </header>
+
+        <section class="cart-item-list">
+            <article class="cart-item">
+                <img src="./assets/product1 (6).png" alt="Product image" class="item-image">
+                <div class="item-details">
+                    <p class="product-name">PRODUCT NAME GOES HERE 01</p>
+                    <p class="product-size">SIZE : XL</p>
+                    <p class="product-price">[ RS. 15,000 ]</p>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                        <button class="remove-btn">REMOVE</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="suggestions">
+            <h3 class="suggestions-title">WHY NOT ADD ?</h3>
+            <div class="suggestions-grid">
+                <article class="suggestion-card">
+                    <img src="./assets/product1 (5).png" alt="Suggested product" class="suggestion-image">
+                    <div class="suggestion-info">
+                        <div>
+                            <p class="suggestion-name">PRODUCT NAME GOES HERE 01</p>
+                            <p class="suggestion-price">
+                                <del>[ RS. 2000 ]</del> <span class="sale-price">[ RS. 1200 ]</span>
+                            </p>
+                            <div class="suggestion-sizes">
+                                <button class="size-btn">XS</button>
+                                <button class="size-btn"></button>
+                            </div>
+                        </div>
+                        <button class="add-to-bag-btn">ADD TO BAG</button>
+                    </div>
+                </article>
+                <article class="suggestion-card">
+                    <img src="./assets/product1 (6).png" alt="Suggested product" class="suggestion-image">
+                    <div class="suggestion-info">
+                        <div>
+                            <p class="suggestion-name">PRODUCT NAME GOES HERE 02</p>
+                            <p class="suggestion-price">
+                                <del>[ RS. 2500 ]</del> <span class="sale-price">[ RS. 1500 ]</span>
+                            </p>
+                            <div class="suggestion-sizes">
+                                <button class="size-btn">S</button>
+                                <button class="size-btn"></button>
+                            </div>
+                        </div>
+                        <button class="add-to-bag-btn">ADD TO BAG</button>
+                    </div>
+                </article>
+                <article class="suggestion-card">
+                    <img src="./assets/product1 (7).png" alt="Suggested product" class="suggestion-image">
+                    <div class="suggestion-info">
+                        <div>
+                            <p class="suggestion-name">PRODUCT NAME GOES HERE 03</p>
+                            <p class="suggestion-price">
+                                <del>[ RS. 1800 ]</del> <span class="sale-price">[ RS. 1000 ]</span>
+                            </p>
+                            <div class="suggestion-sizes">
+                                <button class="size-btn">M</button>
+                                <button class="size-btn"></button>
+                            </div>
+                        </div>
+                        <button class="add-to-bag-btn">ADD TO BAG</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer class="bag-footer">
+            <div class="shipping-notice">
+                <p>SUCCESS! YOU'VE QUALIFIED FOR FREE SHIPPING</p>
+            </div>
+            <div class="checkout-section">
+                <button class="secure-checkout-btn">
+                    <span>SECURE CHECKOUT</span><span>[ RS. 15,000 ]</span>
+                </button>
+                <a href="#" class="continue-shopping">CONTUNIE SHOPPING</a>
+            </div>
+        </footer>
+    </aside>
 
 
     <script src="./script/script.js"></script>

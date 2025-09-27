@@ -85,9 +85,9 @@ body {
 #time1 {
     position: fixed;
     bottom: 1vh;
-    left: 1vw;
+    left: 8px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     color: #000000;
     z-index: 0;
@@ -329,6 +329,26 @@ body {
     font-size: 1.02vw;
     color: #000000;
     text-decoration: none;
+}
+
+
+
+
+.blinking-star {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    margin-right: 8px;
+    margin-top: -14px;
+    vertical-align: middle;
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
 }
 
 .product-scroll-container {
@@ -685,6 +705,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    filter: brightness(80%)
 }
 
 .dpm-left-panel {
@@ -898,7 +919,7 @@ body {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 52px;
     color: #FFFFFF;
     text-transform: uppercase;
 }
@@ -954,4 +975,292 @@ body {
 .dpm-legal-item-1,
 .dpm-legal-item-2 {
     border-right: 0.1vw solid white;
+
+}
+
+
+
+
+/* ======================================================= */
+/* ================= side price style ===================== */
+/* ======================================================= */
+
+
+.shopping-bag-container {
+    font-family: 'Source Code Pro', monospace;
+    position: fixed;
+    top: 38px;
+    left: 189px;
+    width: 450px;
+    max-width: 90%;
+    height: 86%;
+    z-index: 1001;
+    background-color: #fff;
+    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(-197%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.shopping-bag-container.is-visible {
+    transform: translateX(0);
+    border-radius: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.bag-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.close-btn {
+    text-decoration: none;
+    color: #333;
+}
+
+.cart-item-list {
+    flex-grow: 0;
+}
+
+.cart-item {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.item-image {
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: black;
+}
+
+.product-name,
+.product-size,
+.product-price {
+    margin: 2px 0;
+    text-transform: uppercase;
+}
+
+.product-price {
+    margin-bottom: 10px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: stretch;
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+}
+
+.quantity-selector {
+    display: flex;
+    border: 1px solid #ccc;
+}
+
+.quantity-selector button {
+    background-color: #fff;
+    border: none;
+    padding: 8px 26px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-selector span {
+    padding: 8px 15px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.remove-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0 45px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    align-items: center;
+}
+
+.suggestions {
+    background-color: #fff;
+}
+
+.suggestions-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 10px;
+    color: black;
+}
+
+
+.suggestions-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+}
+
+.suggestions-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.suggestion-card {
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex: 0 0 300px;
+}
+
+.suggestion-image {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.suggestion-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    color: black;
+}
+
+.suggestion-name,
+.suggestion-price {
+    margin: 5px 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+
+.sale-price {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.suggestion-sizes {
+    display: flex;
+}
+
+.size-btn {
+    flex: 1;
+    padding: 8px 5px;
+    font-size: 0.8rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.add-to-bag-btn {
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Source Code Pro', monospace;
+}
+
+
+.shipping-notice {
+    text-align: center;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    text-transform: uppercase;
+}
+
+.shipping-notice p {
+    padding: 20px 0px 20px 0px;
+    background-color: #d4edda;
+    color: #000;
+}
+
+
+.checkout-section {
+    padding: 5px;
+    background-color: #fff;
+}
+
+.secure-checkout-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 18px 20px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .desktop-view {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
 }
