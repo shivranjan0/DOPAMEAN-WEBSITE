@@ -5,7 +5,6 @@
 
 }
 
-/*-------font import----------- */
 @font-face {
     font-family: 'Apercu Pro';
     src: url('./apercu_regular_pro.woff2') format('woff2'),
@@ -15,6 +14,21 @@
 }
 
 @font-face {
+    font-family: 'Apercu Pro';
+    src: url('./apercu_regular_italic_pro.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('./apercu_medium_pro.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Apercu Mono Pro Family */
+@font-face {
     font-family: 'Apercu Mono Pro';
     src: url('./ApercuMonoProRegular.woff2') format('woff2'),
         url('./ApercuMonoProRegular.woff') format('woff');
@@ -22,6 +36,22 @@
     font-style: normal;
 }
 
+/* Satoshi Family */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./Satoshi-Regular.woff2') format('woff2'),
+        url('./Satoshi-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./Satoshi-Medium.woff2') format('woff2'),
+        url('./Satoshi-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
 html,
 body {
     margin: 0;
@@ -281,17 +311,17 @@ body {
     padding-top: 1.6vw;
 }
 
-/* 
+
 #time1 {
     position: fixed;
     bottom: 1vh;
-    left: 1vw;
-    font-size: 12px;
-    z-index: 1001;
-    color: #000;
-    font-family: "Apercu Mono Pro", monospace;
-    text-transform: uppercase;
-} */
+    left: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 0;
+}
 
 
 .main-content-area {
@@ -315,11 +345,6 @@ body {
 /* ======================================================= */
 
 
-body {
-    color: #ffffff;
-    margin: 0;
-    line-height: 1.6;
-}
 
 a {
     text-decoration: none;
@@ -351,11 +376,11 @@ button {
     height: 100vh;
     display: flex;
     position: relative;
-    background-image: url("./assets/footer-img.png");
+    background-image: linear-gradient(rgba(57, 56, 56, 0.585)), url('./assets/footer-img.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 100;
+
 }
 
 .dpm-left-panel {

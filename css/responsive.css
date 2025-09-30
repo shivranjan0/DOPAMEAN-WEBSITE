@@ -1,3 +1,53 @@
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('./apercu_regular_pro.woff2') format('woff2'),
+        url('./apercu_regular_pro.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('./apercu_regular_italic_pro.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('./apercu_medium_pro.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Apercu Mono Pro Family */
+@font-face {
+    font-family: 'Apercu Mono Pro';
+    src: url('./ApercuMonoProRegular.woff2') format('woff2'),
+        url('./ApercuMonoProRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Satoshi Family */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./Satoshi-Regular.woff2') format('woff2'),
+        url('./Satoshi-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./Satoshi-Medium.woff2') format('woff2'),
+        url('./Satoshi-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
 /* ======================================================= */
 /* ================= Header resopnsive ================== */
 /* ======================================================= */
@@ -319,7 +369,7 @@
 
     .item-name,
     .item-price {
-        font-size: 14px;
+        font-size: 12px;
     }
 
 
@@ -478,6 +528,9 @@ button {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        color: #fff;
+        position: relative;
+
     }
 
     .dpm-mobile-logo-wrapper {
@@ -548,6 +601,12 @@ button {
         align-items: flex-start;
         text-align: left;
         padding: 1rem;
+        background: none;
+        border: none;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
     }
 
     .dpm-accordion-title {
@@ -565,17 +624,14 @@ button {
         line-height: 1.5;
     }
 
-    .dpm-accordion-icon {
-        font-size: 1.5rem;
-        font-weight: 300;
-        padding-left: 1rem;
-    }
-
+    /* --- KEY CHANGE: Removed conflicting transition --- */
     .dpm-accordion-content {
-        margin-top: 0.75rem;
+        overflow: hidden;
         color: rgba(255, 255, 255, 0.7);
         font-size: 0.75rem;
-        padding: 0 1rem 1rem 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        /* The transition property has been removed from here */
     }
 
     .dpm-accordion-content a {
@@ -583,6 +639,8 @@ button {
         margin-top: 0.5rem;
         transition: color 0.3s;
         padding-bottom: 10px;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
     }
 
     .dpm-accordion-content a:hover {
@@ -603,6 +661,8 @@ button {
     .dpm-mobile-socials a {
         transition: color 0.2s;
         padding: 0.5rem;
+        color: inherit;
+        text-decoration: none;
     }
 
     .dpm-mobile-socials a:hover {
@@ -640,9 +700,45 @@ button {
         justify-content: flex-end;
     }
 
-    .dpm-is-hidden {
-        display: none;
+    /* --- Styles for Smooth Accordion Icon --- */
+
+    /* This rule was removed because JS now handles the open state */
+    /* .dpm-accordion-item.is-open .dpm-accordion-content { ... } */
+
+    .dpm-accordion-icon {
+        position: relative;
+        width: 1.1rem;
+        height: 1.1rem;
+        min-width: 1.1rem;
+        margin-left: 1rem;
+        font-size: 0;
+    }
+
+    .dpm-accordion-icon::before,
+    .dpm-accordion-icon::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dpm-accordion-icon::before {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .dpm-accordion-icon::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .dpm-accordion-item.is-open .dpm-accordion-icon::before {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    .dpm-accordion-item.is-open .dpm-accordion-icon::after {
+        transform: translate(-50%, -50%) rotate(180deg);
     }
 }
-
-

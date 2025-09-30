@@ -88,13 +88,14 @@ body {
 }
 
 #time1 {
-    top: 96vh;
     position: fixed;
+    bottom: 1vh;
+    left: 8px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
     color: #000000;
-    z-index: 1;
+    z-index: 0;
 
 }
 
@@ -477,7 +478,7 @@ body {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.80s ease-out;
     font-size: 0.75em;
 }
 
@@ -576,6 +577,139 @@ body {
 }
 
 
+
+
+/* --- ADD THIS CSS TO YOUR EXISTING STYLESHEET --- */
+
+/* The dark background overlay */
+.size-chart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    /* Hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* The visible state for the overlay */
+.size-chart-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* The modal window containing the chart */
+.size-chart-modal {
+    position: relative;
+    /* For positioning the close button */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    /* Animation */
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+/* Pop-in effect for the modal */
+.size-chart-overlay.active .size-chart-modal {
+    transform: scale(1);
+}
+
+
+/* The 'X' close button */
+.close-chart-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Your original size chart styles (already provided by you) */
+.size-chart-container-lined {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    width: 90%;
+    max-width: 340px;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.size-chart-lined {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.size-chart-lined th,
+.size-chart-lined td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95em;
+    border: none;
+    border-bottom: 1px solid #000000;
+    color: #000;
+}
+
+.size-chart-lined th {
+    font-weight: 600;
+    color: #495057;
+    border-bottom-width: 2px;
+}
+
+.size-chart-lined th:not(:first-child),
+.size-chart-lined td:not(:first-child) {
+    text-align: center;
+}
+
+.size-chart-lined td strong {
+    font-weight: 700;
+    color: #212529;
+}
+
+.size-chart-lined tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ADD THIS TO YOUR .product-info-card RULE */
+.product-info-card {
+    /* ...your existing styles... */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    /* Add this line */
+}
+
+/* ADD THIS NEW RULE FOR THE HIDDEN STATE */
+.product-info-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+    /* Disables clicks when hidden */
+    transform: translateY(20px);
+    /* Optional: adds a slight downward slide */
+}
+
+
+
+
 /* ================================================= */
 /* ============== scroll image style =============*/
 /* ================================================= */
@@ -612,6 +746,7 @@ body {
     height: 10vh;
     border-bottom: 1px solid #000;
     padding: 0 1.5vw;
+    color: #000;
 }
 
 .header-link {
@@ -691,6 +826,25 @@ body {
 }
 
 
+
+
+
+.blinking-star {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    margin-right: 8px;
+    margin-top: -14px;
+    vertical-align: middle;
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
 
 /* ================================================= */
 /* =============== notifaction style ================*/
@@ -870,69 +1024,29 @@ body {
 /* ==================== Footer style ===================== */
 /* ======================================================= */
 
-
-:root {
-    --primary-text: #ffffff;
-    --secondary-text: rgba(255, 255, 255, 0.7);
-    --accent-green: #22c55e;
-    --border-color: rgba(255, 255, 255, 0.2);
-    --font-main: 'Inter', sans-serif;
-    --font-logo: 'Teko', sans-serif;
-    --font-mono: "Apercu Mono Pro", monospace;
-    --font-body: "Apercu Pro", sans-serif;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--primary-text);
-    margin: 0;
-    line-height: 1.6;
-}
-
-
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: inherit;
-    font-family: inherit;
-}
-
-
-
 .dpm-mobile-wrapper {
     display: none;
-    position: relative;
 }
 
-/* .dpm-desktop-wrapper {
+.dpm-desktop-wrapper {
     display: block;
-} */
-
+}
 
 .dpm-main-container {
     width: 100%;
     height: 100vh;
     display: flex;
     position: relative;
-    background-image: url("./assets/footer-img.png");
+    background-image: linear-gradient(rgba(57, 56, 56, 0.585)), url('./assets/footer-img.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 100;
+    filter: brightness(80%)
 }
 
 .dpm-left-panel {
-    width: 11.1%;
+    width: 11.2%;
     height: 100vh;
-    left: 0;
     border-right: 0.1vw solid #f6f4f4;
 }
 
@@ -983,6 +1097,7 @@ button {
     cursor: pointer;
     color: #FFFFFF;
 }
+
 
 .dpm-right-panel {
     width: 89%;
@@ -1069,6 +1184,7 @@ button {
 }
 
 
+
 .dpm-perks-section {
     font-family: 'Apercu Mono Pro', monospace;
     font-size: 15px;
@@ -1105,7 +1221,6 @@ button {
     padding: 1rem 0;
 }
 
-
 .dpm-main-links-grid {
     display: flex;
     align-items: center;
@@ -1140,7 +1255,7 @@ button {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 52px;
     color: #FFFFFF;
     text-transform: uppercase;
 }
@@ -1165,7 +1280,6 @@ button {
     grid-column: 2;
 }
 
-/* --- Bottom Bar --- */
 .dpm-legal-section {
     position: absolute;
     bottom: 0;
@@ -1197,4 +1311,5 @@ button {
 .dpm-legal-item-1,
 .dpm-legal-item-2 {
     border-right: 0.1vw solid white;
+
 }

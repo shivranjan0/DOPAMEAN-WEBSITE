@@ -701,7 +701,7 @@ body {
     height: 100vh;
     display: flex;
     position: relative;
-    background-image: url("./assets/footer-img.png");
+    background-image: linear-gradient(rgba(57, 56, 56, 0.957)), url('./assets/footer-img.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

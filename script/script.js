@@ -13,92 +13,79 @@ updateTime();
 
 
 
+// =======================================================
+// ============== footer accordian script  ===============
+// =======================================================
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const accordionHeaders = document.querySelectorAll('.dpm-accordion-header');
 
-//     // A flag to prevent multiple animations from running at the same time
-//     let isAnimating = false;
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Live Clock for Footer ---
+    const timeElement = document.getElementById('mobile-time');
+    function updateLiveTime() {
+        if (!timeElement) return;
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
 
-//     // --- Reusable Animation Function ---
-//     const slide = (element, action) => {
-//         // This is a quick fix to prevent animation queue buildup.
-//         // A more robust solution might involve aborting previous animations.
-//         if (action === 'down' && isAnimating) return;
+    // --- Accordion Logic ---
+    const accordionItems = document.querySelectorAll('.dpm-accordion-item');
+    const animationOptions = {
+        duration: 400,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        fill: 'forwards'
+    };
 
-//         isAnimating = true;
+    function toggleAccordion(item) {
+        const content = item.querySelector('.dpm-accordion-content');
+        const isOpen = item.classList.contains('is-open');
+        item.dataset.animating = 'true';
 
-//         const duration = 350; // Animation speed in milliseconds
+        const keyframes = isOpen
+            ? [{ height: `${content.scrollHeight}px`, opacity: 1 }, { height: '0px', opacity: 0 }]
+            : [{ height: '0px', opacity: 0 }, { height: `${content.scrollHeight}px`, opacity: 1 }];
 
-//         if (action === 'down') {
-//             // --- To Open the Accordion ---
-//             element.classList.remove('dpm-is-hidden');
-//             const height = element.offsetHeight;
+        const animation = content.animate(keyframes, animationOptions);
+        item.classList.toggle('is-open');
 
-//             const animation = element.animate([
-//                 { height: '0px', overflow: 'hidden' },
-//                 { height: `${height}px`, overflow: 'hidden' }
-//             ], {
-//                 duration: duration,
-//                 easing: 'ease-in-out'
-//             });
+        animation.onfinish = () => {
+            if (item.classList.contains('is-open')) {
+                content.style.height = 'auto';
+            }
+            delete item.dataset.animating;
+        };
+    }
 
-//             animation.onfinish = () => {
-//                 element.style.height = 'auto';
-//                 isAnimating = false;
-//             };
-//         } else {
-//             // --- To Close the Accordion ---
-//             const height = element.offsetHeight;
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.dpm-accordion-header');
+        const content = item.querySelector('.dpm-accordion-content');
 
-//             const animation = element.animate([
-//                 { height: `${height}px`, overflow: 'hidden' },
-//                 { height: '0px', overflow: 'hidden' }
-//             ], {
-//                 duration: duration,
-//                 easing: 'ease-in-out'
-//             });
+        // Set initial state for all items
+        if (item.classList.contains('is-open')) {
+            content.style.height = 'auto'; // Allows default-open item to be responsive
+        } else {
+            content.style.height = '0px';
+            content.style.opacity = '0';
+            content.style.overflow = 'hidden';
+        }
 
-//             animation.onfinish = () => {
-//                 element.classList.add('dpm-is-hidden');
-//                 element.style.height = '';
-//                 isAnimating = false;
-//             };
-//         }
-//     };
+        header.addEventListener('click', () => {
+            if (item.dataset.animating) return;
+            accordionItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('is-open')) {
+                    toggleAccordion(otherItem);
+                }
+            });
+            toggleAccordion(item);
+        });
+    });
+});
 
-//     accordionHeaders.forEach(clickedHeader => {
-//         clickedHeader.addEventListener('click', () => {
-//             if (isAnimating && !clickedHeader.nextElementSibling.classList.contains('dpm-is-hidden')) return;
 
-//             const content = clickedHeader.nextElementSibling;
-//             const icon = clickedHeader.querySelector('.dpm-accordion-icon');
-//             const isOpening = content.classList.contains('dpm-is-hidden');
-
-//             // If you click on an already open item, do nothing until animations are complete
-//             if (!isOpening && isAnimating) return;
-
-//             // --- Close all other accordions smoothly ---
-//             // This is the logic that was added back in.
-//             accordionHeaders.forEach(otherHeader => {
-//                 const otherContent = otherHeader.nextElementSibling;
-//                 if (otherHeader !== clickedHeader && !otherContent.classList.contains('dpm-is-hidden')) {
-//                     slide(otherContent, 'up'); // Animate it closed
-//                     otherHeader.querySelector('.dpm-accordion-icon').textContent = '+';
-//                 }
-//             });
-
-//             // --- Toggle the clicked accordion ---
-//             if (isOpening) {
-//                 slide(content, 'down'); // Animate it open
-//                 icon.textContent = '-';
-//             } else {
-//                 slide(content, 'up'); // Animate it closed
-//                 icon.textContent = '+';
-//             }
-//         });
-//     });
-// });
 
 
 
@@ -107,8 +94,6 @@ updateTime();
 // =======================================================
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    // --- Time Update Logic for BOTH views ---
     const mobileTimeElement = document.getElementById('mobile-time');
     const desktopTimeElement = document.getElementById('desktop-time');
 
@@ -138,34 +123,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const accordionHeaders = document.querySelectorAll('.accordion-header');
+document.addEventListener('DOMContentLoaded', () => {
 
-//     accordionHeaders.forEach(header => {
-//         header.addEventListener('click', () => {
-//             const currentlyActiveItem = document.querySelector('.accordion-item.active');
-//             const clickedItem = header.parentElement;
+    // --- ACCORDION LOGIC (Exclusive Open) ---
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const clickedItem = header.parentElement;
+            const currentlyActiveItem = document.querySelector('.accordion-item.active');
+            if (currentlyActiveItem && currentlyActiveItem !== clickedItem) {
+                currentlyActiveItem.classList.remove('active');
+                const activeHeader = currentlyActiveItem.querySelector('.accordion-header');
+                activeHeader.setAttribute('aria-expanded', 'false');
+                activeHeader.querySelector('.icon').textContent = '+';
+            }
+            clickedItem.classList.toggle('active');
+            const icon = header.querySelector('.icon');
+            const isExpanded = clickedItem.classList.contains('active');
+            header.setAttribute('aria-expanded', isExpanded);
+            icon.textContent = isExpanded ? '-' : '+';
+        });
+    });
 
-//             // If there is an active item and it's not the one we clicked, close it.
-//             if (currentlyActiveItem && currentlyActiveItem !== clickedItem) {
-//                 currentlyActiveItem.classList.remove('active');
-//                 const activeHeader = currentlyActiveItem.querySelector('.accordion-header');
-//                 activeHeader.setAttribute('aria-expanded', 'false');
-//                 activeHeader.querySelector('.icon').textContent = '+';
-//             }
+    // --- SIZE SELECTOR LOGIC ---
+    const sizeButtons = document.querySelectorAll('.size-selector button');
+    sizeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            sizeButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
 
-//             // Toggle the clicked item
-//             clickedItem.classList.toggle('active');
-//             const icon = header.querySelector('.icon');
-//             const isExpanded = clickedItem.classList.contains('active');
+    // --- SIZE CHART MODAL LOGIC ---
+    const sizeGuideLink = document.querySelector('.size-guide');
+    const sizeChartOverlay = document.querySelector('.size-chart-overlay');
+    const closeChartButton = document.querySelector('.close-chart-btn');
+    const openModal = () => sizeChartOverlay.classList.add('active');
+    const closeModal = () => sizeChartOverlay.classList.remove('active');
 
-//             header.setAttribute('aria-expanded', isExpanded);
-//             icon.textContent = isExpanded ? '-' : '+';
-//         });
-//     });
-// });
+    sizeGuideLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+    });
 
+    closeChartButton.addEventListener('click', closeModal);
 
+    sizeChartOverlay.addEventListener('click', (e) => {
+        if (e.target === sizeChartOverlay) closeModal();
+    });
+
+    // --- NEW: CLOSE SIZE CHART ON SCROLL ---
+    window.addEventListener('scroll', () => {
+        // This checks if the size chart is currently open
+        if (sizeChartOverlay.classList.contains('active')) {
+            // If it is, this closes it
+            closeModal();
+        }
+    });
+});
 
 // =======================================================
 // ============== side price script  =====================
@@ -174,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', () => {
     const shoppingBag = document.querySelector('.shopping-bag-container');
     const overlay = document.querySelector('.overlay');
-    // Get the 'BAG[0]' link by its new ID
+   
     const openBtn = document.getElementById('open-bag-link');
     const closeBtn = document.getElementById('close-bag-btn');
 
@@ -188,9 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('is-visible');
     };
 
-    // Event listener for the 'BAG[0]' link
+
     openBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevents the link from navigating
+        e.preventDefault();
         openBag();
     });
 
@@ -201,3 +215,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     overlay.addEventListener('click', closeBag);
 });
+
+
+
+// =======================================================
+// ============== size chart tab on button ===============
+// =======================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetTab = link.getAttribute('data-tab');
+
+            tabLinks.forEach(item => {
+                item.classList.remove('active');
+            });
+            link.classList.add('active');
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            const activeContent = document.getElementById(targetTab);
+            activeContent.classList.add('active');
+        });
+    });
+});
+
+
+
+
+
+
+
