@@ -197,7 +197,7 @@ body {
     justify-content: space-between;
     background: transparent;
     z-index: 999;
-    border-right: 0.1vw solid #000;
+    border-right: 1px solid #000;
 }
 
 
@@ -215,7 +215,7 @@ body {
 .nav-box-dark {
     background-color: #000000;
     border-radius: 0.68vw;
-    padding: 1.02vw;
+    padding: 1.4vw;
     position: fixed;
     top: 3vw;
     height: 16vw;
@@ -229,23 +229,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 0.68vw;
+    padding-bottom: 0.38vw;
 }
 
 .divider-line-light {
     border: none;
     height: 1px;
-    background-color: #ffffff;
-    margin-left: -15px;
-    margin-right: -15px;
+    background-color: #fff;
+    margin: 0 -1.4vw;
 }
 
 .divider-line-dark {
     border: none;
     height: 1px;
-    background-color: #0e0e0e;
-    margin-left: -15px;
-    margin-right: -15px;
+    background-color: #000;
+    margin: 0 -1.02vw;
 }
 
 
@@ -1041,7 +1039,7 @@ h3 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(80%)
+    /* filter: brightness(80%) */
 }
 
 .dpm-left-panel {
