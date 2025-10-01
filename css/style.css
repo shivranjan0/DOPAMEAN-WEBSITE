@@ -228,7 +228,7 @@ body {
 
 .banner-subheadline {
     font-family: 'Apercu Mono Pro', monospace;
-    font-size: 0.9vw;
+    font-size: 0.8vw;
     line-height: 1.6;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -238,6 +238,8 @@ body {
 .banner-cta-link {
     font-size: 3vh;
     text-decoration: underline;
+    font-family: 'Apercu Mono Pro', monospace;
+
 }
 
 .banner-cta a {
@@ -791,7 +793,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    /* align-items: center; */
 }
 
 .dpm-newsletter-text .dpm-newsletter-title {
