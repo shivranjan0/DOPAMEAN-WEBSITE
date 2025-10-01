@@ -513,11 +513,13 @@ body {
 .model-info {
     font-family: 'Apercu Pro', sans-serif;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 3.4;
     letter-spacing: 0px;
     color: #000000;
     text-transform: uppercase;
+    border-right: 1px solid black;
+    padding-right: 63px;
 }
 
 .size-guide {
@@ -541,12 +543,13 @@ body {
     height: 35px;
     background-color: #fff;
     border: none;
-    border-right: 1px solid #dcdcdc;
+    /* border-right: 1px solid #dcdcdc; */
     cursor: pointer;
     font-family: "Apercu Mono Pro", monospace;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
+    font-weight: 600;
 }
 
 .size-selector button:last-child {
@@ -838,8 +841,8 @@ h3 {
     width: 4px;
     height: 4px;
     background-color: #000;
-    margin-right: 8px;
-    margin-top: -14px;
+    margin-right: 2px;
+    margin-top: -19px;
     vertical-align: middle;
     animation: blink-animation 1s steps(2, start) infinite;
 }

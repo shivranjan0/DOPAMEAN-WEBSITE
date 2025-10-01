@@ -96,7 +96,7 @@
         align-items: stretch;
         background-color: #000;
         color: #fff;
-        height: 55px;
+        height: 6vh;
     }
 
     .nav-section {
@@ -107,14 +107,14 @@
     }
 
     .mobile-logo-img {
-        width: 110px;
+        width: 70px;
         height: auto;
     }
 
     .search-container {
         flex-grow: 1;
         color: #ffffff;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
     .controls-container {
@@ -123,7 +123,7 @@
     }
 
     .bag-link {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
     .hamburger-menu {
@@ -131,7 +131,7 @@
         flex-direction: column;
         justify-content: space-between;
         width: 22px;
-        height: 16px;
+        height: 2vh;
         cursor: pointer;
     }
 
@@ -147,7 +147,7 @@
         background-color: #fff;
         color: #000;
         font-size: 0.7rem;
-        height: 35px;
+        height: 4vh;
         border-bottom: 1px solid #000;
     }
 
@@ -182,7 +182,7 @@
         display: flex;
         align-items: center;
         gap: 0.1rem;
-        padding: 0px 10px;
+        padding: 0px 4px;
         border-left: 1px solid #000000;
         flex-shrink: 0;
     }
@@ -292,6 +292,7 @@
         .dpm-mobile-perk-highlight {
             color: #22c55e;
             margin-bottom: 0.5rem;
+            font-family: 'Source Code Pro', monospace;
         }
 
         .dpm-mobile-shipping-bar {
@@ -306,7 +307,7 @@
 
         .dpm-mobile-shipping-content {
             background-color: rgba(85, 85, 85, 0.7);
-            padding: 20px 16vw;
+            padding: 20px 10vw;
         }
 
         .dpm-mobile-shipping-content p {
@@ -344,13 +345,14 @@
             color: inherit;
             font-family: inherit;
             font-size: inherit;
-            cursor: pointer;
+            /* cursor: pointer; */
         }
 
         .dpm-accordion-title {
             font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+            font-family: 'Source Code Pro', monospace;
         }
 
         .dpm-accordion-description {
@@ -360,6 +362,7 @@
             padding-right: 1rem;
             text-transform: uppercase;
             line-height: 1.5;
+            font-family: 'Source Code Pro', monospace;
         }
 
 
@@ -369,6 +372,7 @@
             font-size: 0.75rem;
             padding-left: 1rem;
             padding-right: 1rem;
+            font-family: 'Source Code Pro', monospace;
         }
 
         .dpm-accordion-content a {
@@ -387,12 +391,13 @@
         .dpm-mobile-socials {
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
+            font-size: 0.55rem;
             letter-spacing: 0.1em;
             padding: 0.5rem 1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             text-transform: uppercase;
             flex-wrap: wrap;
+            font-family: 'Source Code Pro', monospace;
         }
 
         .dpm-mobile-socials a {
@@ -408,12 +413,13 @@
 
         .dpm-mobile-legal-bar {
             display: flex;
-            font-size: 0.75rem;
+            font-size: 0.50rem;
             letter-spacing: 0.05em;
             color: rgba(255, 255, 255, 0.6);
             text-transform: uppercase;
             align-items: stretch;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Source Code Pro', monospace;
         }
 
         .dpm-mobile-legal-left {
@@ -431,7 +437,7 @@
         .dpm-mobile-legal-right {
             width: 33.33%;
             padding: 0.5rem 1rem;
-            text-align: right;
+            /* text-align: right; */
             display: flex;
             align-items: center;
             justify-content: flex-end;
