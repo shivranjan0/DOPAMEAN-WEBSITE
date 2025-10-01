@@ -541,7 +541,7 @@ body {
 .size-selector button {
     flex-grow: 1;
     height: 35px;
-    background-color: #fff;
+    background-color: #ffffff;
     border: none;
     /* border-right: 1px solid #dcdcdc; */
     cursor: pointer;
