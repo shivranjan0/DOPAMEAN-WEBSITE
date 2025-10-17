@@ -1,118 +1,44 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
-/*-------font import----------- */
-
-@font-face {
-    font-family: 'Apercu Pro';
-    src: url('./apercu_regular_pro.woff2') format('woff2'),
-        url('./apercu_regular_pro.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Apercu Pro';
-    src: url('./apercu_regular_italic_pro.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Apercu Pro';
-    src: url('./apercu_medium_pro.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* Apercu Mono Pro Family */
-@font-face {
-    font-family: 'Apercu Mono Pro';
-    src: url('./ApercuMonoProRegular.woff2') format('woff2'),
-        url('./ApercuMonoProRegular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* Satoshi Family */
-@font-face {
-    font-family: 'Satoshi';
-    src: url('./Satoshi-Regular.woff2') format('woff2'),
-        url('./Satoshi-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Satoshi';
-    src: url('./Satoshi-Medium.woff2') format('woff2'),
-        url('./Satoshi-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-.desktop {
-    display: flex !important;
-}
-
-.mobile {
-    display: none !important;
-}
-
-
-
-html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: #ECECEC;
-
+    font-family: 'Roboto Mono', monospace;
+    background-color: #f5f5f4;
+    /* bg-stone-100 */
 }
 
-/* ======================================================= */
-/* ==================== hero style ================= */
-/* ======================================================= */
-
-
-.main-banner {
-    height: 100vh;
-    display: flex;
-    position: relative;
-    background-attachment: fixed;
-
+.size-btn.selected {
+    font-weight: 700;
+    color: #000;
 }
 
-#time1 {
-    position: fixed;
-    bottom: 1vh;
-    left: 8px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
-    font-weight: bold;
-    color: #000000;
-    z-index: 0;
-
+.size-btn.selected::before {
+    content: '[ ';
 }
 
+.size-btn.selected::after {
+    content: ' ]';
+}
+
+
+
+
+
+
+/* --- Marquee Banner Styles --- */
 .scrolling-banner-container {
     position: fixed;
     top: 0;
     width: 100%;
     height: 1.6vw;
     background-color: #ffffff;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
     border-bottom: 1px solid black;
 }
-
-
 
 .scrolling-banner {
     position: relative;
@@ -120,7 +46,6 @@ body {
     flex: 1;
     height: 100%;
 }
-
 
 .scrolling-banner div {
     position: absolute;
@@ -130,11 +55,12 @@ body {
     height: 100%;
     white-space: nowrap;
     animation: marquee 15s linear infinite;
-    font: normal normal normal 12px/14px "Apercu Mono Pro", sans-serif;
+    font-family: "Apercu Mono Pro", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
     letter-spacing: 0px;
     color: #000000;
     text-transform: uppercase;
-    opacity: 1;
 }
 
 .scrolling-banner span {
@@ -154,7 +80,6 @@ body {
     }
 }
 
-
 .header-buttons {
     display: flex;
     align-items: center;
@@ -167,8 +92,6 @@ body {
 .header-btn-3 {
     font-family: "Apercu Mono Pro", monospace;
     font-size: clamp(0.3rem, 0.8vw, 1rem);
-    font-weight: normal;
-    line-height: 1.2;
     height: 1.6vw;
     min-height: 0.9vw;
     padding: 0 0.8rem;
@@ -179,18 +102,16 @@ body {
     border-left: 1px solid black;
     text-transform: uppercase;
     letter-spacing: 0px;
-    opacity: 1;
     transition: background-color 0.3s, color 0.3s;
 }
 
-
-
-
+/* --- Side Navigation Styles --- */
 .side-navigation-wrapper {
     width: 11vw;
     height: 100vh;
-    position: absolute;
-    top: 3.4vh;
+    position: fixed;
+    top: 3.3vh;
+    left: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -198,38 +119,33 @@ body {
     background: transparent;
     z-index: 999;
     border-right: 1px solid #000;
+    padding: 3.4vh 0;
 }
 
-
-.main-banner-content {
-    width: 84vw;
-    height: auto;
-    position: fixed;
-    top: unset;
-    right: 0px;
-    bottom: 12%;
-
+.side-navigation-wrapper>div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
 }
-
 
 .nav-box-dark {
     background-color: #000000;
     border-radius: 0.68vw;
     padding: 1.4vw;
-    position: fixed;
-    top: 3vw;
-    height: 16vw;
+    height: 16.3vw;
     z-index: 10;
     letter-spacing: 0px;
-    opacity: 1;
+    width: 9.7vw;
+    margin-bottom: 1vw;
 }
-
 
 .nav-box-logo-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 0.38vw;
+    padding-bottom: 0.7vw;
 }
 
 .divider-line-light {
@@ -245,7 +161,6 @@ body {
     background-color: #000;
     margin: 0 -1.02vw;
 }
-
 
 .nav-box-logo-area a {
     text-decoration: none;
@@ -267,7 +182,6 @@ body {
     color: #ffffff;
     text-decoration: none;
     letter-spacing: 0px;
-    opacity: 1;
     display: block;
     margin-bottom: 0.68vw;
     text-transform: uppercase;
@@ -278,23 +192,18 @@ body {
     color: #000000;
     border-radius: 0.68vw;
     padding: 1.02vw;
-    position: fixed;
-    top: 20vw;
     z-index: 10;
     height: 8vw;
     width: 9.5vw;
 }
 
-
-
 .nav-box-header-1 {
     font-family: 'Apercu Mono Pro', monospace;
-    font-size: 2.2vh;
+    font-size: 0.9rem;
     line-height: 1.2;
-    padding-bottom: 0.544vw;
+    padding-bottom: 0.9vw;
     text-align: left;
     letter-spacing: 0px;
-
 }
 
 .nav-box-user-links {
@@ -308,90 +217,22 @@ body {
     margin-bottom: 0.68vw;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s;
-    font: normal normal normal 13px/16px "Apercu Mono Pro", sans-serif;
+    font: normal normal normal 11px/13px "Apercu Mono Pro", sans-serif;
     letter-spacing: 0px;
-    opacity: 1;
 }
 
-
-
-.product-page-container {
-    position: absolute;
-    top: 1.6vw;
-    left: 11vw;
-    width: calc(100% - 11vw);
-    height: calc(100% - 0.6vw);
+#time1 {
+    position: fixed;
+    bottom: 1vh;
+    left: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 1;
 }
 
-.product-image-scroller {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.product-image-scroller::-webkit-scrollbar {
-    display: none;
-}
-
-.product-image-card {
-    min-width: 45vw;
-    height: 98%;
-    border-right: 0.1vw solid #000;
-}
-
-.product-image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-overlay-info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.thumbnail-gallery {
-    position: absolute;
-    top: 2vw;
-    left: 2vw;
-    height: 4vw;
-    width: 18vw;
-    background-color: rgb(255, 255, 255);
-    border-radius: 11px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2vw;
-    pointer-events: auto;
-    padding: 0.4vw;
-    /* Essential for design */
-}
-
-.thumbnail-gallery img {
-    width: 19%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.5vw;
-    cursor: pointer;
-}
-
-
-
-
-
-
-/* ================================================= */
-/* ============== price accordian style =============*/
-/* ================================================= */
-
+/* --- Desktop Product Card Styles --- */
 .product-info-card {
     position: absolute;
     bottom: 3vw;
@@ -419,10 +260,9 @@ body {
 
 .product-header h1 {
     font-size: 0.8em;
-    font: normal normal 14px/18px "Apercu Pro", sans-serif;
+    font-family: "Apercu Pro", sans-serif;
     letter-spacing: 0px;
     color: #000000;
-    opacity: 1;
 }
 
 .product-header .price {
@@ -432,12 +272,14 @@ body {
     display: flex;
     align-items: center;
     padding-left: 12px;
-    font: normal normal 14px/18px "Apercu Pro", sans-serif;
+    font-family: "Apercu Pro", sans-serif;
     color: #000;
 }
 
 .product-intro {
-    font: normal normal normal 12px/18px "Apercu Mono Pro", monospace;
+    font-family: "Apercu Mono Pro", monospace;
+    font-size: 12px;
+    line-height: 18px;
     letter-spacing: 0px;
     color: #000000;
     text-transform: uppercase;
@@ -445,14 +287,12 @@ body {
     padding: 8px 12px;
 }
 
-
 .accordion-item,
 .model-info-container,
 .size-selector {
     border-top: 1px solid #000000;
     color: #000;
 }
-
 
 .accordion-header {
     background: none;
@@ -467,6 +307,7 @@ body {
     height: 35px;
     padding: 0 12px;
     font-family: "Apercu Mono Pro", monospace;
+    cursor: pointer;
 }
 
 .accordion-header .icon {
@@ -493,7 +334,6 @@ body {
 .accordion-content ul li {
     font-family: 'Apercu Mono Pro', monospace;
     font-size: 12px;
-    font-weight: normal;
     line-height: 1.5;
     letter-spacing: 0px;
     color: #000000;
@@ -503,35 +343,34 @@ body {
 
 .model-info-container {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     height: 40px;
     padding: 0 12px;
-
 }
 
 .model-info {
     font-family: 'Apercu Pro', sans-serif;
     font-weight: 500;
     font-size: 11px;
-    line-height: 3.4;
     letter-spacing: 0px;
     color: #000000;
     text-transform: uppercase;
     border-right: 1px solid black;
-    padding-right: 63px;
+    padding-right: 90px;
+    display: flex;
+    align-items: center;
 }
 
 .size-guide {
-    font: normal normal 15px/18px "Apercu Pro", sans-serif;
+    font-family: "Apercu Pro", sans-serif;
+    font-size: 15px;
     letter-spacing: 0px;
     color: #000000;
-    opacity: 1;
     text-decoration: underline;
-    height: 100%;
+    padding-left: 12px;
     display: flex;
     align-items: center;
-    padding-left: 12px;
 }
 
 .size-selector {
@@ -543,12 +382,11 @@ body {
     height: 35px;
     background-color: #ffffff;
     border: none;
-    /* border-right: 1px solid #dcdcdc; */
+    border-right: 1px solid #dcdcdc;
     cursor: pointer;
     font-family: "Apercu Mono Pro", monospace;
     letter-spacing: 0px;
     color: #000000;
-    opacity: 1;
     font-weight: 600;
 }
 
@@ -558,20 +396,20 @@ body {
 
 .size-selector button.active,
 .size-selector button:hover {
-    color: #000000;
+    background-color: #f0f0f0;
 }
 
 .add-to-cart-bar {
     background-color: #000000;
-    font: normal normal 13px/18px "Apercu Pro", sans-serif;
+    font-family: "Apercu Pro", sans-serif;
+    font-size: 13px;
     letter-spacing: 0px;
     color: #FFFFFF;
-    opacity: 1;
     font-weight: 700;
 }
 
 .add-to-cart-bar .final-price {
-    font: normal normal normal 15px/18px "Apercu Mono Pro", monospace;
+    font-family: "Apercu Mono Pro", monospace;
     font-size: 0.85em;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -580,142 +418,353 @@ body {
 
 
 
+/* --- Desktop Image Scroller Styles --- */
+.product-page-container {
+    position: absolute;
+    top: 1.6vw;
+    left: 11vw;
+    width: calc(100% - 11vw);
+    height: 100%;
+}
 
-/* --- ADD THIS CSS TO YOUR EXISTING STYLESHEET --- */
+.product-image-scroller {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
 
-/* The dark background overlay */
-.size-chart-overlay {
-    position: fixed;
+.product-image-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.product-image-card {
+    min-width: 45vw;
+    height: 99%;
+    border-right: 0.1vw solid #000;
+}
+
+.product-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-overlay-info {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+.thumbnail-gallery {
+    position: absolute;
+    top: 1vw;
+    left: 2vw;
+    height: 4vw;
+    width: 18vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 11px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.2vw;
+    pointer-events: auto;
+    padding: 0.4vw;
+}
+
+.thumbnail-gallery img {
+    width: 19%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+/* --- Custom CSS to replace Tailwind --- */
+.hidden {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .lg\:hidden {
+        display: none;
+    }
+
+    .lg\:block {
+        display: block;
+    }
+
+    .lg\:flex {
+        display: flex;
+    }
+}
+
+.mobile-image {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.drag-handle {
+    width: 100%;
     display: flex;
     justify-content: center;
+    /* padding-top: 0.75rem;
+            padding-bottom: 0.75rem; */
+    padding-top: 4px;
+}
+
+.drag-handle-bar {
+    width: 2.5rem;
+    height: 0.1rem;
+    background-color: #000000;
+    border-radius: 9999px;
+}
+
+.mobile-card-section {
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+    border-bottom: 1px solid #080808;
+}
+
+.mobile-card-section-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.mobile-card-section-sizes {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.product-title-mobile {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.size-guide-link-mobile {
+    font-size: 0.875rem;
+    color: #0a0a0a;
+    /* font-weight: 700; */
+    display: flex;
     align-items: center;
-    z-index: 1000;
-
-    /* Hidden by default */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    gap: 0.25rem;
+    text-decoration: none;
 }
 
-/* The visible state for the overlay */
-.size-chart-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
+.size-guide-link-mobile svg {
+    height: 1rem;
+    width: 1rem;
 }
 
-/* The modal window containing the chart */
-.size-chart-modal {
+.hidden-details-content {
+    padding: 13px 0px 0px 0px;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e5e7eb;
+    color: #000;
+}
+
+/* 
+.hidden-details-content p:first-child {
+    margin-bottom: 1rem;
+} */
+
+.model-info-mobile {
+    color: #16a34a;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid black;
+}
+
+.size-selector-mobile-wrapper {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.size-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.size-btn:hover {
+    color: #000;
+}
+
+.transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+
+
+.add-to-bag-btn {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    /* border-radius: 0.5rem; */
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-bag-btn-text {
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.add-to-bag-btn-text svg {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+.add-to-bag-btn-price {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.details-tabs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6b7280;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.details-tabs button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+}
+
+.details-tabs button:hover {
+    color: #000;
+}
+
+.details-tabs button.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.tab-content {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #374151;
+}
+
+/* .tab-content p+p {
+    margin-top: 0.5rem;
+} */
+
+.desktop-container {
     position: relative;
-    /* For positioning the close button */
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-    /* Animation */
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
+    height: 100vh;
+    width: 99vw;
+    overflow: hidden;
 }
 
-/* Pop-in effect for the modal */
-.size-chart-overlay.active .size-chart-modal {
+
+
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    transform: scale(0.95);
+    transition: transform 0.3s;
+}
+
+.modal-overlay.visible .modal-content {
     transform: scale(1);
 }
 
-
-/* The 'X' close button */
-.close-chart-btn {
+.modal-close-btn {
     position: absolute;
     top: 10px;
     right: 15px;
     background: none;
     border: none;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
     cursor: pointer;
+    color: #6b7280;
 }
 
-/* Your original size chart styles (already provided by you) */
-.size-chart-container-lined {
-    background-color: #ffffff;
-    padding: 20px 25px;
-    width: 90%;
-    max-width: 340px;
-}
-
-h3 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-    color: #000000;
-}
-
-.size-chart-lined {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.size-chart-lined th,
-.size-chart-lined td {
-    padding: 12px 15px;
-    text-align: left;
-    font-size: 0.95em;
-    border: none;
-    border-bottom: 1px solid #000000;
-    color: #000;
-}
-
-.size-chart-lined th {
-    font-weight: 600;
-    color: #495057;
-    border-bottom-width: 2px;
-}
-
-.size-chart-lined th:not(:first-child),
-.size-chart-lined td:not(:first-child) {
-    text-align: center;
-}
-
-.size-chart-lined td strong {
-    font-weight: 700;
-    color: #212529;
-}
-
-.size-chart-lined tbody tr:last-child td {
-    border-bottom: none;
-}
-
-
-/* ADD THIS TO YOUR .product-info-card RULE */
-.product-info-card {
-    /* ...your existing styles... */
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    /* Add this line */
-}
-
-/* ADD THIS NEW RULE FOR THE HIDDEN STATE */
-.product-info-card.hidden {
-    opacity: 0;
-    pointer-events: none;
-    /* Disables clicks when hidden */
-    transform: translateY(20px);
-    /* Optional: adds a slight downward slide */
+.modal-close-btn:hover {
+    color: #111827;
 }
 
 
 
 
-/* ================================================= */
-/* ============== scroll image style =============*/
-/* ================================================= */
+/* Add this to your CSS file */
+.modal-overlay {
+    display: none;
+    /* Hidden by default */
+}
 
+.modal-overlay.visible {
+    display: flex;
+    /* Or 'block'. 'flex' helps with vertical centering. */
+}
+
+
+
+
+/*-------------------------------------  product scroll css ---------------------------------------- */
 
 .showcase-container {
     display: flex;
@@ -730,11 +779,11 @@ h3 {
     background-color: #ececec;
     padding: 1.361vw;
     box-sizing: border-box;
-    border-right: 1px solid #000;
+    /* border-right: 1px solid #000; */
 }
 
 .showcase-main {
-    width: 88.6%;
+    width: 88.8%;
     height: 100%;
     background-color: #ececec;
     box-sizing: border-box;
@@ -853,11 +902,11 @@ h3 {
     }
 }
 
-/* ================================================= */
-/* =============== notifaction style ================*/
-/* ================================================= */
 
 
+
+
+/* ---------------------------------- notifaction -------------------------------- */
 
 
 .page-container {
@@ -872,7 +921,7 @@ h3 {
 
 .main-content {
     flex: 1;
-    padding: 10px;
+    /* padding: 10px; */
     border-top: 1px solid black;
 }
 
@@ -900,6 +949,116 @@ h3 {
     align-items: center;
 }
 
+
+
+@media (max-width: 768px) {
+
+    .showcase-container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    .showcase-sidebar {
+        display: none;
+    }
+
+    .showcase-main {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-header {
+        height: 60px;
+        padding: 0 15px;
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+
+
+    .page-header a {
+        text-decoration: none;
+        font-size: 12px;
+        font-family: "Roboto Mono", monospace;
+
+    }
+
+    .header-link {
+        font-size: 12px;
+    }
+
+    .item-grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background-color: #000000a1;
+        overflow: visible;
+        height: auto;
+        width: 100%;
+        /* border-top: 1px solid #000; */
+    }
+
+    .item-card {
+        min-width: 0;
+        width: 100%;
+        height: auto;
+        border-right: none;
+    }
+
+    .item-card img {
+        height: auto;
+        aspect-ratio: 4 / 5;
+        padding: 5px;
+    }
+
+    .item-info {
+        height: auto;
+        min-height: 60px;
+        padding: 4px 7px;
+        /* border-top: 1px solid #000;
+            border-bottom: 1px solid #000; */
+    }
+
+    .item-name,
+    .item-price {
+        font-size: 11px;
+    }
+
+
+    .shop-now-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-top: 1px solid #e0e0e0;
+        /* border-bottom: 1px solid #e0e0e0; */
+        background-color: #e4e4e4;
+        /* border-bottom: 1px solid black; */
+        padding: 20px 0;
+        z-index: 100;
+        position: relative;
+        border-top: 1px solid black;
+    }
+
+
+    .inner-design {
+        background-color: #ffffff;
+        padding: 15px 36vw;
+
+        text-align: center;
+    }
+
+
+    .shop-now-bar a {
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+
+    }
+}
 
 
 
@@ -951,7 +1110,7 @@ h3 {
 
 .collection-image-wrapper {
     width: 100%;
-    height: 100%;
+    height: 98%;
     overflow: hidden;
 }
 
@@ -1009,6 +1168,7 @@ h3 {
 
 
 
+
 /* ======================================================= */
 /* ==================== video style ===================== */
 /* ======================================================= */
@@ -1018,6 +1178,8 @@ h3 {
 .video-section-content {
     width: 100%;
     height: 100vh;
+    display: block;
+    /* Ensures it's visible */
 }
 
 .video-section-content video {
@@ -1025,6 +1187,8 @@ h3 {
     height: 100%;
     object-fit: cover;
 }
+
+
 
 
 
@@ -1050,6 +1214,8 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
     /* filter: brightness(80%) */
+    z-index: 10;
+
 }
 
 .dpm-left-panel {
@@ -1230,7 +1396,7 @@ h3 {
 
 .dpm-main-links-section {
     height: 50%;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
 }
 
 .dpm-main-links-grid {
@@ -1270,7 +1436,7 @@ h3 {
     line-height: 52px;
     color: #FFFFFF;
     text-transform: uppercase;
-    font-family: 'Apercu Mono Pro', monospace;
+    font: normal normal normal 20px/40px "Apercu Mono Pro", monospace;
 }
 
 .dpm-links-list-1,
@@ -1278,7 +1444,7 @@ h3 {
     grid-row: 2;
     display: flex;
     flex-direction: column;
-    font: normal normal normal 15px/40px "Apercu Mono Pro", monospace;
+    font: normal normal normal 12px/40px "Apercu Mono Pro", monospace;
     letter-spacing: 0px;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -1326,3 +1492,8 @@ h3 {
     border-right: 0.1vw solid white;
 
 }
+
+
+
+
+/* size guid  */

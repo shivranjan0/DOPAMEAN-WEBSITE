@@ -87,7 +87,7 @@ body {
     bottom: 1vh;
     left: 8px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     color: #000000;
     z-index: 0;
@@ -236,7 +236,7 @@ body {
 }
 
 .banner-cta-link {
-    font-size: 3vh;
+    font-size: 3.4vh;
     text-decoration: underline;
     font-family: 'Apercu Mono Pro', monospace;
 
@@ -1277,4 +1277,23 @@ body {
     .mobile {
         display: block !important;
     }
+}
+
+
+
+
+.nav-box-logo-area img {
+    width: 6.803vw;
+    height: auto;
+    display: block;
+}
+
+
+
+
+.nav-box-logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.68vw;
 }
