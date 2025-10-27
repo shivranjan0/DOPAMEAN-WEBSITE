@@ -328,7 +328,7 @@ body {
 
 .accordion-content ul {
     list-style: none;
-    padding: 8px 30px;
+    padding: 0px 30px 10px 30px;
 }
 
 .accordion-content ul li {
@@ -340,6 +340,8 @@ body {
     text-transform: uppercase;
     opacity: 0.7;
 }
+
+
 
 .model-info-container {
     display: flex;

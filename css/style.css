@@ -1005,9 +1005,9 @@ body {
     position: fixed;
     top: 38px;
     left: 189px;
-    width: 450px;
+    width: 464px;
     max-width: 90%;
-    height: 86%;
+    height: 90%;
     z-index: 1001;
     background-color: #fff;
     border-right: 1px solid #000;
@@ -1069,7 +1069,7 @@ body {
 }
 
 .item-image {
-    height: 200px;
+    height: 173px;
     object-fit: cover;
     border: 1px solid #e0e0e0;
 }

@@ -123,63 +123,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-//     // --- ACCORDION LOGIC (Exclusive Open) ---
-//     document.querySelectorAll('.accordion-header').forEach(header => {
-//         header.addEventListener('click', () => {
-//             const clickedItem = header.parentElement;
-//             const currentlyActiveItem = document.querySelector('.accordion-item.active');
-//             if (currentlyActiveItem && currentlyActiveItem !== clickedItem) {
-//                 currentlyActiveItem.classList.remove('active');
-//                 const activeHeader = currentlyActiveItem.querySelector('.accordion-header');
-//                 activeHeader.setAttribute('aria-expanded', 'false');
-//                 activeHeader.querySelector('.icon').textContent = '+';
-//             }
-//             clickedItem.classList.toggle('active');
-//             const icon = header.querySelector('.icon');
-//             const isExpanded = clickedItem.classList.contains('active');
-//             header.setAttribute('aria-expanded', isExpanded);
-//             icon.textContent = isExpanded ? '-' : '+';
-//         });
-//     });
+    // --- ACCORDION LOGIC (Exclusive Open) ---
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const clickedItem = header.parentElement;
+            const currentlyActiveItem = document.querySelector('.accordion-item.active');
+            if (currentlyActiveItem && currentlyActiveItem !== clickedItem) {
+                currentlyActiveItem.classList.remove('active');
+                const activeHeader = currentlyActiveItem.querySelector('.accordion-header');
+                activeHeader.setAttribute('aria-expanded', 'false');
+                activeHeader.querySelector('.icon').textContent = '+';
+            }
+            clickedItem.classList.toggle('active');
+            const icon = header.querySelector('.icon');
+            const isExpanded = clickedItem.classList.contains('active');
+            header.setAttribute('aria-expanded', isExpanded);
+            icon.textContent = isExpanded ? '-' : '+';
+        });
+    });
 
-//     // --- SIZE SELECTOR LOGIC ---
-//     const sizeButtons = document.querySelectorAll('.size-selector button');
-//     sizeButtons.forEach(button => {
-//         button.addEventListener('click', () => {
-//             sizeButtons.forEach(btn => btn.classList.remove('active'));
-//             button.classList.add('active');
-//         });
-//     });
+    // --- SIZE SELECTOR LOGIC ---
+    const sizeButtons = document.querySelectorAll('.size-selector button');
+    sizeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            sizeButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
 
-//     // --- SIZE CHART MODAL LOGIC ---
-//     const sizeGuideLink = document.querySelector('.size-guide');
-//     const sizeChartOverlay = document.querySelector('.size-chart-overlay');
-//     const closeChartButton = document.querySelector('.close-chart-btn');
-//     const openModal = () => sizeChartOverlay.classList.add('active');
-//     const closeModal = () => sizeChartOverlay.classList.remove('active');
+    // --- SIZE CHART MODAL LOGIC ---
+    const sizeGuideLink = document.querySelector('.size-guide');
+    const sizeChartOverlay = document.querySelector('.size-chart-overlay');
+    const closeChartButton = document.querySelector('.close-chart-btn');
+    const openModal = () => sizeChartOverlay.classList.add('active');
+    const closeModal = () => sizeChartOverlay.classList.remove('active');
 
-//     sizeGuideLink.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         openModal();
-//     });
+    sizeGuideLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+    });
 
-//     closeChartButton.addEventListener('click', closeModal);
+    closeChartButton.addEventListener('click', closeModal);
 
-//     sizeChartOverlay.addEventListener('click', (e) => {
-//         if (e.target === sizeChartOverlay) closeModal();
-//     });
+    sizeChartOverlay.addEventListener('click', (e) => {
+        if (e.target === sizeChartOverlay) closeModal();
+    });
 
-//     // --- NEW: CLOSE SIZE CHART ON SCROLL ---
-//     window.addEventListener('scroll', () => {
-//         // This checks if the size chart is currently open
-//         if (sizeChartOverlay.classList.contains('active')) {
-//             // If it is, this closes it
-//             closeModal();
-//         }
-//     });
-// });
+    // --- NEW: CLOSE SIZE CHART ON SCROLL ---
+    window.addEventListener('scroll', () => {
+        // This checks if the size chart is currently open
+        if (sizeChartOverlay.classList.contains('active')) {
+            // If it is, this closes it
+            closeModal();
+        }
+    });
+});
 
 // =======================================================
 // ============== side price script  =====================
@@ -274,9 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //         closeModal();
 //     }
 // });
-
-
-
 
 
 
