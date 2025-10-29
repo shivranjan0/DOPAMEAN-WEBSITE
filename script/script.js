@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Live Clock for Footer ---
     const timeElement = document.getElementById('mobile-time');
     function updateLiveTime() {
         if (!timeElement) return;
@@ -13,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateLiveTime, 1000);
 
     // --- Accordion Logic ---
+
     const accordionItems = document.querySelectorAll('.dpm-accordion-item');
     const animationOptions = {
         duration: 400,
