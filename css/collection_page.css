@@ -27,7 +27,6 @@
     font-style: normal;
 }
 
-/* Apercu Mono Pro Family */
 @font-face {
     font-family: 'Apercu Mono Pro';
     src: url('./ApercuMonoProRegular.woff2') format('woff2'),
@@ -36,7 +35,6 @@
     font-style: normal;
 }
 
-/* Satoshi Family */
 @font-face {
     font-family: 'Satoshi';
     src: url('./Satoshi-Regular.woff2') format('woff2'),
@@ -52,6 +50,7 @@
     font-weight: 500;
     font-style: normal;
 }
+
 html,
 body {
     margin: 0;
@@ -291,16 +290,6 @@ body {
     font-family: "Apercu Mono Pro", monospace;
     color: #000;
 }
-
-/* .product-name {
-    letter-spacing: 0.05em;
-    margin: 0;
-} */
-/* 
-.product-price {
-    margin-top: 0.25rem;
-    color: #374151;
-} */
 
 
 /* ============================================= */

@@ -20,7 +20,6 @@
     font-style: normal;
 }
 
-/* Apercu Mono Pro Family */
 @font-face {
     font-family: 'Apercu Mono Pro';
     src: url('./ApercuMonoProRegular.woff2') format('woff2'),
@@ -29,7 +28,6 @@
     font-style: normal;
 }
 
-/* Satoshi Family */
 @font-face {
     font-family: 'Satoshi';
     src: url('./Satoshi-Regular.woff2') format('woff2'),
@@ -55,6 +53,7 @@
 /* ======================================================= */
 /* ============= hero responsive style =================== */
 /* ======================================================= */
+
 @media (max-width: 768px) {
 
     .desktop-view {
@@ -220,7 +219,6 @@
     body {
         color: #ffffff;
         line-height: 1.6;
-        /* background-color: #000; */
     }
 
     a {
@@ -345,7 +343,6 @@
             color: inherit;
             font-family: inherit;
             font-size: inherit;
-            /* cursor: pointer; */
         }
 
         .dpm-accordion-title {
@@ -437,7 +434,6 @@
         .dpm-mobile-legal-right {
             width: 33.33%;
             padding: 0.5rem 1rem;
-            /* text-align: right; */
             display: flex;
             align-items: center;
             justify-content: flex-end;
