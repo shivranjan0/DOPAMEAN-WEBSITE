@@ -1,23 +1,3 @@
-
-// Simple script for the desktop clock
-// function updateTime() {
-//     const timeElement = document.getElementById('time1');
-//     if (timeElement) {
-//         const now = new Date();
-//         const timeString = now.toLocaleTimeString();
-//         timeElement.textContent = `[ INDIA  ${timeString} ]`;
-//     }
-// }
-// setInterval(updateTime, 1000);
-// updateTime();
-
-
-
-// =======================================================
-// ============== footer accordian script  ===============
-// =======================================================
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // --- Live Clock for Footer ---
     const timeElement = document.getElementById('mobile-time');
@@ -64,9 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const header = item.querySelector('.dpm-accordion-header');
         const content = item.querySelector('.dpm-accordion-content');
 
-        // Set initial state for all items
         if (item.classList.contains('is-open')) {
-            content.style.height = 'auto'; // Allows default-open item to be responsive
+            content.style.height = 'auto';
         } else {
             content.style.height = '0px';
             content.style.opacity = '0';
@@ -86,12 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-// =======================================================
-// ============== footer time script  =====================
-// =======================================================
 
 document.addEventListener('DOMContentLoaded', function () {
     const mobileTimeElement = document.getElementById('mobile-time');
@@ -118,14 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-// // accordian 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- ACCORDION LOGIC (Exclusive Open) ---
     document.querySelectorAll('.accordion-header').forEach(header => {
         header.addEventListener('click', () => {
             const clickedItem = header.parentElement;
@@ -145,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- SIZE SELECTOR LOGIC ---
+
     const sizeButtons = document.querySelectorAll('.size-selector button');
     sizeButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -154,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- SIZE CHART MODAL LOGIC ---
+
     const sizeGuideLink = document.querySelector('.size-guide');
     const sizeChartOverlay = document.querySelector('.size-chart-overlay');
     const closeChartButton = document.querySelector('.close-chart-btn');
@@ -172,18 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- NEW: CLOSE SIZE CHART ON SCROLL ---
+
     window.addEventListener('scroll', () => {
-        // This checks if the size chart is currently open
         if (sizeChartOverlay.classList.contains('active')) {
-            // If it is, this closes it
             closeModal();
         }
     });
 });
-
-// =======================================================
-// ============== side price script  =====================
-// =======================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     const shoppingBag = document.querySelector('.shopping-bag-container');
@@ -214,88 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     overlay.addEventListener('click', closeBag);
-});
-
-
-
-// =======================================================
-// ============== size chart tab on button ===============
-// =======================================================
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const tabLinks = document.querySelectorAll('.tab-link');
-//     const tabContents = document.querySelectorAll('.tab-content');
-//     tabLinks.forEach(link => {
-//         link.addEventListener('click', () => {
-//             const targetTab = link.getAttribute('data-tab');
-
-//             tabLinks.forEach(item => {
-//                 item.classList.remove('active');
-//             });
-//             link.classList.add('active');
-
-//             tabContents.forEach(content => {
-//                 content.classList.remove('active');
-//             });
-//             const activeContent = document.getElementById(targetTab);
-//             activeContent.classList.add('active');
-//         });
-//     });
-// });
-
-
-
-
-
-// Get the necessary elements from the page
-// const openModalLink = document.querySelector('.size-guide-mobile');
-// const closeModalBtn = document.querySelector('.close-chart-btn');
-// const sizeChartOverlay = document.querySelector('.size-chart-overlay');
-
-// // --- Event Listeners ---
-
-// // 1. When the "SIZE GUIDE" link is clicked, show the modal
-// openModalLink.addEventListener('click', function (event) {
-//     event.preventDefault(); // Prevents the link from trying to navigate to "#"
-//     sizeChartOverlay.classList.add('active'); // Use class for better control
-// });
-
-// // Function to close the modal
-// function closeModal() {
-//     sizeChartOverlay.classList.remove('active');
-// }
-
-// // 2. When the close button (×) is clicked, hide the modal
-// closeModalBtn.addEventListener('click', closeModal);
-
-// // 3. When the user clicks on the dark overlay background, also hide the modal
-// sizeChartOverlay.addEventListener('click', function (event) {
-//     if (event.target === sizeChartOverlay) {
-//         closeModal();
-//     }
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// new js code
-
-
-
+})
 
 // --- Mobile Logic for sticky-to-fixed transition ---
+
 if (window.innerWidth < 1024) {
     const componentContainer = document.getElementById('component-container');
     const productDock = document.getElementById('product-dock');
@@ -375,6 +260,7 @@ if (window.innerWidth >= 1024) {
     updateTime();
 
     // --- Desktop Thumbnail Gallery Logic ---
+
     const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
     const imageScroller = document.querySelector('.product-image-scroller');
     const imageCards = document.querySelectorAll('.product-image-card');
@@ -391,15 +277,8 @@ if (window.innerWidth >= 1024) {
 
 
 
-
-
-// size guid 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Accordion Logic (from your code) ---
     document.querySelectorAll('.accordion-header').forEach(button => {
         button.addEventListener('click', () => {
             const accordionItem = button.parentElement;
@@ -419,44 +298,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Size Guide Modal Logic (with scroll-to-close) ---
+
     const sizeGuideModal = document.getElementById('size-guide-modal');
     const openDesktopLink = document.getElementById('size-guide-link');
     const openMobileLink = document.querySelector('.size-guide-link-mobile');
     const closeModalButton = document.getElementById('modal-close-button');
-
-    // This is the function that will be called when scrolling
     const closeModalOnScroll = () => {
         closeModal();
     };
 
-    // This function opens the modal and starts listening for a scroll event
     const openModal = (event) => {
-        event.preventDefault(); // Prevents the link from jumping
+        event.preventDefault();
         if (sizeGuideModal) {
             sizeGuideModal.classList.add('visible');
-            // Add the scroll listener ONLY when the modal is open
             window.addEventListener('scroll', closeModalOnScroll);
         }
     };
-
-    // This function closes the modal and stops listening for the scroll event
     const closeModal = () => {
         if (sizeGuideModal) {
             sizeGuideModal.classList.remove('visible');
-            // IMPORTANT: Remove the listener so it doesn't run in the background
             window.removeEventListener('scroll', closeModalOnScroll);
         }
     };
-
-    // Attach listeners to all elements that can open or close the modal
     if (openDesktopLink) openDesktopLink.addEventListener('click', openModal);
     if (openMobileLink) openMobileLink.addEventListener('click', openModal);
     if (closeModalButton) closeModalButton.addEventListener('click', closeModal);
-
-    // Close the modal if the user clicks on the dark overlay background
     if (sizeGuideModal) {
         sizeGuideModal.addEventListener('click', (event) => {
-            // Check if the click is on the overlay itself, not the content inside
             if (event.target === sizeGuideModal) {
                 closeModal();
             }
