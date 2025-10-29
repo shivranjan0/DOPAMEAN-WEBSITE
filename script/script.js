@@ -1,15 +1,15 @@
 
 // Simple script for the desktop clock
-function updateTime() {
-    const timeElement = document.getElementById('time1');
-    if (timeElement) {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString();
-        timeElement.textContent = `[ INDIA  ${timeString} ]`;
-    }
-}
-setInterval(updateTime, 1000);
-updateTime();
+// function updateTime() {
+//     const timeElement = document.getElementById('time1');
+//     if (timeElement) {
+//         const now = new Date();
+//         const timeString = now.toLocaleTimeString();
+//         timeElement.textContent = `[ INDIA  ${timeString} ]`;
+//     }
+// }
+// setInterval(updateTime, 1000);
+// updateTime();
 
 
 

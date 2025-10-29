@@ -1,3 +1,7 @@
+/* ======================================================= */
+/* ================== GLOBAL STYLES ==================== */
+/* ======================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +10,9 @@
 body {
     font-family: 'Roboto Mono', monospace;
     background-color: #f5f5f4;
-    /* bg-stone-100 */
+
 }
+
 
 .size-btn.selected {
     font-weight: 700;
@@ -22,12 +27,10 @@ body {
     content: ' ]';
 }
 
+/* ======================================================= */
+/* ================== DESKTOP HEADER =================== */
+/* ======================================================= */
 
-
-
-
-
-/* --- Marquee Banner Styles --- */
 .scrolling-banner-container {
     position: fixed;
     top: 0;
@@ -70,6 +73,7 @@ body {
     padding: 0 0.5rem;
 }
 
+
 @keyframes marquee {
     0% {
         transform: translateX(0%);
@@ -79,6 +83,7 @@ body {
         transform: translateX(-56%);
     }
 }
+
 
 .header-buttons {
     display: flex;
@@ -105,7 +110,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Side Navigation Styles --- */
+/* ======================================================= */
+/* ================ DESKTOP SIDE NAVIGATION ============== */
+/* ======================================================= */
+
 .side-navigation-wrapper {
     width: 11vw;
     height: 100vh;
@@ -134,10 +142,10 @@ body {
     background-color: #000000;
     border-radius: 0.68vw;
     padding: 1.4vw;
-    height: 16.3vw;
+    top: 3vw;
+    height: 13.3vw;
     z-index: 10;
     letter-spacing: 0px;
-    width: 9.7vw;
     margin-bottom: 1vw;
 }
 
@@ -187,14 +195,14 @@ body {
     text-transform: uppercase;
 }
 
+
 .nav-box-light {
     background-color: #ffffff;
     color: #000000;
     border-radius: 0.68vw;
     padding: 1.02vw;
     z-index: 10;
-    height: 8vw;
-    width: 9.5vw;
+    width: 7.5vw;
 }
 
 .nav-box-header-1 {
@@ -232,7 +240,10 @@ body {
     z-index: 1;
 }
 
-/* --- Desktop Product Card Styles --- */
+/* ======================================================= */
+/* ================ DESKTOP PRODUCT PAGE ================= */
+/* ======================================================= */
+
 .product-info-card {
     position: absolute;
     bottom: 3vw;
@@ -287,6 +298,7 @@ body {
     padding: 8px 12px;
 }
 
+
 .accordion-item,
 .model-info-container,
 .size-selector {
@@ -322,6 +334,7 @@ body {
     font-size: 0.75em;
 }
 
+
 .accordion-item.active .accordion-content {
     max-height: 200px;
 }
@@ -341,11 +354,8 @@ body {
     opacity: 0.7;
 }
 
-
-
 .model-info-container {
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     height: 40px;
     padding: 0 12px;
@@ -373,7 +383,9 @@ body {
     padding-left: 12px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
+
 
 .size-selector {
     display: flex;
@@ -420,7 +432,6 @@ body {
 
 
 
-/* --- Desktop Image Scroller Styles --- */
 .product-page-container {
     position: absolute;
     top: 1.6vw;
@@ -453,6 +464,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 
 .product-overlay-info {
     position: absolute;
@@ -487,7 +499,10 @@ body {
     cursor: pointer;
 }
 
-/* --- Custom CSS to replace Tailwind --- */
+/* ======================================================= */
+/* =================== MOBILE STYLES =================== */
+/* ======================================================= */
+
 .hidden {
     display: none;
 }
@@ -516,8 +531,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* padding-top: 0.75rem;
-            padding-bottom: 0.75rem; */
     padding-top: 4px;
 }
 
@@ -529,8 +542,6 @@ body {
 }
 
 .mobile-card-section {
-    /* padding-left: 1rem;
-    padding-right: 1rem; */
     border-bottom: 1px solid #080808;
 }
 
@@ -547,7 +558,6 @@ body {
 .flex-between-center {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -561,7 +571,6 @@ body {
 .size-guide-link-mobile {
     font-size: 0.875rem;
     color: #0a0a0a;
-    /* font-weight: 700; */
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -581,10 +590,6 @@ body {
     color: #000;
 }
 
-/* 
-.hidden-details-content p:first-child {
-    margin-bottom: 1rem;
-} */
 
 .model-info-mobile {
     color: #16a34a;
@@ -617,7 +622,6 @@ body {
 }
 
 
-
 .add-to-bag-btn {
     background-color: #000;
     color: #fff;
@@ -626,7 +630,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem;
-    /* border-radius: 0.5rem; */
     border: none;
     cursor: pointer;
 }
@@ -648,6 +651,7 @@ body {
     font-weight: 700;
     font-size: 0.875rem;
 }
+
 
 .details-tabs {
     display: flex;
@@ -681,9 +685,11 @@ body {
     color: #374151;
 }
 
-/* .tab-content p+p {
-    margin-top: 0.5rem;
-} */
+
+/* ======================================================= */
+/* =================== SIZE GUIDE MODAL ================== */
+/* ======================================================= */
+
 
 .desktop-container {
     position: relative;
@@ -691,11 +697,6 @@ body {
     width: 99vw;
     overflow: hidden;
 }
-
-
-
-
-
 
 .modal-overlay {
     position: fixed;
@@ -711,11 +712,14 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
+    display: none;
 }
+
 
 .modal-overlay.visible {
     opacity: 1;
     visibility: visible;
+    display: flex;
 }
 
 .modal-content {
@@ -749,24 +753,9 @@ body {
     color: #111827;
 }
 
-
-
-
-/* Add this to your CSS file */
-.modal-overlay {
-    display: none;
-    /* Hidden by default */
-}
-
-.modal-overlay.visible {
-    display: flex;
-    /* Or 'block'. 'flex' helps with vertical centering. */
-}
-
-
-
-
-/*-------------------------------------  product scroll css ---------------------------------------- */
+/* ======================================================= */
+/* ============= "YOU MAY ALSO LIKE" SHOWCASE ============ */
+/* ======================================================= */
 
 .showcase-container {
     display: flex;
@@ -781,7 +770,7 @@ body {
     background-color: #ececec;
     padding: 1.361vw;
     box-sizing: border-box;
-    /* border-right: 1px solid #000; */
+
 }
 
 .showcase-main {
@@ -814,6 +803,7 @@ body {
     text-decoration: none;
 }
 
+
 .item-grid-container {
     display: flex;
     flex-direction: row;
@@ -821,15 +811,12 @@ body {
     width: 100%;
     overflow-x: auto;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .item-grid-container::-webkit-scrollbar {
     display: none;
-}
-
-.item-grid-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 .item-card {
@@ -863,7 +850,6 @@ body {
     border-top: 1px solid #000;
     padding: 0 1vw;
     box-sizing: border-box;
-    /* border-bottom: 0.1px solid #000; */
 }
 
 .item-name,
@@ -878,13 +864,9 @@ body {
     margin-bottom: 4px;
 }
 
-
 .shop-now-bar {
     display: none;
 }
-
-
-
 
 
 .blinking-star {
@@ -904,12 +886,9 @@ body {
     }
 }
 
-
-
-
-
-/* ---------------------------------- notifaction -------------------------------- */
-
+/* ======================================================= */
+/* ================== NOTIFICATION BAR =================== */
+/* ======================================================= */
 
 .page-container {
     display: flex;
@@ -923,10 +902,8 @@ body {
 
 .main-content {
     flex: 1;
-    /* padding: 10px; */
     border-top: 1px solid black;
 }
-
 
 .notification-bar {
     background-color: #ffffff;
@@ -951,7 +928,9 @@ body {
     align-items: center;
 }
 
-
+/* ======================================================= */
+/* ============ SHOWCASE MEDIA QUERY (TABLET/MOBILE) ===== */
+/* ======================================================= */
 
 @media (max-width: 768px) {
 
@@ -982,7 +961,6 @@ body {
         text-decoration: none;
         font-size: 12px;
         font-family: "Roboto Mono", monospace;
-
     }
 
     .header-link {
@@ -997,7 +975,6 @@ body {
         overflow: visible;
         height: auto;
         width: 100%;
-        /* border-top: 1px solid #000; */
     }
 
     .item-card {
@@ -1017,8 +994,6 @@ body {
         height: auto;
         min-height: 60px;
         padding: 4px 7px;
-        /* border-top: 1px solid #000;
-            border-bottom: 1px solid #000; */
     }
 
     .item-name,
@@ -1026,30 +1001,24 @@ body {
         font-size: 11px;
     }
 
-
     .shop-now-bar {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         border-top: 1px solid #e0e0e0;
-        /* border-bottom: 1px solid #e0e0e0; */
         background-color: #e4e4e4;
-        /* border-bottom: 1px solid black; */
         padding: 20px 0;
         z-index: 100;
         position: relative;
         border-top: 1px solid black;
     }
 
-
     .inner-design {
         background-color: #ffffff;
         padding: 15px 36vw;
-
         text-align: center;
     }
-
 
     .shop-now-bar a {
         font-family: "Roboto Mono", monospace;
@@ -1058,18 +1027,12 @@ body {
         text-decoration: none;
         font-weight: 500;
         letter-spacing: 0.5px;
-
     }
 }
 
-
-
-
-/* ================================================= */
-/* =============== collection style ================*/
-/* ================================================= */
-
-
+/* ======================================================= */
+/* ================== COLLECTION STYLES ================== */
+/* ======================================================= */
 
 .content-section,
 .content-section-4 {
@@ -1084,35 +1047,32 @@ body {
 }
 
 
-
 .mobile-only {
     display: flex;
-
 }
 
 .desktop-only {
     display: none;
 }
 
-
 .collection-grid {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    border-top: 1px solid black;
 }
 
 .collection-item {
     width: 100%;
-    height: 50vh;
-    border-bottom: 0.1vw solid #000;
     box-sizing: border-box;
     position: relative;
+    padding: 10px;
 }
 
 .collection-image-wrapper {
     width: 100%;
-    height: 98%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -1122,7 +1082,7 @@ body {
     object-fit: cover;
     display: block;
     filter: brightness(80%);
-    padding: 10px;
+    ;
 }
 
 .collection-overlay {
@@ -1137,6 +1097,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
+    font-family: 'Apercu Mono Pro', monospace;
 }
 
 .collection-info {
@@ -1167,21 +1128,14 @@ body {
     text-decoration: underline;
 }
 
-
-
-
-
 /* ======================================================= */
-/* ==================== video style ===================== */
+/* ==================== VIDEO STYLE ====================== */
 /* ======================================================= */
-
-
 
 .video-section-content {
     width: 100%;
     height: 100vh;
     display: block;
-    /* Ensures it's visible */
 }
 
 .video-section-content video {
@@ -1190,13 +1144,10 @@ body {
     object-fit: cover;
 }
 
-
-
-
-
 /* ======================================================= */
-/* ==================== Footer style ===================== */
+/* ==================== FOOTER STYLES ==================== */
 /* ======================================================= */
+
 
 .dpm-mobile-wrapper {
     display: none;
@@ -1215,9 +1166,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* filter: brightness(80%) */
     z-index: 10;
-
 }
 
 .dpm-left-panel {
@@ -1239,7 +1188,7 @@ body {
     padding: 1.02vw;
     position: absolute;
     bottom: 1vw;
-    width: 9.565vw;
+    width: 7.5vw;
     z-index: 10;
 }
 
@@ -1273,7 +1222,6 @@ body {
     cursor: pointer;
     color: #FFFFFF;
 }
-
 
 .dpm-right-panel {
     width: 89%;
@@ -1364,7 +1312,6 @@ body {
 }
 
 
-
 .dpm-perks-section {
     font-family: 'Apercu Mono Pro', monospace;
     font-size: 15px;
@@ -1398,7 +1345,6 @@ body {
 
 .dpm-main-links-section {
     height: 50%;
-    /* padding: 1rem 0; */
 }
 
 .dpm-main-links-grid {
@@ -1492,10 +1438,120 @@ body {
 .dpm-legal-item-1,
 .dpm-legal-item-2 {
     border-right: 0.1vw solid white;
-
 }
 
 
+.hidden {
+    display: none;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-gray-50 {
+    background-color: rgb(249 250 251);
+}
+
+.bg-gray-200 {
+    background-color: rgb(229 231 235);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.border-t {
+    border-top-width: 1px;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.text-gray-600 {
+    color: rgb(75 85 99);
+}
+
+.text-gray-700 {
+    color: rgb(55 65 81);
+}
+
+.text-gray-800 {
+    color: rgb(31 41 55);
+}
+
+.transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
 
 
-/* size guid  */
+/* --- Responsive Utilities (lg: 1024px) --- */
+
+@media (min-width: 1024px) {
+    .lg\:hidden {
+        display: none;
+    }
+
+    .lg\:flex {
+        display: flex;
+    }
+
+    .lg\:block {
+        display: block;
+    }
+}

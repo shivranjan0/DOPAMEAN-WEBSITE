@@ -36,7 +36,6 @@
 
     #component-container.is-docked #product-component {
         background-color: #f5f5f4;
-        /* bg-stone-100 */
         border-radius: 0;
         box-shadow: none;
         max-width: 100%;
@@ -57,14 +56,12 @@
     #component-container.is-docked #product-component .add-to-bag-wrapper {
         padding: 0;
         background-color: #f5f5f4;
-        /* bg-stone-100 */
     }
 
     #component-container.is-docked #product-component .add-to-bag-wrapper button {
         border-radius: 0;
     }
 
-    /* New Mobile Header Styles */
     .mobile-header {
         display: flex !important;
         position: fixed;
@@ -193,15 +190,8 @@
 
     .mobile-content-wrapper {
         padding-top: 10vh;
-        /* Space for the fixed header */
     }
 }
-
-
-
-
-
-
 
 
 /* ======================================================= */
@@ -240,7 +230,6 @@
 
     .product-image-card-mobile {
         width: 100%;
-        /* border-bottom: 1px solid #000; */
     }
 
     .product-image-card-mobile img {
@@ -258,8 +247,7 @@
 
     .product-container-mobile .section {
         padding: 12px 15px;
-        /* border-bottom: 1px solid #000000; */
-        /* border-top: 1px solid #090909; */
+
     }
 
 
@@ -321,7 +309,6 @@
         font-size: 12px;
     }
 
-    /* --- Size Selector --- */
     .size-selector-mobile {
         display: flex;
         justify-content: space-between;
@@ -345,12 +332,10 @@
         flex-wrap: wrap;
     }
 
-    /* hide the default radio */
     .size-selector-mobile input[type="radio"] {
         display: none;
     }
 
-    /* button style */
     .size-option {
         display: inline-block;
         padding: 10px 18px;
@@ -363,14 +348,10 @@
         transition: all 0.2s ease;
     }
 
-    /* when radio is checked → style button */
     .size-selector-mobile input[type="radio"]:checked+.size-option {
-        /* background: #4CAF50; */
         color: rgb(0, 0, 0);
-        /* border-color: #4CAF50; */
     }
 
-    /* hover effect */
     .size-option:hover {
         background: #f0f0f0;
     }
@@ -441,15 +422,6 @@
 
 }
 
-/* .mobile-only {
-    display: block !important;
-    position: relative;
-    z-index: 10;
-
-
-} */
-
-
 
 
 
@@ -494,8 +466,6 @@
 }
 
 
-
-
 :root {
     --font-mono: "Apercu Mono Pro", monospace;
     --font-main: 'Satoshi', sans-serif;
@@ -504,7 +474,6 @@
 body {
     color: #ffffff;
     line-height: 1.6;
-    /* background-color: #000; */
 }
 
 a {
@@ -641,7 +610,6 @@ button {
         font-family: 'Source Code Pro', monospace;
     }
 
-    /* --- KEY CHANGE: Removed conflicting transition --- */
     .dpm-accordion-content {
         overflow: hidden;
         color: rgba(255, 255, 255, 0.7);
@@ -719,10 +687,7 @@ button {
         justify-content: flex-end;
     }
 
-    /* --- Styles for Smooth Accordion Icon --- */
 
-    /* This rule was removed because JS now handles the open state */
-    /* .dpm-accordion-item.is-open .dpm-accordion-content { ... } */
 
     .dpm-accordion-icon {
         position: relative;
@@ -772,18 +737,10 @@ button {
 
 
 @media (min-width: 768px) {
-
-    /* This will hide your video section on desktop. */
     .video-section-content {
         display: none;
     }
 }
-
-
-
-
-/* notifaction  */
-
 
 
 @media (max-width: 767px) {
