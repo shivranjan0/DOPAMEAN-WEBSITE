@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    
     accordionItems.forEach(item => {
         const header = item.querySelector('.dpm-accordion-header');
         const content = item.querySelector('.dpm-accordion-content');
