@@ -1,146 +1,58 @@
-# DOPAMEAN Website Project
+# DOPAMEAN commerce platform
 
-## Overview
+Single-vendor commerce platform (storefront, admin, backend) built behind the existing DOPAMEAN storefront design.
 
-DOPAMEAN is a modern, static e-commerce and product showcase website built with HTML, CSS, and JavaScript. The site features a responsive design and uses custom typography (Apercu and Satoshi fonts) to create a unique brand experience.
+> **Status: Phase 2 (walking skeleton) complete.** Auth, database, worker, outbox, CI gates, seed and an admin shell work. The storefront pages are **not ported yet** (home shows a placeholder); cart, checkout, payments and orders are not built. See [docs/PROGRESS.md](docs/PROGRESS.md) for the truth about what works.
 
-## 🚀 Quick Start
+## Quick start (about 10 minutes)
 
-1. **No special tools required!**
-2. Download or clone the repository
-3. Keep all files and folders in their original structure
-4. Open `index.html` in your web browser to view the site
+Prerequisites: Node 22+, npm 10+, Docker Desktop (running).
 
-## 🛠️ Technologies Used
+```bash
+git clone <this repo> && cd cloth
+cp .env.example .env
+# Fill the two secrets (any shell with openssl; or use any 32+ char random strings):
+#   BETTER_AUTH_SECRET=$(openssl rand -base64 32)
+#   PRICING_TOKEN_SECRET=$(openssl rand -base64 32)
+# For local development also set S3_ACCESS_KEY=minioadmin and S3_SECRET_KEY=minioadmin.
 
-- **HTML5**
+npm ci
+docker compose up -d postgres storage mailpit   # Postgres, S3 storage, Mailpit (mail UI on :8025)
+npm run db:migrate                               # apply SQL migrations
+npm run db:seed                                  # fictional products, variants and stock
+OWNER_EMAIL=you@example.com OWNER_NAME="You" OWNER_PASSWORD='choose-a-long-password' npm run staff:create-owner
 
-  - Semantic markup
-  - Modern HTML structure
-  - Accessibility features
-
-- **CSS3**
-
-  - Custom styling
-  - Responsive design
-  - Flexbox/Grid layouts
-  - Custom animations
-  - Media queries
-
-- **JavaScript**
-  - Dynamic content loading
-  - Interactive UI elements
-  - Shopping cart functionality
-  - Mobile navigation
-  - Image sliders
-
-## 📁 File Structure
-
-```
-DOPAMEAN/
-│
-├── .vscode/
-│   └── settings.json           # VS Code editor configuration
-│
-├── assets/
-│   └── [media files]          # Images, logos, icons, videos
-│
-├── css/
-│   ├── assets.css             # Styles for UI assets and icons
-│   ├── collection_page.css    # Collection page specific styles
-│   ├── collection_page_responsive.css  # Collection page mobile styles
-│   ├── product_responsive.css # Product page mobile styles
-│   ├── products.css           # Product page specific styles
-│   ├── responsive.css         # Global responsive styles
-│   └── style.css             # Main stylesheet (colors, typography, layout)
-│
-├── fonts/
-│   ├── apercu/               # Apercu font family files
-│   └── satoshi/             # Satoshi font family files
-│
-├── script/
-│   └── script.js            # Main JavaScript functionality
-│
-├── HTML Pages
-│   ├── index.html           # Homepage
-│   ├── products.html        # Main shop/products page
-│   └── collection_page.html # Collection showcase page
-│
-└── readme.MD                # Project documentation
+npm run dev        # web on http://localhost:3000
+npm run worker     # in a second terminal: outbox relay, housekeeping, heartbeat
 ```
 
-## 📋 Component Details
+Sign in at <http://localhost:3000/admin/login>. Owner and Manager accounts must enrol an authenticator app (TOTP) on first sign-in.
 
-### CSS Structure
+Everything in containers instead: `docker compose --profile app up --build` (runs migrations, web and worker). Health: <http://localhost:3000/api/health>.
 
-- **style.css**: Global styles, variables, and common elements
-- **responsive.css**: Breakpoints and responsive layouts
-- **[page]\_responsive.css**: Page-specific mobile adaptations
-- **products.css & collection_page.css**: Page-specific styles
+## Commands
 
-### JavaScript Features
+| Command                             | What it does                                                               |
+| ----------------------------------- | -------------------------------------------------------------------------- |
+| `npm run lint`                      | ESLint and dependency-cruiser module-boundary rules                        |
+| `npm run typecheck`                 | `tsc --noEmit` (strict)                                                    |
+| `npm test`                          | Unit tests                                                                 |
+| `npm run test:integration`          | Integration tests against a real PostgreSQL (Testcontainers; needs Docker) |
+| `npm run build && npm run test:e2e` | Playwright E2E (needs `docker compose up -d postgres mailpit`)             |
+| `npm run audit`                     | Production dependency audit (fails on high/critical)                       |
+| `npm run db:generate`               | Generate a new SQL migration from schema changes                           |
 
-- Shopping cart management
-- Mobile menu toggle
-- Image sliders/carousels
-- Dynamic product filtering
-- Interactive UI elements
+## Layout
 
-### Custom Typography
+- `src/modules/*`: domain modules; each exposes only `index.ts` (enforced in CI).
+- `src/app`: Next.js routes (`admin/` uses Tailwind; the storefront route group uses the original CSS).
+- `src/worker`: background worker (pg-boss + outbox relay).
+- `drizzle/`: committed SQL migrations. `scripts/`: migrate, seed, create-owner.
+- `legacy/`: the original static site, kept as the design reference.
+- `docs/`: spec, progress, invariants, decisions (ADRs).
 
-The site uses two primary font families:
+Architecture overview: [ARCHITECTURE.md](ARCHITECTURE.md). Environment variables: [docs/ENV.md](docs/ENV.md).
 
-- **Apercu**: Modern, clean sans-serif
-- **Satoshi**: Contemporary, versatile typeface
+## Licence
 
-## 🎨 Design Features
-
-- Responsive layout adapts to all screen sizes
-- Clean, minimalist aesthetic
-- Custom animations and transitions
-- Intuitive navigation
-- Mobile-first approach
-
-## 💻 Development
-
-### Prerequisites
-
-- Basic understanding of HTML, CSS, and JavaScript
-- Any modern web browser
-- Text editor (VS Code recommended)
-
-### Editing
-
-1. CSS changes: Find relevant stylesheet in `/css`
-2. Content updates: Edit appropriate HTML files
-3. Functionality changes: Modify `script.js`
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👥 Author
-
-**Shiv Ranjan**
-
-- GitHub: [@shivranjan0](https://github.com/shivranjan0)
-
----
-
-_For questions or feedback, please open an issue in the repository._
+MIT for the source code. Brand fonts, photos and video are not covered (rights unconfirmed), see [LICENSE](LICENSE).
