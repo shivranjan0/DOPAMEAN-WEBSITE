@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:22-alpine AS deps
+FROM node:25-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
@@ -9,12 +9,12 @@ COPY . .
 # Placeholder env only so build-time module evaluation never needs real secrets (nothing is baked in).
 RUN npm run build && node scripts/build-runtime.mjs
 
-FROM node:22-alpine AS prod-deps
+FROM node:25-alpine AS prod-deps
 WORKDIR /app/worker
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
-FROM node:22-alpine AS runtime
+FROM node:25-alpine AS runtime
 ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1
 RUN addgroup -S app && adduser -S app -G app
 WORKDIR /app
